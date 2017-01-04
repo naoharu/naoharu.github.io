@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nas on 順道制勝</title>
+    <link>https://naoharu.github.io/tags/nas/index.xml</link>
+    <description>Recent content in Nas on 順道制勝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/naoharu&#34;&gt;Naoharu SASAKI&lt;/a&gt; 2017</copyright>
+    <atom:link href="https://naoharu.github.io/tags/nas/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Synology DiskStation DS215j を購入</title>
+      <link>https://naoharu.github.io/archives/12293</link>
+      <pubDate>Tue, 05 Apr 2016 06:16:46 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/12293</guid>
+      <description>&lt;p&gt;娘の写真や動画を撮ることが多くて、&lt;/p&gt;
+
+&lt;p&gt;iPhoneとかだとiCloudに勝手にアップされるからいいんだけど、&lt;/p&gt;
+
+&lt;p&gt;一眼レフとかGoProのファイルの退避先が無くなってきたので、NASを購入した。&lt;/p&gt;
+
+&lt;p&gt;色々調べると、どうやら最近のNASっていうのは単なるファイル置き場じゃなくて&lt;/p&gt;
+
+&lt;p&gt;iPhoneなどからアプリを使ってキャリア回線経由でアクセスできるんだねぇ！&lt;/p&gt;
+
+&lt;p&gt;こりゃあ便利だ。&lt;/p&gt;
+
+&lt;p&gt;製品としては&lt;a href=&#34;http://kakaku.com/item/K0000720291/&#34;&gt;Synology DiskStation DS215j&lt;/a&gt;というサーバと、&lt;a href=&#34;http://kakaku.com/item/K0000401036/&#34;&gt;WESTERN DIGITALの3TBのNAS用ディスク&lt;/a&gt;を購入。早速マウント！&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/s_naoharu/26180285001/in/dateposted/&#34; title=&#34;***&#34;&gt;&lt;img src=&#34;https://i0.wp.com/farm2.staticflickr.com/1567/26180285001_6eec14f196_k.jpg?resize=700%2C525&amp;#038;ssl=1&#34; alt=&#34;***&#34; data-recalc-dims=&#34;1&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/s_naoharu/26180283021/in/dateposted/&#34; title=&#34;***&#34;&gt;&lt;img src=&#34;https://i0.wp.com/farm2.staticflickr.com/1604/26180283021_7857fce22b_k.jpg?resize=700%2C542&amp;#038;ssl=1&#34; alt=&#34;***&#34; data-recalc-dims=&#34;1&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;電源入れて有線LANケーブル挿したら、もうMacBookProからもブラウザ経由で見えてファイルもアップできる！同様にiPhoneとかからもアップできる！&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/s_naoharu/26180231681/in/dateposted/&#34; title=&#34;***&#34;&gt;&lt;img src=&#34;https://i0.wp.com/farm2.staticflickr.com/1653/26180231681_c649f86cd6_k.jpg?resize=700%2C525&amp;#038;ssl=1&#34; alt=&#34;***&#34; data-recalc-dims=&#34;1&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;理論的に考えられるファイルアップロード速度にまったく到達していないという問題があるけど、そこは後日&lt;a href=&#34;https://www.synology.com/ja-jp/knowledgebase/DSM/tutorial/General/What_should_I_do_if_file_transfers_are_slow&#34;&gt;原因究明&lt;/a&gt;するとして、いったんは構築できた。これでクライミング動画も撮りまくりだ！&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>順道制勝</title>
+<link rel="stylesheet" href="https://naoharu.github.io//css/style.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/github.min.css">
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://naoharu.github.io/"><h1 class="title is-4">順道制勝</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/naoharu">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/naoharu">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="/index.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    
+    <article>
+      <h2 class="subtitle is-6">March 6, 2010</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/8713">iPhoneで動画を見る</a></h1>
+      <div class="content">
+        最近電車に乗ってる時間とか、せっかくiPhone持ってるんだから動画を見たいと思うようになりました。iPhoneで動画を見る方法は、色々あると思いますが、大体以下のように分けられると思います。
+ プリインストールされている公式YouTubeプレイヤーなどで、そのつどストリーミングで見る iWoopieなどのアプリケーションを使って、事前にiPhoneで動画をダウンロードしておいて見る あらかじめPC内にある動画をiTunesで同期しておいて、iPhoneではネットワークに接続せずに見る  この中で、電力消費や画質の事を考えると、自分は3.派だということがわかりました。
+1.の方法だと画質を勝手に妥協してしまいます。（無線LANならともかく、3G回線ならもはや紙芝居ですよね、、、）あと、電池がグングン減っていくのも気になります。
+2.の方法だと、動画の検索時に、iPhoneでは見ることのできない形式の動画も引っかかってしまいますし、かと言って、それらの動画をiPhoneで見れるような形式に変換することはiPhone上では難しいです。また、ダウンロードした動画ファイルをプレイリストで管理することができません。
+そもそも、出先で動画を検索する事はあまり無い（見たい動画はもう決まっている）し、iPhoneを買う前からお気に入り動画自体の多くはMacに保存してあります。そういう意味では、音楽を聴く状況と非常に似ているので、やはり音楽と同様にiTunesで管理するのが一番合理的だと思いました。
+というわけで、3.のような動画視聴スタイルを効率良くやっていくには、どうしたいいんだろう？と最近ちょっと悩んでいました。動画ファイル自体は、DVD等からリップする場合もあるんですが、主にYouTube上からダウンロードします。なので、できればPCで「YouTubeから動画ファイルをダウンロード　→　iPhone用に形式変換　→　iTunesへの登録（iPhoneを接続すれば自動転送するようにしとく）」を一発でメイクしたいんですが、なかなかそういうソフトは見つけることができなくて、結局firefoxのアドオンのFlash Video Resources Downloaderで動画ファイルをダウンロードして、iSquintで形式変換＆iTunes登録をしています。
+これでも「自分が手を動かすのは最初の検索とダウンロードのみ」っていう状況で、結構気に入ってるんですが、もっと効率良くできる方法を知っている方がいましたら、ぜひぜひ教えて頂ければと思います・・・。
+最近一番見てる動画です。3分01秒〜3分20秒の、めちゃスタイリッシュなコスりのルーティン、、、しかもそのカットの最後に、太陽のイタズラでドラマチックに光が差し込む部分が最高です・・・！
+        
+      </div>
+    </article>
+    
+    <article>
+      <h2 class="subtitle is-6">March 4, 2010</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/8704">GDB において特定の回数関数が呼ばれたら break する</a></h1>
+      <div class="content">
+        GDB において特定の回数関数が呼ばれたら break する
+[shell]
+# break point を表示。番号を知る
+(gdb) info b
+Num Type Disp Enb Address What
+1 breakpoint keep y 0x0000000000413fab in scheme::VM::runLoop(scheme::Object*, __jmp_buf_tag*, bool) at src/VM-Run.cpp:982
+2 breakpoint keep y 0x000000000040e240 in scheme::VM::tryJitCompile(scheme::Object) at src/VM.cpp:957
+breakpoint already hit 3 times
+# 2番の breakpoint において 121 回は通過し 122 回目で break するように指示
+(gdb) ignore 2 121
+Will ignore next 121 crossings of breakpoint 2.
+(gdb) r
+[/shell]
+これ、初めて知りました。
+ず〜っと前から、
+        
+        ...<a class="button is-link" href="https://naoharu.github.io/archives/8704" style="height:28px">
+          Read more
+          <span class="icon is-small">
+            <i class="fa fa-angle-double-right"></i>
+          </span>
+        </a>
+        
+      </div>
+    </article>
+    
+    <article>
+      <h2 class="subtitle is-6">March 1, 2010</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/8700">GANG STARR の GURUが昏睡状態</a></h1>
+      <div class="content">
+        notraxのニュースから知りましたが、GANG STARR の GURUが昏睡状態って・・・。
+ ヒップホップ・ブログPhilaflavaがグールーの妹Triciaの話として掲載した記事や、ラジオパーソナリティのミス・インフォ(Miss Info)など複数の情報筋から確認されたもので、グールーは心臓発作を起こして倒れ、ニューヨーク病院に収容。一時は心停止に陥りかけたが、蘇生措置が行われ、現在昏睡状態にあるという。彼はこの後手術を受ける予定とのこと。
+現在のところ倒れた状況などは不明で、彼と共にギャング・スターの伝説的活動を行ったDJプレミア(DJ Premier)もラジオに出演して病状についてコメントすると発表された後、結局は中止するなど、病状は予断を許さない状況にあると推測されている。
+ 手術の成功と快復を祈ります・・・。
+        
+      </div>
+    </article>
+    
+    <article>
+      <h2 class="subtitle is-6">March 1, 2010</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/8688">ヒール抜けとトゥ抜け</a></h1>
+      <div class="content">
+        連日スノーボードなエントリですが・・・。
+この前の栂池で練習してて思ったんですが、自分は、FSのトゥ抜け、BSのヒール抜け（てかBS全般）が苦手。
+○○抜けっていうのは、トリックなどでボードが雪面から離れるときに、最後にどっちのエッジが最後まで雪面と接触していたか？ということです。ヒール抜けの場合は、ヒールエッジが最後まで雪面に着いているということで、トゥについても同様です。
+ヒール抜けでキッカーを飛ぶ場合、最後に踏み切るのはカカト側エッジなので、上手くFS側（自分が谷側に体を開く方向の回転＝オープンサイド）に回せます。これは雪面にかかる力の方向から考えても、納得できます。自分が苦手なのは、最後につま先側のエッジで踏み切ってFSに回す方法です。なぜそんなことが可能？？だって最後つま先側ってことは、地面からは自分が体の前面に進むように力を受けるわけだから、むしろBS側（自分が山側に体を向けていく方向）に回るんじゃないの？？
+オープン3程度だと、惰性と上体の先行動作で何とかなりますが，回転がスムーズじゃないし、そもそもこの先挑戦したい軸ずらし系に発展させることができません。
+今の時代、プログラミング等と同様に、ネットに幾らでも勉強用のサンプルや答えが落ちているので、いろいろと探しているのですが、イマイチ納得できるものに出会っていません・・・。
+似たような悩みの人もいます。
+OKWave スノーボード　トゥー抜けのオープンスピン
+あとyoutubeにも参考になりそうな動画がいくつかありました。
+↑の動画では、1個目は俺も得意サイドだけど、問題は2個目ですね。う～ん、どういう荷重になっているか謎。
+↑これがyoutubeで見つけた一番参考になりそうなトゥ抜け。スローありがたい！キッカーに残る、つま先側でのエッジング痕から、荷重の強さがうかがえます。
+↑この人、俺とは全然レベルが違うけど、映像を見る限りトゥ抜け苦手と見た・・・笑
+いや～～・・・。
+なんとか今シーズン中にコツりたいところではあります。
+誰か教えてくれ～～～！！
+        
+      </div>
+    </article>
+    
+    <article>
+      <h2 class="subtitle is-6">February 28, 2010</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/8682">栂池高原スノーボーディング</a></h1>
+      <div class="content">
+        週末、栂池高原にスノーボードに行ってきました。宿はラフォーレ白馬、やっぱスノーボードto温泉out（技名っぽく言ってみた）は最高ですよね。
+レンタルショップでロッカーボードの貸し出しをしていたので、4000円でロッカーボードをレンタル。板は08-09シーズン話題になったK2のZEROでした。定価9万円のボードを2日間も自分のモノにできるのであれば、まぁ4000円払ってもいいでしょう、と。
+ちなみに、ロッカーボードというのは、去年から爆発的に人気が出始めたスノーボードの形の一種で、極端に言うと「ボードの両端が上に反っている形状」です。ロッカーボードは形状的に、センター部には大きく体重がかかり、ボードの両端部分は雪面にあまり圧力を与えません。エッジの引っかかりが少ない（有効エッジ長が短い）ため、逆エッジなどが発生しにくく、安心してグラトリなどができるという利点があります。
+今回、レンタルしてみて、グラトリのしやすさの点についてはかなり効果を実感できました。オープンサイド540など、初めての技も（グリ気味ですが）メイクできました。これは、ロッカー形状だけでなく、ZERO固有の特徴であるカーボン素材の軽さなども大きいと思いました。また、話題のペラペラ素材ですが、最初は
+ 「こんなんでチャンと雪を喰って行けるのか！？」
+ とも思いましたが、ある一定以上の力が加わるとしっかり反発してくるような感覚がありました。最新テクノロジーおそるべし・・・・。
+ただ、逆に高速カービングターン時には遠心力に負けてエッジが抜けてしまうという場面がありました。まぁこれは自分が今までキャンパーボードに慣れていたせいもあるし、そもそもターン技術がヘタいという原因もあるでしょう。
+また、ボードのノーズとテールが同じ形状をしたツインチップ形状もかなり調子が良く、スイッチライディングもかなり上達した気分になれました。キャブ系の技にも挑戦する勇気が出ました。ただ、やっぱりパウダーの上を滑るときは、どうかな〜という不安はある感じです。
+色々書きましたが、総合して非常にオールラウンドに使えそうな良いボードでした。ただK2ってのがな。。。
+次に、ゲレンデですが、今回も先週同様の撮影機材を持参したんですが、ゲレンデまで持って行ったところで、モノすごいガスり具合だったので、麓のロッカーに入れてきてしまいました。実は、ガスは中級ゲレンデ付近までで、栂池最難関の馬ノ背コースがある山頂まで登ると、霧は雲海となって遥かに下の方にあり、目の前には北アルプスが・・・。めちゃくちゃ感動＆カメラを持って来なかったことを後悔しました。まだまだ山の事を知らないんだなぁ。しかたなくiPhoneで撮りました。
+例によって、sasaki&#8217;s bootcampは逆ライオン方式なので、スノボ歴3日のホリッチも、「EXPERTS ONLY」の看板を横目に、最難関コースに挑戦！！（思い切り滑落してました。）自分もチョッカリすぎてコブで跳ねてしまい頭から落下、前歯グラグラ＆口の中を切って血だらけになりました。これ、リアルスノーボーディング！
+馬ノ背コース。下が見えない（斜面が急過ぎて地平線になってる）コースは何回突っ込んでも怖いですね。。
+宿に帰ってからは、露天風呂、なかなか良かったです。料理も美味しかったし。
+夜はひとしきりお酒飲んで、酔っぱらって寝。
+2日は何故か自分だけ二日酔いのままゲロゲロと滑走。今回もみんなほぼターンをマスターし、ほりっちに至ってはショートターンもバッチリでしたね！
+そんなこんなでほぼ全コースを堪能した2日間でありました。お疲れさま！
+        
+      </div>
+    </article>
+    
+    <article>
+      <h2 class="subtitle is-6">February 26, 2010</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/8675">雪庇の向こう側へ</a></h1>
+      <div class="content">
+        ところで、雪庇 （せっぴ）って変換一発で出ますか？
+今日から長野県は栂池高原に行ってきます。天候が微妙で、楽しみにしていた北アルプスの撮影は上手くいかないかもしれないですが、自然相手なので、しょうがないですね。先週の苗場と同様に本当に大きなスキー場なので、いろんなコース、パークに行ってみたいです。
+晴れないかな〜。。
+雪の祭典＆感謝祭が開催されるので、そちらも楽しみ！
+ところで、INO hidefumiのプロモって雪山多いですが、好きなんですかね？
+        
+      </div>
+    </article>
+    
+    <article>
+      <h2 class="subtitle is-6">February 24, 2010</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/8667">にゃー　わん　ぱおーん　がおー</a></h1>
+      <div class="content">
+        この曲、この前の苗場まで行くバスの中でiPodランダムに聴いてたら、久しぶりに流れてきてヤラれました。。
+リリックは可愛いし、ちゃんと聴いたら意外と深い！トラックもスゴく良いしね。元ネタ知らないけど。。。
+KREVA &#8211; あかさたなはまやらわをん
+        
+      </div>
+    </article>
+    
+    <article>
+      <h2 class="subtitle is-6">February 24, 2010</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/8661">my favorite place</a></h1>
+      <div class="content">
+        今日はボチボチと論文誌に向けてネタを蓄えつつ、暗くなってからは気分転換に調布飛行場へ行きました。この場所は、東京に来てまだ誰も知り合いがいなかった時からずっと行ってた場所で、非常に気分転換になるというか、初心に戻れる場所です。今日も久しぶりに1人で行ってみましたが、グッときました！
+ここでセスナ機をボーっと見てると、懐かしいような悲しいような、なんか不思議な気分になって、結局はやる気アップするんですよね〜。不思議！
+頑張ろう！
+        
+      </div>
+    </article>
+    
+    <article>
+      <h2 class="subtitle is-6">February 21, 2010</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/8640">苗場スノーボーディング</a></h1>
+      <div class="content">
+        金曜日からドコモインターン同期の方々と苗場にスノーボードに行ってました。
+今回は初心者の人が多めだったので、そこまで滑りを極めるという趣旨じゃなくて、どっちかというと皆で練習しようって感じでした。なので、そこまでハードな滑りはしないだろうという事で、初めてデジタル一眼レフカメラをゲレンデに持参しました。衝撃・雪・寒暖の差による結露などが怖かったので、カメラバッグにシリカゲルを入れて、そのバッグをさらにバックパックに入れて背負って滑りました。
+今回持っていったレンズは、
+ SIGMA 30mm F1.4 HSM Canon EF 50mm F1.8 II Canon 18-55mm F3.5-5.6 IS USM Canon 75-300mm F4-5.6 USM  の4つです。
+1日目は初心者コース中心にペンジュラムの練習して、できた人からターンの練習。基本的に、木の葉が出来れば滑れないコースは無い（ビビったりして制御不能になることはあるけど）なので、上級者コースへ連行。これによってRule氏はタイミング任せとはいえ、両サイドのターンをマスター。
+2日目は最初に山頂アタック。かなり満足な写真撮影に成功。その後は、Rule氏は加重・抜重による自分ドリヴンなターンをほぼマスター。ただ、ときどき平坦な場所で逆エッジしていました。ヒロコフ氏も後半マンツーでしごいて、緩やかな場所では6〜7割のメイク率。
+スノーボードで滑る技術は（曲がる方法、コケてしまうときの原因、重心移動の方法、エッジング・・・etc）は非常にシンプルなので、付いてきてくれたら絶対にすぐ理論をマスターできます。んでメキメキ上達させます！
+いろんなスポーツは習うより慣れろですが、スノーボードは単純なので、まず理論です。これmy持論。
+そして、2日間を通して、sasaki&#8217;s bootcamp はかなりスパルタ教育だったのに、みんな根性を持ち合わせていて素晴らしかったです・・・。
+ おれ「今から、ここ降ります。」
+Rule「ええぇ！？ここ！？ガケじゃん！」
+おれ「やめとく？」
+Rule「俺まじで死ぬわ〜、、まぁでも行きます・・・。」
+ とか、
+ ヒロコフ「うわぁっっっ！（ズサー）」
+おれ「おー大丈夫？？」
+ヒロコフ「コケすぎて、お尻痛い。。。」
+おれ「休む？？」
+ヒロコフ「大丈夫・・・できる・・・。」
+ sasaki&#8217;s bootcampで、スノーボードを通じてスノーボード以上に伝えたいこと、ガッツや、諦めない精神、失敗しても起き上がってまたチャンレジする姿勢、など、ちゃんと伝わってる感じでした。何事も　大切なのは　アティチュード。（5　7　5）
+筆者近影
+追記：
+そういえば、レンズは4本持参しましたが、結局キットレンズと300mmのズームレンズしか使いませんでした。ゲレンデだと光の量が多すぎるので、単焦点でも結局は絞ることになって、明るさはどのレンズでも関係無くなり、レンズ選びは結局画角性能だけに依存するという状況でした。なので、広角〜望遠をカバーするレンズだけ持って行けばそれで事足りるという・・・。一方、広角と望遠の両方が必要だったかと言うと、写真を見てもらえばわかる通り、答えはYES。やっぱ風景は広角、スポーツシーンは望遠というのは定番ですね。それにしても、充分シャスピが出る状況での300mmとか、本当に楽しかったです。
+最初は、スノーボードに一眼レフカメラってあり？？と思っていましたが、スノーボードにこそ、一眼レフカメラです。
+        
+      </div>
+    </article>
+    
+    <article>
+      <h2 class="subtitle is-6">February 18, 2010</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/8638">浅草フォトシューティング</a></h1>
+      <div class="content">
+        実は、今まで浅草に行ったことが無かったので、今日は研究室のメンバーで浅草に行こうということになってたんだけど、朝雪が降ってて電車が微妙ということで中止に。。無念・・・。昼からは晴れてきたので自分一人でも行ってしまえ～というわけで、SIGMA 30mm F1.4 EX DC / HSMを持ってフォトシュートに出かけました。
+        
+      </div>
+    </article>
+    
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <nav class="level is-mobile">
+      <div class="level-left">
+        <div class="level-item">
+          
+          <a class="button" href="/page/78/">
+            <span class="icon is-small is-marginless">
+              <i class="fa fa-angle-left"></i>
+            </span>
+            Newer
+          </a>
+          
+        </div>
+      </div>
+      <div class="level-right is-marginless">
+        <div class="level-item">
+          
+          <a class="button" href="/page/80/">
+            Older
+            <span class="icon is-small is-marginless">
+              <i class="fa fa-angle-right"></i>
+            </span>
+          </a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; <a href="https://twitter.com/naoharu">Naoharu SASAKI</a> 2017</p>
+  </div>
+</section>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/languages/go.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/languages/dockerfile.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-4774178-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+

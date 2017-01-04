@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cf Sz5 on 順道制勝</title>
+    <link>https://naoharu.github.io/tags/cf-sz5/index.xml</link>
+    <description>Recent content in Cf Sz5 on 順道制勝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/naoharu&#34;&gt;Naoharu SASAKI&lt;/a&gt; 2017</copyright>
+    <atom:link href="https://naoharu.github.io/tags/cf-sz5/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Panasonic CF-SZ5のACアダプターをIBM製品で代用</title>
+      <link>https://naoharu.github.io/archives/12402</link>
+      <pubDate>Tue, 31 May 2016 01:20:56 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/12402</guid>
+      <description>&lt;p&gt;Windows機として使っている&lt;a href=&#34;http://ec-club.panasonic.jp/pc/sz/&#34;&gt;Panasonic CF-SZ5&lt;/a&gt;のACアダプターを先日ワーキングスペースに忘れてしまって、あとで聞いてみるも&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;「そのような忘れ物は預かっていないですね～。。」&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;とのこと。無念！&lt;/p&gt;
+
+&lt;p&gt;しかしこれが無いと仕事にならないので何とか入手するしかない。&lt;/p&gt;
+
+&lt;p&gt;パナが出してる純正アダプター&lt;a href=&#34;http://panasonic.jp/pc/p-db/CF-AA6412CJS.html&#34;&gt;CF-AA6412CJS&lt;/a&gt;は定価ちょっきり1万円！&lt;/p&gt;
+
+&lt;p&gt;マジかよ。。クライミング月パス買えるじゃん。。&lt;/p&gt;
+
+&lt;p&gt;ということで、Rhino&amp;amp;Birdに登りに行くついでに、秋葉原に寄って中古を探しにいくことに。&lt;/p&gt;
+
+&lt;p&gt;色々調べた結果、どうやら下記が同じならば、他メーカーのものでも使えるらしい。&lt;/p&gt;
+
+&lt;p&gt;（もちろん稼動保障外の自己責任）&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;電圧&lt;/li&gt;
+&lt;li&gt;電流&lt;/li&gt;
+&lt;li&gt;差込口の形状&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;まぁ確かにエレコムとかサンワとかも、純正互換の製品を出してるもんね。&lt;/p&gt;
+
+&lt;p&gt;今回の場合、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;16(V)&lt;/li&gt;
+&lt;li&gt;4.06(A)&lt;/li&gt;
+&lt;li&gt;Panasonic型&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;さらに、どうやらIBMとPanasonicは挿し込み口が同じらしいので、&lt;/p&gt;
+
+&lt;p&gt;早速ジャンクをdig！あった！&lt;/p&gt;
+
+&lt;p&gt;&lt;a title=&#34;***&#34; href=&#34;https://www.flickr.com/photos/s_naoharu/26756274213/in/dateposted/&#34; data-flickr-embed=&#34;true&#34;&gt;&lt;img src=&#34;https://i1.wp.com/c6.staticflickr.com/8/7494/26756274213_98b0150e14_k.jpg?resize=700%2C525&amp;#038;ssl=1&#34; alt=&#34;***&#34; data-recalc-dims=&#34;1&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a title=&#34;***&#34; href=&#34;https://www.flickr.com/photos/s_naoharu/26756271293/in/dateposted/&#34; data-flickr-embed=&#34;true&#34;&gt;&lt;img src=&#34;https://i2.wp.com/c6.staticflickr.com/8/7066/26756271293_bccc592fc8_k.jpg?resize=700%2C525&amp;#038;ssl=1&#34; alt=&#34;***&#34; data-recalc-dims=&#34;1&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;IBM ACアダプタ 02K6657/DC:16V-4.5Aという製品！500円！&lt;/p&gt;
+
+&lt;p&gt;別に電流値は抵抗に合わせて「MAXこれだけ流せるよ」ってことだから、大きい分には問題ない。（はず）&lt;/p&gt;
+
+&lt;p&gt;とりあえず帰ってつないで試してみると無事PC起動。&lt;/p&gt;
+
+&lt;p&gt;しかもBIOSで&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;「純正アダプタ使ってください！」&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;という例の警告も出ず。良かった良かった。&lt;/p&gt;
+
+&lt;p&gt;しかし久々に秋葉原に行って色々見てみると、特に中古ノートPC市場がぶっ壊れてるね。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/%E3%83%8E%E3%83%BC%E3%83%88%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3-800000-1000000-%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%83%BB%E5%91%A8%E8%BE%BA%E6%A9%9F%E5%99%A8/s?ie=UTF8&amp;amp;#038;page=1&amp;amp;#038;rh=n%3A2151981051%2Cp_36%3A800000-1000000&#34;&gt;メモリ2GBで普通に1万円切ってたり&lt;/a&gt;する。しかもOS付き。&lt;/p&gt;
+
+&lt;p&gt;みんなスマホとかタブレット持ってるからネットするだけだとPCいらなくなってこういうことが起こっているのかな。。&lt;/p&gt;
+
+&lt;p&gt;奥さんが自分用のPC欲しいって行ってたからプレゼントしてあげようかしら。。さすがに怒るか。。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

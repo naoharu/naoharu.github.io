@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C#デビュー | 順道制勝</title>
+<link rel="stylesheet" href="https://naoharu.github.io//css/style.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/github.min.css">
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://naoharu.github.io/"><h1 class="title is-4">順道制勝</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/naoharu">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/naoharu">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="/index.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">November 14, 2008</h2>
+    <h1 class="title">C#デビュー</h1>
+    <div class="content">
+      <p>実は今まで使ったことなかったけど、今日初めて使ってみたり。</p>
+
+<p>が、、、これ、すごい。もうメソッド名とか穴埋めパズル状態。</p>
+
+<p>いやーこれは感動した。テキトーなやつは全部これで作ればいいじゃん。（盲信）</p>
+
+<p>インターフェースとかも超簡単に作れるし。。。</p>
+
+<p>Win32だろーがmobileだろうが関係ないし。。。</p>
+
+<p>一瞬MSを尊敬しかけました。</p>
+
+<p>というわけで、今日はFTへ。</p>
+
+<p>いやー今日は眠かった。。まぁ寝不足だわな。</p>
+
+<p>中間テスト勉強（修士まできて中間試験って・・・）やレポート、合同輪講用の論文調査、SIPサーバー構築、彼女さんとの喧嘩（っていうか、俺が100で悪いんだけど・・・）などなど、こまごまとしたことがあって、あんまり寝れてなかった。</p>
+
+<p>とりあえず今日乗り切れば土日なので、1日に1本しか飲んではいけないゼナを2本飲んで戦った。</p>
+
+<p>したら、途中で自分の心臓の鼓動が聴こえてきてあせったり。</p>
+
+<p>先週に引き続き、bugfixできたんだけど、ちょー簡単なところで2時間も・・・。</p>
+
+<p>「このクラスに絶対原因があるのに！」ってわかってるのに、そっからナカナカわからない。</p>
+
+<p>集中力MAXで2時間格闘して、めちゃくちゃ疲れた〜。</p>
+
+<p>プログラミングのことをよく知らない人のために例えるならば、</p>
+
+<p>お笑いまんが道場の、膨らみ続ける風船をみんなでまわしていくやつで、もう風船パンパンなのにナカナカ割れずに2時間！みたいな・・・。</p>
+
+<p>富永先生、もう65回目！みたいな・・・。（わかりにくい）</p>
+
+<p>もしくは、マラソンで42km走って、残り195mでダッシュしてラストスパートかけたら、「もうしばらく走っててください。」って言われて、はや半日！みたいな・・・。</p>
+
+<p>仕事終わってからは、「<a href="http://r.tabelog.com/tokyo/A1304/A130401/13000736/">ひごのれん</a>」という熊本ラーメン屋さんに連れてってもらった。味はうまかったけど、ちょっと匂いがヤバいっすよ〜。これは。。。塩っぽいトンコツで、ちょっと東京では珍しい感じ？</p>
+
+<p>そのあとは新宿3丁目のBEAMSと、中古カメラ屋を経由して帰宅。</p>
+
+<p>東京は都会だなぁ。（新宿から六本木方面を眺めてみました。）</p>
+
+<p><img src="https://i0.wp.com/farm4.static.flickr.com/3071/3028959567_39d6f30294.jpg?resize=500%2C375" data-recalc-dims="1" /></p>
+
+<p>自分用メモ</p>
+
+<p>sshには、一定時間パケットが通信されなければ接続を解除するという仕組みがあるらしい。</p>
+
+<p>どうりで新しく立てたSIPサーバーにcygwinから入っていると、勝手に切れたりするわけだ。</p>
+
+<p>これ、知らなかったの俺だけ何でしょうか？接続を切断するまでの時間は、</p>
+
+<p>~/.ssh/configの中にある、</p>
+
+<p>`実は今まで使ったことなかったけど、今日初めて使ってみたり。</p>
+
+<p>が、、、これ、すごい。もうメソッド名とか穴埋めパズル状態。</p>
+
+<p>いやーこれは感動した。テキトーなやつは全部これで作ればいいじゃん。（盲信）</p>
+
+<p>インターフェースとかも超簡単に作れるし。。。</p>
+
+<p>Win32だろーがmobileだろうが関係ないし。。。</p>
+
+<p>一瞬MSを尊敬しかけました。</p>
+
+<p>というわけで、今日はFTへ。</p>
+
+<p>いやー今日は眠かった。。まぁ寝不足だわな。</p>
+
+<p>中間テスト勉強（修士まできて中間試験って・・・）やレポート、合同輪講用の論文調査、SIPサーバー構築、彼女さんとの喧嘩（っていうか、俺が100で悪いんだけど・・・）などなど、こまごまとしたことがあって、あんまり寝れてなかった。</p>
+
+<p>とりあえず今日乗り切れば土日なので、1日に1本しか飲んではいけないゼナを2本飲んで戦った。</p>
+
+<p>したら、途中で自分の心臓の鼓動が聴こえてきてあせったり。</p>
+
+<p>先週に引き続き、bugfixできたんだけど、ちょー簡単なところで2時間も・・・。</p>
+
+<p>「このクラスに絶対原因があるのに！」ってわかってるのに、そっからナカナカわからない。</p>
+
+<p>集中力MAXで2時間格闘して、めちゃくちゃ疲れた〜。</p>
+
+<p>プログラミングのことをよく知らない人のために例えるならば、</p>
+
+<p>お笑いまんが道場の、膨らみ続ける風船をみんなでまわしていくやつで、もう風船パンパンなのにナカナカ割れずに2時間！みたいな・・・。</p>
+
+<p>富永先生、もう65回目！みたいな・・・。（わかりにくい）</p>
+
+<p>もしくは、マラソンで42km走って、残り195mでダッシュしてラストスパートかけたら、「もうしばらく走っててください。」って言われて、はや半日！みたいな・・・。</p>
+
+<p>仕事終わってからは、「<a href="http://r.tabelog.com/tokyo/A1304/A130401/13000736/">ひごのれん</a>」という熊本ラーメン屋さんに連れてってもらった。味はうまかったけど、ちょっと匂いがヤバいっすよ〜。これは。。。塩っぽいトンコツで、ちょっと東京では珍しい感じ？</p>
+
+<p>そのあとは新宿3丁目のBEAMSと、中古カメラ屋を経由して帰宅。</p>
+
+<p>東京は都会だなぁ。（新宿から六本木方面を眺めてみました。）</p>
+
+<p><img src="https://i0.wp.com/farm4.static.flickr.com/3071/3028959567_39d6f30294.jpg?resize=500%2C375" data-recalc-dims="1" /><!--more--></p>
+
+<p>自分用メモ</p>
+
+<p>sshには、一定時間パケットが通信されなければ接続を解除するという仕組みがあるらしい。</p>
+
+<p>どうりで新しく立てたSIPサーバーにcygwinから入っていると、勝手に切れたりするわけだ。</p>
+
+<p>これ、知らなかったの俺だけ何でしょうか？接続を切断するまでの時間は、</p>
+
+<p>~/.ssh/configの中にある、</p>
+
+<p>`</p>
+
+<p>で定義されているらしい。</p>
+
+<p>ちなみにこの例だと、300秒間何もしなかったら無害なパケットを送信して接続が切れないようにしてくれる。</p>
+
+<p>いやー初めて知った。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'naoharu1218';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; <a href="https://twitter.com/naoharu">Naoharu SASAKI</a> 2017</p>
+  </div>
+</section>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/languages/go.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/languages/dockerfile.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-4774178-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+

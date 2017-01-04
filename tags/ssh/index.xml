@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ssh on 順道制勝</title>
+    <link>https://naoharu.github.io/tags/ssh/index.xml</link>
+    <description>Recent content in Ssh on 順道制勝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/naoharu&#34;&gt;Naoharu SASAKI&lt;/a&gt; 2017</copyright>
+    <atom:link href="https://naoharu.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>C#デビュー</title>
+      <link>https://naoharu.github.io/archives/6540</link>
+      <pubDate>Fri, 14 Nov 2008 13:01:01 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/6540</guid>
+      <description>&lt;p&gt;実は今まで使ったことなかったけど、今日初めて使ってみたり。&lt;/p&gt;
+
+&lt;p&gt;が、、、これ、すごい。もうメソッド名とか穴埋めパズル状態。&lt;/p&gt;
+
+&lt;p&gt;いやーこれは感動した。テキトーなやつは全部これで作ればいいじゃん。（盲信）&lt;/p&gt;
+
+&lt;p&gt;インターフェースとかも超簡単に作れるし。。。&lt;/p&gt;
+
+&lt;p&gt;Win32だろーがmobileだろうが関係ないし。。。&lt;/p&gt;
+
+&lt;p&gt;一瞬MSを尊敬しかけました。&lt;/p&gt;
+
+&lt;p&gt;というわけで、今日はFTへ。&lt;/p&gt;
+
+&lt;p&gt;いやー今日は眠かった。。まぁ寝不足だわな。&lt;/p&gt;
+
+&lt;p&gt;中間テスト勉強（修士まできて中間試験って・・・）やレポート、合同輪講用の論文調査、SIPサーバー構築、彼女さんとの喧嘩（っていうか、俺が100で悪いんだけど・・・）などなど、こまごまとしたことがあって、あんまり寝れてなかった。&lt;/p&gt;
+
+&lt;p&gt;とりあえず今日乗り切れば土日なので、1日に1本しか飲んではいけないゼナを2本飲んで戦った。&lt;/p&gt;
+
+&lt;p&gt;したら、途中で自分の心臓の鼓動が聴こえてきてあせったり。&lt;/p&gt;
+
+&lt;p&gt;先週に引き続き、bugfixできたんだけど、ちょー簡単なところで2時間も・・・。&lt;/p&gt;
+
+&lt;p&gt;「このクラスに絶対原因があるのに！」ってわかってるのに、そっからナカナカわからない。&lt;/p&gt;
+
+&lt;p&gt;集中力MAXで2時間格闘して、めちゃくちゃ疲れた〜。&lt;/p&gt;
+
+&lt;p&gt;プログラミングのことをよく知らない人のために例えるならば、&lt;/p&gt;
+
+&lt;p&gt;お笑いまんが道場の、膨らみ続ける風船をみんなでまわしていくやつで、もう風船パンパンなのにナカナカ割れずに2時間！みたいな・・・。&lt;/p&gt;
+
+&lt;p&gt;富永先生、もう65回目！みたいな・・・。（わかりにくい）&lt;/p&gt;
+
+&lt;p&gt;もしくは、マラソンで42km走って、残り195mでダッシュしてラストスパートかけたら、「もうしばらく走っててください。」って言われて、はや半日！みたいな・・・。&lt;/p&gt;
+
+&lt;p&gt;仕事終わってからは、「&lt;a href=&#34;http://r.tabelog.com/tokyo/A1304/A130401/13000736/&#34;&gt;ひごのれん&lt;/a&gt;」という熊本ラーメン屋さんに連れてってもらった。味はうまかったけど、ちょっと匂いがヤバいっすよ〜。これは。。。塩っぽいトンコツで、ちょっと東京では珍しい感じ？&lt;/p&gt;
+
+&lt;p&gt;そのあとは新宿3丁目のBEAMSと、中古カメラ屋を経由して帰宅。&lt;/p&gt;
+
+&lt;p&gt;東京は都会だなぁ。（新宿から六本木方面を眺めてみました。）&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i0.wp.com/farm4.static.flickr.com/3071/3028959567_39d6f30294.jpg?resize=500%2C375&#34; data-recalc-dims=&#34;1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;自分用メモ&lt;/p&gt;
+
+&lt;p&gt;sshには、一定時間パケットが通信されなければ接続を解除するという仕組みがあるらしい。&lt;/p&gt;
+
+&lt;p&gt;どうりで新しく立てたSIPサーバーにcygwinから入っていると、勝手に切れたりするわけだ。&lt;/p&gt;
+
+&lt;p&gt;これ、知らなかったの俺だけ何でしょうか？接続を切断するまでの時間は、&lt;/p&gt;
+
+&lt;p&gt;~/.ssh/configの中にある、&lt;/p&gt;
+
+&lt;p&gt;`実は今まで使ったことなかったけど、今日初めて使ってみたり。&lt;/p&gt;
+
+&lt;p&gt;が、、、これ、すごい。もうメソッド名とか穴埋めパズル状態。&lt;/p&gt;
+
+&lt;p&gt;いやーこれは感動した。テキトーなやつは全部これで作ればいいじゃん。（盲信）&lt;/p&gt;
+
+&lt;p&gt;インターフェースとかも超簡単に作れるし。。。&lt;/p&gt;
+
+&lt;p&gt;Win32だろーがmobileだろうが関係ないし。。。&lt;/p&gt;
+
+&lt;p&gt;一瞬MSを尊敬しかけました。&lt;/p&gt;
+
+&lt;p&gt;というわけで、今日はFTへ。&lt;/p&gt;
+
+&lt;p&gt;いやー今日は眠かった。。まぁ寝不足だわな。&lt;/p&gt;
+
+&lt;p&gt;中間テスト勉強（修士まできて中間試験って・・・）やレポート、合同輪講用の論文調査、SIPサーバー構築、彼女さんとの喧嘩（っていうか、俺が100で悪いんだけど・・・）などなど、こまごまとしたことがあって、あんまり寝れてなかった。&lt;/p&gt;
+
+&lt;p&gt;とりあえず今日乗り切れば土日なので、1日に1本しか飲んではいけないゼナを2本飲んで戦った。&lt;/p&gt;
+
+&lt;p&gt;したら、途中で自分の心臓の鼓動が聴こえてきてあせったり。&lt;/p&gt;
+
+&lt;p&gt;先週に引き続き、bugfixできたんだけど、ちょー簡単なところで2時間も・・・。&lt;/p&gt;
+
+&lt;p&gt;「このクラスに絶対原因があるのに！」ってわかってるのに、そっからナカナカわからない。&lt;/p&gt;
+
+&lt;p&gt;集中力MAXで2時間格闘して、めちゃくちゃ疲れた〜。&lt;/p&gt;
+
+&lt;p&gt;プログラミングのことをよく知らない人のために例えるならば、&lt;/p&gt;
+
+&lt;p&gt;お笑いまんが道場の、膨らみ続ける風船をみんなでまわしていくやつで、もう風船パンパンなのにナカナカ割れずに2時間！みたいな・・・。&lt;/p&gt;
+
+&lt;p&gt;富永先生、もう65回目！みたいな・・・。（わかりにくい）&lt;/p&gt;
+
+&lt;p&gt;もしくは、マラソンで42km走って、残り195mでダッシュしてラストスパートかけたら、「もうしばらく走っててください。」って言われて、はや半日！みたいな・・・。&lt;/p&gt;
+
+&lt;p&gt;仕事終わってからは、「&lt;a href=&#34;http://r.tabelog.com/tokyo/A1304/A130401/13000736/&#34;&gt;ひごのれん&lt;/a&gt;」という熊本ラーメン屋さんに連れてってもらった。味はうまかったけど、ちょっと匂いがヤバいっすよ〜。これは。。。塩っぽいトンコツで、ちょっと東京では珍しい感じ？&lt;/p&gt;
+
+&lt;p&gt;そのあとは新宿3丁目のBEAMSと、中古カメラ屋を経由して帰宅。&lt;/p&gt;
+
+&lt;p&gt;東京は都会だなぁ。（新宿から六本木方面を眺めてみました。）&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i0.wp.com/farm4.static.flickr.com/3071/3028959567_39d6f30294.jpg?resize=500%2C375&#34; data-recalc-dims=&#34;1&#34; /&gt;&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;自分用メモ&lt;/p&gt;
+
+&lt;p&gt;sshには、一定時間パケットが通信されなければ接続を解除するという仕組みがあるらしい。&lt;/p&gt;
+
+&lt;p&gt;どうりで新しく立てたSIPサーバーにcygwinから入っていると、勝手に切れたりするわけだ。&lt;/p&gt;
+
+&lt;p&gt;これ、知らなかったの俺だけ何でしょうか？接続を切断するまでの時間は、&lt;/p&gt;
+
+&lt;p&gt;~/.ssh/configの中にある、&lt;/p&gt;
+
+&lt;p&gt;`&lt;/p&gt;
+
+&lt;p&gt;で定義されているらしい。&lt;/p&gt;
+
+&lt;p&gt;ちなみにこの例だと、300秒間何もしなかったら無害なパケットを送信して接続が切れないようにしてくれる。&lt;/p&gt;
+
+&lt;p&gt;いやー初めて知った。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

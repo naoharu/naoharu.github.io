@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>腹が痛すぎる | 順道制勝</title>
+<link rel="stylesheet" href="https://naoharu.github.io//css/style.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/github.min.css">
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://naoharu.github.io/"><h1 class="title is-4">順道制勝</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/naoharu">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/naoharu">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="/index.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">December 10, 2008</h2>
+    <h1 class="title">腹が痛すぎる</h1>
+    <div class="content">
+      <p>いや、別に <a href="http://ameblo.jp/thelma-aoyama/entry-10176147590.html">テルマのスッピン</a>を見たからではなくて。。。</p>
+
+<p>ってか、</p>
+
+<blockquote>
+<p>今日起きてパシャリ(ノ_・。)</p>
+
+<p>blogでは初すっぴんかな？（笑）</p>
+</blockquote>
+
+<p>って言われても。（笑）って言われても。</p>
+
+<p>まぁブログ見てるけど。毎日見てるけど。</p>
+
+<p>しっかし、今年の風邪は腹痛系？？結構ヤバいんすけども・・・。</p>
+
+<p>しかも、うちの研究室トイレ遠いし！と言っても、トイレに罪は無いが。</p>
+
+<p>まぁ、今日はガッツリとメシ食ってやったから、明日には治っているはず。</p>
+
+<p>今日はアプリケーション開発ゼミに向けて色々と。</p>
+
+<p>そろそろ、忘れそうだから書いておこう。</p>
+
+<ol>
+<li>当初、インストールしたserでmysqlをシバき、ユーザー登録、メッセージのやり取りをpidgin←→  <a href="http://www.adiumx.com/" target="_blank">Adium</a>間で行おうとするも、pidgin→  <a href="http://www.adiumx.com/" target="_blank">Adium</a>方向しか送れず。原因不明。</li>
+<li>しょうがないので、開発が止まったserの後継といわれているopenserをインストール。サーバー側に問題があるのかなぁと。この後の設定はSZK君に割り振らせてもらったので、彼に明文化してもらわねば。</li>
+<li>結局、openserでも同様に一方向からしか送れず。もう意味不明。しょうがないのでwiresharkを出動させて、SIP/SIMPLEのパケットモニタリング。リクエスト、200（OK）、・・・とか。そうしてたら、とあるSIP/SIMPLEクライアントに問題があることが判明。</li>
+<li>クライアントを変えてやってみたら、双方向のメッセージのやり取りが可能に。</li>
+<li>結局、serとかopenserの問題じゃなくて、  <a href="http://www.adiumx.com/" target="_blank">Adium</a>固有の問題（問題というか、なんというか。。）だったのか？なんか、LAN内でやってるのに、pidgin側から見てたらsource ipがグローバルになってるし。一回外でてるし！</li>
+<li>自分らとしては、別にメッセンジャーで何かしたいわけではないので、pidgin←→pidginでやり取りできた時点で、OKと。そういう感じで。</li>
+</ol>
+
+<p>というわけで、SIPサーバ＆デーベ班は仕事ひと段落。</p>
+
+<p>途中、</p>
+
+<blockquote>
+<p><code>select * from uri;</code></p>
+</blockquote>
+
+<p>とかやって確認するのがダルくなったので、まさかと思って``いや、別に <a href="http://ameblo.jp/thelma-aoyama/entry-10176147590.html">テルマのスッピン</a>を見たからではなくて。。。</p>
+
+<p>ってか、</p>
+
+<blockquote>
+<p>今日起きてパシャリ(ノ_・。)</p>
+
+<p>blogでは初すっぴんかな？（笑）</p>
+</blockquote>
+
+<p>って言われても。（笑）って言われても。</p>
+
+<p>まぁブログ見てるけど。毎日見てるけど。</p>
+
+<p>しっかし、今年の風邪は腹痛系？？結構ヤバいんすけども・・・。</p>
+
+<p>しかも、うちの研究室トイレ遠いし！と言っても、トイレに罪は無いが。</p>
+
+<p>まぁ、今日はガッツリとメシ食ってやったから、明日には治っているはず。</p>
+
+<p>今日はアプリケーション開発ゼミに向けて色々と。</p>
+
+<p>そろそろ、忘れそうだから書いておこう。</p>
+
+<ol>
+<li>当初、インストールしたserでmysqlをシバき、ユーザー登録、メッセージのやり取りをpidgin←→  <a href="http://www.adiumx.com/" target="_blank">Adium</a>間で行おうとするも、pidgin→  <a href="http://www.adiumx.com/" target="_blank">Adium</a>方向しか送れず。原因不明。</li>
+<li>しょうがないので、開発が止まったserの後継といわれているopenserをインストール。サーバー側に問題があるのかなぁと。この後の設定はSZK君に割り振らせてもらったので、彼に明文化してもらわねば。</li>
+<li>結局、openserでも同様に一方向からしか送れず。もう意味不明。しょうがないのでwiresharkを出動させて、SIP/SIMPLEのパケットモニタリング。リクエスト、200（OK）、・・・とか。そうしてたら、とあるSIP/SIMPLEクライアントに問題があることが判明。</li>
+<li>クライアントを変えてやってみたら、双方向のメッセージのやり取りが可能に。</li>
+<li>結局、serとかopenserの問題じゃなくて、  <a href="http://www.adiumx.com/" target="_blank">Adium</a>固有の問題（問題というか、なんというか。。）だったのか？なんか、LAN内でやってるのに、pidgin側から見てたらsource ipがグローバルになってるし。一回外でてるし！</li>
+<li>自分らとしては、別にメッセンジャーで何かしたいわけではないので、pidgin←→pidginでやり取りできた時点で、OKと。そういう感じで。</li>
+</ol>
+
+<p>というわけで、SIPサーバ＆デーベ班は仕事ひと段落。</p>
+
+<p>途中、</p>
+
+<blockquote>
+<p><code>select * from uri;</code></p>
+</blockquote>
+
+<p>とかやって確認するのがダルくなったので、まさかと思って``</p>
+
+<blockquote>
+<p><code>#yum install -y phpmyadmin</code></p>
+</blockquote>
+
+<p>すると、ちゃんとインストールされて感動したことも書いておこう。</p>
+
+<p>んで、24時くらいに帰宅すると、BOSSからメール。</p>
+
+<blockquote>
+<p>Webサーバ落ちてませんか？</p>
+</blockquote>
+
+<p>確認すると、ガン落ち。えーー。うそーん。</p>
+
+<p>とりあえず自宅からssh接続＆httpd startしようとするも、そもそもsshできず。</p>
+
+<p>というかpingすら通らない！？！？マジかよー。</p>
+
+<p>しょうがないのでピストで大学にとんぼ返りし、サーバ室へ。</p>
+
+<p>上位層からチェックしていくが、原因不明！</p>
+
+<p>/sbin/ifconfigすると、ちゃんと内向き、外向き共ににIP当たってる。</p>
+
+<p>っていうか固定IP自己申告なので、当たりまえ。（←それすらわからないくらいパニクってる。）</p>
+
+<p>結局、今日のゼミ用に先輩が新しくサーバを設置しケーブルを挿したんだけど、</p>
+
+<p>そのとなりのポートのケーブルが物理的に抜けかかってた。たぶん作業中に手が当たったとかかな？</p>
+
+<p>っていうか。物理層って・・・。っふ。</p>
+
+<p>F先生の実験でもこういうことあったなぁ。</p>
+
+<p>って思って日記見直してみると、<a href="http://d.hatena.ne.jp/naoharu/20060705">やっぱりあった</a>。</p>
+
+<p>いやー疲れた。けど、我ながら宮城君バリのfixだったな。</p>
+
+<p>25時に再び帰宅。今これ書いてる感じ。</p>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'naoharu1218';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; <a href="https://twitter.com/naoharu">Naoharu SASAKI</a> 2017</p>
+  </div>
+</section>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/languages/go.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/languages/dockerfile.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-4774178-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+

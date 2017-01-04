@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Access NetFrontWidgetの開発チュートリアルの・・・。 | 順道制勝</title>
+<link rel="stylesheet" href="https://naoharu.github.io//css/style.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/github.min.css">
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://naoharu.github.io/"><h1 class="title is-4">順道制勝</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/naoharu">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/naoharu">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="/index.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">December 3, 2008</h2>
+    <h1 class="title">Access NetFrontWidgetの開発チュートリアルの・・・。</h1>
+    <div class="content">
+      <p><a href="http://jp.access-company.com/">AccessのWebサイト</a>からダウンロードできる<a href="http://widgets.access-company.com/jp/developers/index.php">NetFrontWidget開発者向けドキュメント</a>に、</p>
+
+<p>「ウィジェットコンテンツ作成チュートリアルV2.0」というものがある。</p>
+
+<p>Windows Mobile上で動作するWidgetを開発する際のイロハが書かれているものなんだけど、</p>
+
+<p>実はこの中の5.2章「XML形式のレスポンスを扱う方法」と書かれているところに、</p>
+
+<p>どう見ても間違ってるところを発見した。</p>
+
+<p>内容的にはXHRをサーバーに投げて帰ってきたデータでゴニョゴニョという部分。</p>
+
+<p>19ページから始まる<code>js/youtube.js</code>というファイル内の、</p>
+
+<blockquote>
+<p><code>function showVideos(data) {</code></p>
+
+<p><code>　// 検索結果の総数</code></p>
+
+<p><code>　</code><code>var totalResults  = xmlDoc.getElementsByTagName(&quot;totalResults&quot;)[0].firstChild.nodeValue;</code></p>
+
+<p><code>（略）</code></p>
+
+<p><code>}</code></p>
+
+<p>``</p>
+</blockquote>
+
+<p>``の部分、</p>
+
+<blockquote>
+<p>```<a href="http://jp.access-company.com/">AccessのWebサイト</a>からダウンロードできる<a href="http://widgets.access-company.com/jp/developers/index.php">NetFrontWidget開発者向けドキュメント</a>に、</p>
+</blockquote>
+
+<p>「ウィジェットコンテンツ作成チュートリアルV2.0」というものがある。</p>
+
+<p>Windows Mobile上で動作するWidgetを開発する際のイロハが書かれているものなんだけど、</p>
+
+<p>実はこの中の5.2章「XML形式のレスポンスを扱う方法」と書かれているところに、</p>
+
+<p>どう見ても間違ってるところを発見した。</p>
+
+<p>内容的にはXHRをサーバーに投げて帰ってきたデータでゴニョゴニョという部分。</p>
+
+<p>19ページから始まる<code>js/youtube.js</code>というファイル内の、</p>
+
+<blockquote>
+<p><code>function showVideos(data) {</code></p>
+
+<p><code>　// 検索結果の総数</code></p>
+
+<p><code>　</code><code>var totalResults  = xmlDoc.getElementsByTagName(&quot;totalResults&quot;)[0].firstChild.nodeValue;</code></p>
+
+<p><code>（略）</code></p>
+
+<p><code>}</code></p>
+
+<p>``</p>
+</blockquote>
+
+<p>``の部分、</p>
+
+<blockquote>
+<p><code>`　`</code>` <a href="http://jp.access-company.com/">AccessのWebサイト</a>からダウンロードできる<a href="http://widgets.access-company.com/jp/developers/index.php">NetFrontWidget開発者向けドキュメント</a>に、</p>
+</blockquote>
+
+<p>「ウィジェットコンテンツ作成チュートリアルV2.0」というものがある。</p>
+
+<p>Windows Mobile上で動作するWidgetを開発する際のイロハが書かれているものなんだけど、</p>
+
+<p>実はこの中の5.2章「XML形式のレスポンスを扱う方法」と書かれているところに、</p>
+
+<p>どう見ても間違ってるところを発見した。</p>
+
+<p>内容的にはXHRをサーバーに投げて帰ってきたデータでゴニョゴニョという部分。</p>
+
+<p>19ページから始まる<code>js/youtube.js</code>というファイル内の、</p>
+
+<blockquote>
+<p><code>function showVideos(data) {</code></p>
+
+<p><code>　// 検索結果の総数</code></p>
+
+<p><code>　</code><code>var totalResults  = xmlDoc.getElementsByTagName(&quot;totalResults&quot;)[0].firstChild.nodeValue;</code></p>
+
+<p><code>（略）</code></p>
+
+<p><code>}</code></p>
+
+<p>``</p>
+</blockquote>
+
+<p>``の部分、</p>
+
+<blockquote>
+<p>```<a href="http://jp.access-company.com/">AccessのWebサイト</a>からダウンロードできる<a href="http://widgets.access-company.com/jp/developers/index.php">NetFrontWidget開発者向けドキュメント</a>に、</p>
+</blockquote>
+
+<p>「ウィジェットコンテンツ作成チュートリアルV2.0」というものがある。</p>
+
+<p>Windows Mobile上で動作するWidgetを開発する際のイロハが書かれているものなんだけど、</p>
+
+<p>実はこの中の5.2章「XML形式のレスポンスを扱う方法」と書かれているところに、</p>
+
+<p>どう見ても間違ってるところを発見した。</p>
+
+<p>内容的にはXHRをサーバーに投げて帰ってきたデータでゴニョゴニョという部分。</p>
+
+<p>19ページから始まる<code>js/youtube.js</code>というファイル内の、</p>
+
+<blockquote>
+<p><code>function showVideos(data) {</code></p>
+
+<p><code>　// 検索結果の総数</code></p>
+
+<p><code>　</code><code>var totalResults  = xmlDoc.getElementsByTagName(&quot;totalResults&quot;)[0].firstChild.nodeValue;</code></p>
+
+<p><code>（略）</code></p>
+
+<p><code>}</code></p>
+
+<p>``</p>
+</blockquote>
+
+<p>``の部分、</p>
+
+<blockquote>
+<p><code>`　`</code>　var totalResults = xmlDoc.getElementsByTagName(&ldquo;totalResults&rdquo;)[0].firstChild.nodeValue;<br />
+（略）<br />
+}`</p>
+</blockquote>
+
+<p>の間違いでしょう。。</p>
+
+<p>同じく、`````<a href="http://jp.access-company.com/">AccessのWebサイト</a>からダウンロードできる<a href="http://widgets.access-company.com/jp/developers/index.php">NetFrontWidget開発者向けドキュメント</a>に、</p>
+
+<p>「ウィジェットコンテンツ作成チュートリアルV2.0」というものがある。</p>
+
+<p>Windows Mobile上で動作するWidgetを開発する際のイロハが書かれているものなんだけど、</p>
+
+<p>実はこの中の5.2章「XML形式のレスポンスを扱う方法」と書かれているところに、</p>
+
+<p>どう見ても間違ってるところを発見した。</p>
+
+<p>内容的にはXHRをサーバーに投げて帰ってきたデータでゴニョゴニョという部分。</p>
+
+<p>19ページから始まる<code>js/youtube.js</code>というファイル内の、</p>
+
+<blockquote>
+<p><code>function showVideos(data) {</code></p>
+
+<p><code>　// 検索結果の総数</code></p>
+
+<p><code>　</code><code>var totalResults  = xmlDoc.getElementsByTagName(&quot;totalResults&quot;)[0].firstChild.nodeValue;</code></p>
+
+<p><code>（略）</code></p>
+
+<p><code>}</code></p>
+
+<p>``</p>
+</blockquote>
+
+<p>``の部分、</p>
+
+<blockquote>
+<p>```<a href="http://jp.access-company.com/">AccessのWebサイト</a>からダウンロードできる<a href="http://widgets.access-company.com/jp/developers/index.php">NetFrontWidget開発者向けドキュメント</a>に、</p>
+</blockquote>
+
+<p>「ウィジェットコンテンツ作成チュートリアルV2.0」というものがある。</p>
+
+<p>Windows Mobile上で動作するWidgetを開発する際のイロハが書かれているものなんだけど、</p>
+
+<p>実はこの中の5.2章「XML形式のレスポンスを扱う方法」と書かれているところに、</p>
+
+<p>どう見ても間違ってるところを発見した。</p>
+
+<p>内容的にはXHRをサーバーに投げて帰ってきたデータでゴニョゴニョという部分。</p>
+
+<p>19ページから始まる<code>js/youtube.js</code>というファイル内の、</p>
+
+<blockquote>
+<p><code>function showVideos(data) {</code></p>
+
+<p><code>　// 検索結果の総数</code></p>
+
+<p><code>　</code><code>var totalResults  = xmlDoc.getElementsByTagName(&quot;totalResults&quot;)[0].firstChild.nodeValue;</code></p>
+
+<p><code>（略）</code></p>
+
+<p><code>}</code></p>
+
+<p>``</p>
+</blockquote>
+
+<p>``の部分、</p>
+
+<blockquote>
+<p><code>`　`</code>` <a href="http://jp.access-company.com/">AccessのWebサイト</a>からダウンロードできる<a href="http://widgets.access-company.com/jp/developers/index.php">NetFrontWidget開発者向けドキュメント</a>に、</p>
+</blockquote>
+
+<p>「ウィジェットコンテンツ作成チュートリアルV2.0」というものがある。</p>
+
+<p>Windows Mobile上で動作するWidgetを開発する際のイロハが書かれているものなんだけど、</p>
+
+<p>実はこの中の5.2章「XML形式のレスポンスを扱う方法」と書かれているところに、</p>
+
+<p>どう見ても間違ってるところを発見した。</p>
+
+<p>内容的にはXHRをサーバーに投げて帰ってきたデータでゴニョゴニョという部分。</p>
+
+<p>19ページから始まる<code>js/youtube.js</code>というファイル内の、</p>
+
+<blockquote>
+<p><code>function showVideos(data) {</code></p>
+
+<p><code>　// 検索結果の総数</code></p>
+
+<p><code>　</code><code>var totalResults  = xmlDoc.getElementsByTagName(&quot;totalResults&quot;)[0].firstChild.nodeValue;</code></p>
+
+<p><code>（略）</code></p>
+
+<p><code>}</code></p>
+
+<p>``</p>
+</blockquote>
+
+<p>``の部分、</p>
+
+<blockquote>
+<p>```<a href="http://jp.access-company.com/">AccessのWebサイト</a>からダウンロードできる<a href="http://widgets.access-company.com/jp/developers/index.php">NetFrontWidget開発者向けドキュメント</a>に、</p>
+</blockquote>
+
+<p>「ウィジェットコンテンツ作成チュートリアルV2.0」というものがある。</p>
+
+<p>Windows Mobile上で動作するWidgetを開発する際のイロハが書かれているものなんだけど、</p>
+
+<p>実はこの中の5.2章「XML形式のレスポンスを扱う方法」と書かれているところに、</p>
+
+<p>どう見ても間違ってるところを発見した。</p>
+
+<p>内容的にはXHRをサーバーに投げて帰ってきたデータでゴニョゴニョという部分。</p>
+
+<p>19ページから始まる<code>js/youtube.js</code>というファイル内の、</p>
+
+<blockquote>
+<p><code>function showVideos(data) {</code></p>
+
+<p><code>　// 検索結果の総数</code></p>
+
+<p><code>　</code><code>var totalResults  = xmlDoc.getElementsByTagName(&quot;totalResults&quot;)[0].firstChild.nodeValue;</code></p>
+
+<p><code>（略）</code></p>
+
+<p><code>}</code></p>
+
+<p>``</p>
+</blockquote>
+
+<p>``の部分、</p>
+
+<blockquote>
+<p><code>`　`</code>　var totalResults = xmlDoc.getElementsByTagName(&ldquo;totalResults&rdquo;)[0].firstChild.nodeValue;<br />
+（略）<br />
+}`</p>
+</blockquote>
+
+<p>の間違いでしょう。。</p>
+
+<p>同じく、`````</p>
+
+<blockquote>
+<p><code>request.onreadystatechange = function() {</code></p>
+
+<p><code>if (request.readyState == 4) {</code></p>
+
+<p><code>　　var xmlDoc = request.responseXML.documentElement;</code></p>
+
+<p><code>　　showVideos(data);</code></p>
+
+<p><code>　}</code></p>
+
+<p><code>}</code></p>
+</blockquote>
+
+<p>の部分、``````<a href="http://jp.access-company.com/">AccessのWebサイト</a>からダウンロードできる<a href="http://widgets.access-company.com/jp/developers/index.php">NetFrontWidget開発者向けドキュメント</a>に、</p>
+
+<p>「ウィジェットコンテンツ作成チュートリアルV2.0」というものがある。</p>
+
+<p>Windows Mobile上で動作するWidgetを開発する際のイロハが書かれているものなんだけど、</p>
+
+<p>実はこの中の5.2章「XML形式のレスポンスを扱う方法」と書かれているところに、</p>
+
+<p>どう見ても間違ってるところを発見した。</p>
+
+<p>内容的にはXHRをサーバーに投げて帰ってきたデータでゴニョゴニョという部分。</p>
+
+<p>19ページから始まる<code>js/youtube.js</code>というファイル内の、</p>
+
+<blockquote>
+<p><code>function showVideos(data) {</code></p>
+
+<p><code>　// 検索結果の総数</code></p>
+
+<p><code>　</code><code>var totalResults  = xmlDoc.getElementsByTagName(&quot;totalResults&quot;)[0].firstChild.nodeValue;</code></p>
+
+<p><code>（略）</code></p>
+
+<p><code>}</code></p>
+
+<p>``</p>
+</blockquote>
+
+<p>``の部分、</p>
+
+<blockquote>
+<p>```<a href="http://jp.access-company.com/">AccessのWebサイト</a>からダウンロードできる<a href="http://widgets.access-company.com/jp/developers/index.php">NetFrontWidget開発者向けドキュメント</a>に、</p>
+</blockquote>
+
+<p>「ウィジェットコンテンツ作成チュートリアルV2.0」というものがある。</p>
+
+<p>Windows Mobile上で動作するWidgetを開発する際のイロハが書かれているものなんだけど、</p>
+
+<p>実はこの中の5.2章「XML形式のレスポンスを扱う方法」と書かれているところに、</p>
+
+<p>どう見ても間違ってるところを発見した。</p>
+
+<p>内容的にはXHRをサーバーに投げて帰ってきたデータでゴニョゴニョという部分。</p>
+
+<p>19ページから始まる<code>js/youtube.js</code>というファイル内の、</p>
+
+<blockquote>
+<p><code>function showVideos(data) {</code></p>
+
+<p><code>　// 検索結果の総数</code></p>
+
+<p><code>　</code><code>var totalResults  = xmlDoc.getElementsByTagName(&quot;totalResults&quot;)[0].firstChild.nodeValue;</code></p>
+
+<p><code>（略）</code></p>
+
+<p><code>}</code></p>
+
+<p>``</p>
+</blockquote>
+
+<p>``の部分、</p>
+
+<blockquote>
+<p><code>`　`</code>` <a href="http://jp.access-company.com/">AccessのWebサイト</a>からダウンロードできる<a href="http://widgets.access-company.com/jp/developers/index.php">NetFrontWidget開発者向けドキュメント</a>に、</p>
+</blockquote>
+
+<p>「ウィジェットコンテンツ作成チュートリアルV2.0」というものがある。</p>
+
+<p>Windows Mobile上で動作するWidgetを開発する際のイロハが書かれているものなんだけど、</p>
+
+<p>実はこの中の5.2章「XML形式のレスポンスを扱う方法」と書かれているところに、</p>
+
+<p>どう見ても間違ってるところを発見した。</p>
+
+<p>内容的にはXHRをサーバーに投げて帰ってきたデータでゴニョゴニョという部分。</p>
+
+<p>19ページから始まる<code>js/youtube.js</code>というファイル内の、</p>
+
+<blockquote>
+<p><code>function showVideos(data) {</code></p>
+
+<p><code>　// 検索結果の総数</code></p>
+
+<p><code>　</code><code>var totalResults  = xmlDoc.getElementsByTagName(&quot;totalResults&quot;)[0].firstChild.nodeValue;</code></p>
+
+<p><code>（略）</code></p>
+
+<p><code>}</code></p>
+
+<p>``</p>
+</blockquote>
+
+<p>``の部分、</p>
+
+<blockquote>
+<p>```<a href="http://jp.access-company.com/">AccessのWebサイト</a>からダウンロードできる<a href="http://widgets.access-company.com/jp/developers/index.php">NetFrontWidget開発者向けドキュメント</a>に、</p>
+</blockquote>
+
+<p>「ウィジェットコンテンツ作成チュートリアルV2.0」というものがある。</p>
+
+<p>Windows Mobile上で動作するWidgetを開発する際のイロハが書かれているものなんだけど、</p>
+
+<p>実はこの中の5.2章「XML形式のレスポンスを扱う方法」と書かれているところに、</p>
+
+<p>どう見ても間違ってるところを発見した。</p>
+
+<p>内容的にはXHRをサーバーに投げて帰ってきたデータでゴニョゴニョという部分。</p>
+
+<p>19ページから始まる<code>js/youtube.js</code>というファイル内の、</p>
+
+<blockquote>
+<p><code>function showVideos(data) {</code></p>
+
+<p><code>　// 検索結果の総数</code></p>
+
+<p><code>　</code><code>var totalResults  = xmlDoc.getElementsByTagName(&quot;totalResults&quot;)[0].firstChild.nodeValue;</code></p>
+
+<p><code>（略）</code></p>
+
+<p><code>}</code></p>
+
+<p>``</p>
+</blockquote>
+
+<p>``の部分、</p>
+
+<blockquote>
+<p><code>`　`</code>　var totalResults = xmlDoc.getElementsByTagName(&ldquo;totalResults&rdquo;)[0].firstChild.nodeValue;<br />
+（略）<br />
+}`</p>
+</blockquote>
+
+<p>の間違いでしょう。。</p>
+
+<p>同じく、`````<a href="http://jp.access-company.com/">AccessのWebサイト</a>からダウンロードできる<a href="http://widgets.access-company.com/jp/developers/index.php">NetFrontWidget開発者向けドキュメント</a>に、</p>
+
+<p>「ウィジェットコンテンツ作成チュートリアルV2.0」というものがある。</p>
+
+<p>Windows Mobile上で動作するWidgetを開発する際のイロハが書かれているものなんだけど、</p>
+
+<p>実はこの中の5.2章「XML形式のレスポンスを扱う方法」と書かれているところに、</p>
+
+<p>どう見ても間違ってるところを発見した。</p>
+
+<p>内容的にはXHRをサーバーに投げて帰ってきたデータでゴニョゴニョという部分。</p>
+
+<p>19ページから始まる<code>js/youtube.js</code>というファイル内の、</p>
+
+<blockquote>
+<p><code>function showVideos(data) {</code></p>
+
+<p><code>　// 検索結果の総数</code></p>
+
+<p><code>　</code><code>var totalResults  = xmlDoc.getElementsByTagName(&quot;totalResults&quot;)[0].firstChild.nodeValue;</code></p>
+
+<p><code>（略）</code></p>
+
+<p><code>}</code></p>
+
+<p>``</p>
+</blockquote>
+
+<p>``の部分、</p>
+
+<blockquote>
+<p>```<a href="http://jp.access-company.com/">AccessのWebサイト</a>からダウンロードできる<a href="http://widgets.access-company.com/jp/developers/index.php">NetFrontWidget開発者向けドキュメント</a>に、</p>
+</blockquote>
+
+<p>「ウィジェットコンテンツ作成チュートリアルV2.0」というものがある。</p>
+
+<p>Windows Mobile上で動作するWidgetを開発する際のイロハが書かれているものなんだけど、</p>
+
+<p>実はこの中の5.2章「XML形式のレスポンスを扱う方法」と書かれているところに、</p>
+
+<p>どう見ても間違ってるところを発見した。</p>
+
+<p>内容的にはXHRをサーバーに投げて帰ってきたデータでゴニョゴニョという部分。</p>
+
+<p>19ページから始まる<code>js/youtube.js</code>というファイル内の、</p>
+
+<blockquote>
+<p><code>function showVideos(data) {</code></p>
+
+<p><code>　// 検索結果の総数</code></p>
+
+<p><code>　</code><code>var totalResults  = xmlDoc.getElementsByTagName(&quot;totalResults&quot;)[0].firstChild.nodeValue;</code></p>
+
+<p><code>（略）</code></p>
+
+<p><code>}</code></p>
+
+<p>``</p>
+</blockquote>
+
+<p>``の部分、</p>
+
+<blockquote>
+<p><code>`　`</code>` <a href="http://jp.access-company.com/">AccessのWebサイト</a>からダウンロードできる<a href="http://widgets.access-company.com/jp/developers/index.php">NetFrontWidget開発者向けドキュメント</a>に、</p>
+</blockquote>
+
+<p>「ウィジェットコンテンツ作成チュートリアルV2.0」というものがある。</p>
+
+<p>Windows Mobile上で動作するWidgetを開発する際のイロハが書かれているものなんだけど、</p>
+
+<p>実はこの中の5.2章「XML形式のレスポンスを扱う方法」と書かれているところに、</p>
+
+<p>どう見ても間違ってるところを発見した。</p>
+
+<p>内容的にはXHRをサーバーに投げて帰ってきたデータでゴニョゴニョという部分。</p>
+
+<p>19ページから始まる<code>js/youtube.js</code>というファイル内の、</p>
+
+<blockquote>
+<p><code>function showVideos(data) {</code></p>
+
+<p><code>　// 検索結果の総数</code></p>
+
+<p><code>　</code><code>var totalResults  = xmlDoc.getElementsByTagName(&quot;totalResults&quot;)[0].firstChild.nodeValue;</code></p>
+
+<p><code>（略）</code></p>
+
+<p><code>}</code></p>
+
+<p>``</p>
+</blockquote>
+
+<p>``の部分、</p>
+
+<blockquote>
+<p>```<a href="http://jp.access-company.com/">AccessのWebサイト</a>からダウンロードできる<a href="http://widgets.access-company.com/jp/developers/index.php">NetFrontWidget開発者向けドキュメント</a>に、</p>
+</blockquote>
+
+<p>「ウィジェットコンテンツ作成チュートリアルV2.0」というものがある。</p>
+
+<p>Windows Mobile上で動作するWidgetを開発する際のイロハが書かれているものなんだけど、</p>
+
+<p>実はこの中の5.2章「XML形式のレスポンスを扱う方法」と書かれているところに、</p>
+
+<p>どう見ても間違ってるところを発見した。</p>
+
+<p>内容的にはXHRをサーバーに投げて帰ってきたデータでゴニョゴニョという部分。</p>
+
+<p>19ページから始まる<code>js/youtube.js</code>というファイル内の、</p>
+
+<blockquote>
+<p><code>function showVideos(data) {</code></p>
+
+<p><code>　// 検索結果の総数</code></p>
+
+<p><code>　</code><code>var totalResults  = xmlDoc.getElementsByTagName(&quot;totalResults&quot;)[0].firstChild.nodeValue;</code></p>
+
+<p><code>（略）</code></p>
+
+<p><code>}</code></p>
+
+<p>``</p>
+</blockquote>
+
+<p>``の部分、</p>
+
+<blockquote>
+<p><code>`　`</code>　var totalResults = xmlDoc.getElementsByTagName(&ldquo;totalResults&rdquo;)[0].firstChild.nodeValue;<br />
+（略）<br />
+}`</p>
+</blockquote>
+
+<p>の間違いでしょう。。</p>
+
+<p>同じく、`````</p>
+
+<blockquote>
+<p><code>request.onreadystatechange = function() {</code></p>
+
+<p><code>if (request.readyState == 4) {</code></p>
+
+<p><code>　　var xmlDoc = request.responseXML.documentElement;</code></p>
+
+<p><code>　　showVideos(data);</code></p>
+
+<p><code>　}</code></p>
+
+<p><code>}</code></p>
+</blockquote>
+
+<p>の部分、``````</p>
+
+<blockquote>
+<p><code>request.onreadystatechange = function() {</code></p>
+
+<p><code>if (request.readyState == 4) {</code></p>
+
+<p><code>　　var xmlDoc = request.responseXML.documentElement;</code></p>
+
+<p><code>　　showVideos(&lt;strong&gt;xmlDoc&lt;/strong&gt;);</code></p>
+
+<p><code>　}</code></p>
+
+<p><code>}</code></p>
+</blockquote>
+
+<p>の間違いかと。</p>
+
+<p>まぁ、文脈的に気づくと思うけど、こういうのはネット上に書き残しておくだけでも</p>
+
+<p>誰かにとって価値が生じることがあるはず。。</p>
+
+<p>っていうか初心者の人にとっては、チュートリアル通りに作って動かないんだから、</p>
+
+<p>多分もうそこで挫折しかけるわな。</p>
+
+<p>ということで、チュートリアルの間違いも直せたことだし、</p>
+
+<p>このブログの読者の方々はWidget開発において、1歩他者を出し抜いたわけです。</p>
+
+<p>もう、<a href="http://mobile.yahoo.co.jp/sp/widgets/contest/index.html">モバイルウィジェットコンテスト</a>に参加するしかないですよ。</p>
+
+<p><strong>賞金総額1000万円</strong>っすよ！この不景気にYB~!</p>
+
+<p>自分は諸事情により参加資格無いので、誰か出て。。んで賞金取って俺にキャッシュバックして。もしくは焼肉オゴって。。</p>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'naoharu1218';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; <a href="https://twitter.com/naoharu">Naoharu SASAKI</a> 2017</p>
+  </div>
+</section>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/languages/go.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/languages/dockerfile.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-4774178-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+

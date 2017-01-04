@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vps on 順道制勝</title>
+    <link>https://naoharu.github.io/tags/vps/index.xml</link>
+    <description>Recent content in Vps on 順道制勝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/naoharu&#34;&gt;Naoharu SASAKI&lt;/a&gt; 2017</copyright>
+    <atom:link href="https://naoharu.github.io/tags/vps/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ブログ移転しました</title>
+      <link>https://naoharu.github.io/archives/9256</link>
+      <pubDate>Tue, 05 Oct 2010 13:26:54 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/9256</guid>
+      <description>&lt;p&gt;といっても、ほんと内部的な話で、外からは何も変わっていないように見えると思いますが・・・。&lt;/p&gt;
+
+&lt;p&gt;この前、&lt;a href=&#34;http://defenceless.org/wordpress/?p=9247&#34;&gt;さくらVPSはじめました&lt;/a&gt;ってエントリー書きましたが、ひとまずブログを以前使ってた&lt;a href=&#34;http://www.xrea.com&#34;&gt;xrea.com&lt;/a&gt;からこちらへ移転。VPS始めたから移したってだけで、&lt;a href=&#34;http://www.xrea.com&#34;&gt;xrea.com&lt;/a&gt;も非常に満足のいくサービスを提供してくださいました。今までありがとうございました〜。※&lt;del datetime=&#34;2010-10-07T02:16:20+00:00&#34;&gt;でもやっぱsshログインしたいっすわ。&lt;/del&gt;さらなる自由を求めて、ということで。&lt;/p&gt;
+
+&lt;p&gt;※2010/10/07 追記　すんません！&lt;a href=&#34;http://www.xrea.com/&#34;&gt;xrea.comさん、普通にsshできました&lt;/a&gt;！僕が使ってないだけでした！笑&lt;/p&gt;
+
+&lt;p&gt;とりあえず引っ越しでやったことメモ。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;旧サーバからエクスポート
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;　1.1 wordpress 管理画面左部の「ツール」→「エクスポート」&lt;/p&gt;
+
+&lt;p&gt;　1.2 /wordpress/wp-contens/ 配下（plugins, themes など）をダウンロード&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;新サーバへwordpressインストール&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;[shell]&lt;/p&gt;
+
+&lt;p&gt;[root@www6384u ~]# yum install httpd php php-mbstring php-mysql php-gd mysql-server&lt;/p&gt;
+
+&lt;p&gt;[root@www6384u ~]# chkconfig &amp;#8211;level 345 httpd on&lt;/p&gt;
+
+&lt;p&gt;[root@www6384u ~]# chkconfig &amp;#8211;level 345 mysqld on&lt;/p&gt;
+
+&lt;p&gt;[root@www6384u ~]# /etc/init.d/httpd start&lt;/p&gt;
+
+&lt;p&gt;[root@www6384u ~]# /etc/init.d/mysqld start&lt;/p&gt;
+
+&lt;p&gt;[root@www6384u ~]# mysql -u root -p&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;create database &amp;#8216;wordpressdb&amp;#8217; default character set utf8 collate utf8_general_ci;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;[root@www6384u ~]# cd /var/www/html/&lt;/p&gt;
+
+&lt;p&gt;[root@www6384u ~]# wget &lt;a href=&#34;http://ja.wordpress.org/wordpress-3.0.1-ja.tar.gz&#34;&gt;http://ja.wordpress.org/wordpress-3.0.1-ja.tar.gz&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;[root@www6384u ~]# tar zxvf wordpress-3.0.1-ja.tar.gz&lt;/p&gt;
+
+&lt;p&gt;[root@www6384u ~]# chown -R apache:apache wordpress&lt;/p&gt;
+
+&lt;p&gt;[root@www6384u ~]# chmod +w wordpress&lt;/p&gt;
+
+&lt;p&gt;[/shell]&lt;/p&gt;
+
+&lt;p&gt;3.新サーバへのインポート&lt;/p&gt;
+
+&lt;p&gt;　3.1 wordpress 管理画面左部の「ツール」→「インポート」&lt;/p&gt;
+
+&lt;p&gt;　3.2 /wordpress/wp-contens/ 配下（plugins, themes など）へアップロード&lt;/p&gt;
+
+&lt;p&gt;4.wordpressの設定&lt;/p&gt;
+
+&lt;p&gt;　4.1 ブラウザから/wordpress/wp-admin/install.php へアクセスし各種設定入力&lt;/p&gt;
+
+&lt;p&gt;こんな感じでしたかね。&lt;/p&gt;
+
+&lt;p&gt;というか、いっつも思うんですが、プログラムコードをブログに載せるときは&lt;a href=&#34;http://wordpress.org/extend/plugins/syntaxhighlighter/screenshots/&#34;&gt;SyntaxHighlighter Evolved&lt;/a&gt;にお世話になってますが、いわゆる.bash_history的なものとかってどうのせたら良いんですかね・・・。rootのプロンプトでコメントアウトされちゃうし。&lt;/p&gt;
+
+&lt;p&gt;まったく関係無いけど、最近聴いてる。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://bmr.jp/news/detail/0000009443.html&#34;&gt;来年2月に来日&lt;/a&gt;らしいっすよ！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>さくらVPS（とりあえず）はじめました</title>
+      <link>https://naoharu.github.io/archives/9247</link>
+      <pubDate>Mon, 27 Sep 2010 19:19:14 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/9247</guid>
+      <description>&lt;p&gt;IT系の会社、しかもクラウド系の仕事でメシ食わせてもらってるのに、自分が私生活で1つもそういったサービスを使ってないっていうのは結構痛い感じなので、勉強もかねて、&lt;a href=&#34;http://vps.sakura.ad.jp/&#34;&gt;さくらVPS&lt;/a&gt;の月額980円のプランを始めました。&lt;/p&gt;
+
+&lt;p&gt;これで自分も一国一城の主です。今まではWeb系のレンタルでこのブログも運用してきましたが、これからマシンまるごと借りてるから、Webに限らず何でもあり！しかも、自宅に物理的なサーバを置く場合と比べて、電気代・停電対応用の設備費用は月額の中にコミコミだし、騒音も無い。一番大きいのは、「コストダウンし続けるハードウェア」を固定資産として持つ必要がなくて、むしろ相手側の競争に丸投げすることができるってことですね。今の進化スピードだと、ハードを「所有する」こと自体がリスクでしょう。&lt;/p&gt;
+
+&lt;p&gt;というか、ほんと、申し込みして5分後くらいから自分のマシンみたいに使えるんですね・・・。本番用っていうよりか、開発時のテストとか、実験用のアドホックなマシンとしての利用方法、ぜんぜんアリですね。&lt;/p&gt;
+
+&lt;p&gt;というように、これからはこのサービスを使いながら、自分の仕事にも良いビジネスのアイデアなどをフィードバックさせていきたいと思います。&lt;/p&gt;
+
+&lt;p&gt;ひとまずは、一応&lt;/p&gt;
+
+&lt;p&gt;[shell]&lt;/p&gt;
+
+&lt;p&gt;[root@www6384u ~]# passwd&lt;/p&gt;
+
+&lt;p&gt;[/shell]&lt;/p&gt;
+
+&lt;p&gt;して、あとは&lt;/p&gt;
+
+&lt;p&gt;[shell]&lt;/p&gt;
+
+&lt;p&gt;[root@www6384u ~]# vi /etc/ssh/sshd_config&lt;/p&gt;
+
+&lt;p&gt;（略）&lt;/p&gt;
+
+&lt;p&gt;PermitRootLogin no&lt;/p&gt;
+
+&lt;p&gt;（略）&lt;/p&gt;
+
+&lt;p&gt;[/shell]&lt;/p&gt;
+
+&lt;p&gt;[shell]&lt;/p&gt;
+
+&lt;p&gt;[root@www6384u ~]# service sshd restart&lt;/p&gt;
+
+&lt;p&gt;[/shell]&lt;/p&gt;
+
+&lt;p&gt;とかしておいたっていう状態です。とりあえず。今後もっと遊んだら報告します！&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

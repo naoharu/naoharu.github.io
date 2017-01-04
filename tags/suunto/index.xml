@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Suunto on 順道制勝</title>
+    <link>https://naoharu.github.io/tags/suunto/index.xml</link>
+    <description>Recent content in Suunto on 順道制勝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/naoharu&#34;&gt;Naoharu SASAKI&lt;/a&gt; 2017</copyright>
+    <atom:link href="https://naoharu.github.io/tags/suunto/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Running Day 7</title>
+      <link>https://naoharu.github.io/archives/11850</link>
+      <pubDate>Sun, 22 Mar 2015 16:35:46 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/11850</guid>
+      <description>&lt;p&gt;10km走ろうと思ってたけど先日怪我した広背筋（って一発で変換出ない！WindowsのよくわからんIME！）が痛くなったのでやめ。Suuntoと連動しているMovescountってアプリで、GPSの情報をもとにサイクリングやランニングのルートの動画作れるの面白いね。&lt;/p&gt;
+
+&lt;p&gt;沢登りとか登山とかで使いたい感じ。&lt;/p&gt;
+
+&lt;div class=&#34;jetpack-video-wrapper&#34;&gt;
+  &lt;span class=&#34;embed-youtube&#34; style=&#34;text-align:center; display: block;&#34;&gt;&lt;/span&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SUUNTO AMBIT 3 から Nike&#43; へデータ連携する方法</title>
+      <link>https://naoharu.github.io/archives/11815</link>
+      <pubDate>Fri, 13 Mar 2015 01:46:57 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/11815</guid>
+      <description>&lt;p&gt;奥さんからAMBIT3を貰った～！ありがとう！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i1.wp.com/igcdn-photos-h-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-15/11055520_1413855598918135_1732583403_n.jpg?w=700&amp;#038;ssl=1&#34; alt=&#34;&#34; data-recalc-dims=&#34;1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;BlueToothついてるので、早速iPhoneに&lt;a href=&#34;http://www.movescount.jp/ja/&#34;&gt;Movescount&lt;/a&gt;をインストール。AMBIT3側の「NEXT」ってボタン（マニュアルを見ると「Modeボタン」って言うらしい。ラベルと違うし。。）を長押しすることでペアリング準備OK。iPhone側もBlueToothをonにして、アプリを立ち上げてペアリング開始＆完了！&lt;/p&gt;
+
+&lt;p&gt;あとはウィザードに従って時刻表示フォーマットとか言語とかを入力していけば、初期設定はOK。&lt;/p&gt;
+
+&lt;p&gt;早速走ってみら、ちゃんとAMBIT3にMOVEが蓄積されてる！（MOVEってのはAMBIT3で計測できるActivityのことで、ランニング以外にも自転車やダイビングとか、色々あるようです。）&lt;/p&gt;
+
+&lt;p&gt;これはこれでいいんだけど、今まではNike+でランニング実績を貯めてたので、これからもそこに連携したい！&lt;/p&gt;
+
+&lt;p&gt;が、当然こういうスポーツアクティビティポータル（？）としては、SUUNTOとNikeはド競合だからか、SUUNTOから直接的にNike+に実績をアップする方法は無いみたい。え～。&lt;/p&gt;
+
+&lt;p&gt;ただ世の中的には必要だろうということで、&lt;a href=&#34;http://google.com&#34;&gt;世界&lt;/a&gt;に聞いてみたら&lt;a href=&#34;https://github.com/oldhu/suunto2nike&#34;&gt;suunto2nikeってものを発見&lt;/a&gt;！&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/oldhu/suunto2nike/releases&#34;&gt;最新バージョンのzip&lt;/a&gt;落として展開して、mvn packageして実行可能なjarを作成。&lt;/p&gt;
+
+&lt;p&gt;その後はMoveslink2でAMBIT3と同期している状態でsuunto2nikeを起動し、Nike+のログインID/PWを入力すると、連携してくれます。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

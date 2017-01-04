@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Develop on 順道制勝</title>
+    <link>https://naoharu.github.io/tags/develop/index.xml</link>
+    <description>Recent content in Develop on 順道制勝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/naoharu&#34;&gt;Naoharu SASAKI&lt;/a&gt; 2017</copyright>
+    <atom:link href="https://naoharu.github.io/tags/develop/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>JJUG CCC 2013 SpringとBouldering Day 3の日</title>
+      <link>https://naoharu.github.io/archives/10371</link>
+      <pubDate>Sun, 12 May 2013 01:31:03 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/10371</guid>
+      <description>&lt;p&gt;最近土日開催になって、個人的には参加しやすくなった&lt;a href=&#34;http://www.java-users.jp/?page_id=330&#34;&gt;JJUG（ジェイジャグ）&lt;/a&gt;に参加して来た。今回はJava EE 7とか、ScaleなどのJVM言語などのリリース話、まぁ後は&lt;del datetime=&#34;2013-05-11T15:05:09+00:00&#34;&gt;コズミネクサスがどんだけスゴいかっていう宣伝&lt;/del&gt;スポンサー様の講演などなど。相変わらず狭義のJavaにとどまらない多種多様なセッションがあって非常にためになった。&lt;/p&gt;
+
+&lt;p&gt;個人的には、直近のプロジェクトでは、開発標準化支援や、もっと低級なところだとAPI設計・ネーミングルール策定とかをワシワシやっているので、&lt;a href=&#34;https://twitter.com/yusuke&#34;&gt;山本裕介（@yusuke）&lt;/a&gt;の下記の発表が本当に勉強になった。Twitter4Jのような広く一般的に拡散していくライブラリのAPI設計方針と、MUT行程でPGが100人を超すくらいの規模のSIでの共通部品設計方針って、結構似たところがあるなあと思った。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&#34;line-height: 13px;&#34;&gt;性悪説に基づく&lt;/span&gt;
+
+&lt;ul&gt;
+&lt;li&gt;そのAPIに基づく全ての開発者が高いレベルを有しているわけではない&lt;/li&gt;
+&lt;li&gt;開発者はJavaDocなどを確認せずにメソッド名から機能を推察して利用する&lt;/li&gt;
+&lt;li&gt;コピペ開発&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;拡散したものに手を加えて修正することは大変&lt;/li&gt;
+&lt;li&gt;すぐにはupdateしてもらえない&lt;/li&gt;
+&lt;li&gt;etc&amp;#8230;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;みたいな。そのような時にしっかり回すために大切なのは、わかりやすい（利用しやすい）API設計と、「No GGRKS（ノーググレカス）」ポリシーなのだねえ。非常に勉強になりました。発表資料もアップされていたので、あとでまた見返してみよう。&lt;/p&gt;
+
+&lt;div style=&#34;margin-bottom: 5px;&#34;&gt;
+  &lt;strong&gt; &lt;a title=&#34;失敗から学ぶAPI設計 #ccc_h4 #jjug #jjug_ccc JJUG CCC 2013 Spring &#34; href=&#34;http://www.slideshare.net/yusukey/api-ccch4-jjug-jjugccc-jjug-ccc-2013-spring&#34; target=&#34;_blank&#34;&gt;失敗から学ぶAPI設計 #ccc_h4 #jjug #jjug_ccc JJUG CCC 2013 Spring &lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;http://www.slideshare.net/yusukey&#34; target=&#34;_blank&#34;&gt;Yusuke Yamamoto&lt;/a&gt;&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;p&gt;特に印象に残ったのは、下記のくだり。&lt;/p&gt;
+
+&lt;p&gt;例えば、Twitter側が「ユーザ情報」と、フォロワー数などの付加的な情報を「ユーザ詳細情報」みたいに分けて提供していたので、JavaのAPIのVersion1.0としても下記のように提供していました、と。&lt;/p&gt;
+
+&lt;p&gt;Version1.0&lt;/p&gt;
+
+&lt;pre name=&#34;code&#34; class=&#34;java&#34;&gt;Class User{}
+Class UserWithStatus extends User{
+    getFriendsCount();
+    getFollowersCount();
+}
+&lt;/pre&gt;
+
+&lt;p&gt;ところがTwitter側が提供するAPI仕様が変って、フォロワー数などの情報も「ユーザ詳細情報」ではなく「ユーザ情報」に含めるようになりました、と。こういうデカい仕様変更を、どうやってライブラリ側で緩衝していくか（利用者側に対して隠すか）というと、いきなり削除するのではなくて、いったんメソッドを非推奨にして、「利用は出来るんだけどもIDE上では警告が出る」ようにしますと。&lt;/p&gt;
+
+&lt;p&gt;Version1.04&lt;/p&gt;
+
+&lt;pre name=&#34;code&#34; class=&#34;java&#34;&gt;Class User{
+    getFriendsCount();
+    getFollowersCount();
+}
+/** @deprecated */ 
+Class UserWithStatus extends User{
+}
+&lt;/pre&gt;
+
+&lt;p&gt;そしてメジャーバージョンが上がるような大きな更新の時にバッサリ削除すると。&lt;/p&gt;
+
+&lt;p&gt;Version2.0&lt;/p&gt;
+
+&lt;pre name=&#34;code&#34; class=&#34;java&#34;&gt;Class User{
+    getFriendsCount();
+    getFollowersCount();
+}
+&lt;/pre&gt;
+
+&lt;p&gt;こうすると利用者側からも比較的変更が緩やかになるね、と。確かに。部品側のAPIを変えるのは利用者（SIだとアプリチームとか）からも苦情がくるし、億劫になりがちなんだけども、だからと言ってイビツな設計のまま時が経ってアプリが育っても、傷口が広がるだけだもんねぇ。こういうところはライブラリ管理方針とかリリース方針（○○な変更はメジャーバージョンアップあげますよ、とかの決めごと）などと合わせてプロジェクト内で整備していくと、利用者（アプリ）側も準備ができるし、事故が防げそうなので、実践していこう！勉強になりました！&lt;/p&gt;
+
+&lt;p&gt;JJUGを見終わったら、アベ君から電話で&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;「今日どっかで壁登りましょうよ〜〜。」&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;と電話があったので、2日連続になっちゃうけど、二つ返事でOKして、恵比寿J&amp;#038;Sへ。今日は先日残してた7級を平らげて終了！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i1.wp.com/sphotos-d.ak.fbcdn.net/hphotos-ak-ash4/308686_10201074068875127_1403491848_n.jpg?w=700&#34; alt=&#34;&#34; data-recalc-dims=&#34;1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;あべ君は6級を倒して、5級は苦戦してて宿題になってた。こちらも勉強になりました！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MacOS X lionでrvmでrubyをインストールしようとしてハマった日</title>
+      <link>https://naoharu.github.io/archives/10002</link>
+      <pubDate>Thu, 03 May 2012 16:53:12 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/10002</guid>
+      <description>&lt;p&gt;ちょっとした野暮用で、Mac OS X(Lion)にRuby on Rails 3.2の開発環境を構築することになったのだけど結構ハマった。のでメモ。&lt;/p&gt;
+
+&lt;p&gt;ひとまず、&lt;/p&gt;
+
+&lt;p&gt;[c]&lt;/p&gt;
+
+&lt;p&gt;sasaki% rvm install 1.9.2-p320&lt;/p&gt;
+
+&lt;p&gt;The provided CC(/usr/bin/gcc) is LLVM based, it is not yet fully supported by ruby and gems, please read `rvm requirements`.&lt;/p&gt;
+
+&lt;p&gt;[/c]&lt;/p&gt;
+
+&lt;p&gt;と怒られる。調べてみると、どうやらlionからデフォのCCが本家GCCではなくLLVM basedなものになっているらしい。&lt;a href=&#34;https://github.com/kennethreitz/osx-gcc-installer&#34;&gt;本家GCCをダウンロード&lt;/a&gt;＆インストールして、CCを書き換え。&lt;/p&gt;
+
+&lt;p&gt;[c]&lt;/p&gt;
+
+&lt;p&gt;sasaki$ echo &amp;ldquo;export CC=/usr/bin/gcc-4.2&amp;rdquo; &amp;gt;&amp;gt; ~/.bash_profile&lt;/p&gt;
+
+&lt;p&gt;[/c]&lt;/p&gt;
+
+&lt;p&gt;いったんゴミを消して、改めてrvm install 1.9.2してみる。&lt;/p&gt;
+
+&lt;p&gt;[c]&lt;/p&gt;
+
+&lt;p&gt;sasaki$ rvm remove 1.9.2-p320&lt;/p&gt;
+
+&lt;p&gt;sasaki% rvm install 1.9.2-p320&lt;/p&gt;
+
+&lt;p&gt;[/c]&lt;/p&gt;
+
+&lt;p&gt;そしたら、readlineのbuildでコケるので、logを見る。&lt;/p&gt;
+
+&lt;p&gt;[c]&lt;/p&gt;
+
+&lt;p&gt;sasaki$ vi /Users/sasaki/.rvm/log/ruby-1.9.3-p0/make.log&lt;/p&gt;
+
+&lt;p&gt;[/c]&lt;/p&gt;
+
+&lt;p&gt;該当部分は下記の通り。&lt;/p&gt;
+
+&lt;p&gt;[c]&lt;/p&gt;
+
+&lt;p&gt;compiling readline.c&lt;/p&gt;
+
+&lt;p&gt;readline.c: In function ‘username_completion_proc_call’:&lt;/p&gt;
+
+&lt;p&gt;readline.c:1472: error: ‘username_completion_function’ undeclared (first use in this function)&lt;/p&gt;
+
+&lt;p&gt;readline.c:1472: error: (Each undeclared identifier is reported only once&lt;/p&gt;
+
+&lt;p&gt;readline.c:1472: error: for each function it appears in.)&lt;/p&gt;
+
+&lt;p&gt;make[2]: *** [readline.o] Error 1&lt;/p&gt;
+
+&lt;p&gt;make&lt;a href=&#34;https://github.com/kennethreitz/osx-gcc-installer&#34;&gt;1&lt;/a&gt;: *** [ext/readline/all] Error 2&lt;/p&gt;
+
+&lt;p&gt;make: *** [build-ext] Error 2&lt;/p&gt;
+
+&lt;p&gt;[/c]&lt;/p&gt;
+
+&lt;p&gt;これも世界に聞いてみると、readlineだけ別buildすれば良いとのことなので、&lt;/p&gt;
+
+&lt;p&gt;[c]&lt;/p&gt;
+
+&lt;p&gt;sasaki$ rvm pkg install readline&lt;/p&gt;
+
+&lt;p&gt;[/c]&lt;/p&gt;
+
+&lt;p&gt;で、ビタmakeできた。その後、ようやく&lt;/p&gt;
+
+&lt;p&gt;[c]&lt;/p&gt;
+
+&lt;p&gt;sasaki$ rvm remove 1.9.2-p320&lt;/p&gt;
+
+&lt;p&gt;sasaki% rvm install 1.9.2-p320&lt;/p&gt;
+
+&lt;p&gt;（略）&lt;/p&gt;
+
+&lt;p&gt;Install of ruby-1.9.2-p320 &amp;#8211; #complete&lt;/p&gt;
+
+&lt;p&gt;[/c]&lt;/p&gt;
+
+&lt;p&gt;で、完了。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

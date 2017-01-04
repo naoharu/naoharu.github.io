@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dbunit on 順道制勝</title>
+    <link>https://naoharu.github.io/tags/dbunit/index.xml</link>
+    <description>Recent content in Dbunit on 順道制勝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/naoharu&#34;&gt;Naoharu SASAKI&lt;/a&gt; 2017</copyright>
+    <atom:link href="https://naoharu.github.io/tags/dbunit/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>DBUnit@Oracle DB時のAmbiguousTableNameException</title>
+      <link>https://naoharu.github.io/archives/12239</link>
+      <pubDate>Sat, 13 Feb 2016 04:15:16 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/12239</guid>
+      <description>&lt;p&gt;これまたオールドスクールなツールを使っていて問題発生。&lt;/p&gt;
+
+&lt;p&gt;DBUnitを使って単体テストを実施していた時なのだけど、下記の例外に遭遇。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;org.dbunit.database.AmbiguousTableNameException: AQ$_SCHEDULES&lt;/p&gt;
+
+&lt;p&gt;　at org.dbunit.database.DatabaseDataSet.initialize(DatabaseDataSet.java:140)&lt;/p&gt;
+
+&lt;p&gt;　at org.dbunit.database.DatabaseDataSet.getTableMetaData(DatabaseDataSet.java:186)&lt;/p&gt;
+
+&lt;p&gt;　at org.dbunit.operation.DeleteAllOperation.execute(DeleteAllOperation.java:98)&lt;/p&gt;
+
+&lt;p&gt;　at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:67)&lt;/p&gt;
+
+&lt;p&gt;&amp;#8230;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;どうやらOracleを使っていて違うschemaに同じtable名が存在するとこうなっていて、&lt;/p&gt;
+
+&lt;p&gt;この時は&lt;a href=&#34;http://dbunit.sourceforge.net/apidocs/org/dbunit/database/AmbiguousTableNameException.html&#34;&gt;コネクション生成するときにschemaを指定すべし&lt;/a&gt;とのこと。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;This exception is thrown by IDataSet when multiple tables having the same name are accessible. This usually occurs when the database connection have access to multiple schemas containing identical table names.&lt;/p&gt;
+
+&lt;p&gt;Possible solutions:&lt;/p&gt;
+
+&lt;p&gt;1) Use a database connection credential that has access to only one database schema.&lt;/p&gt;
+
+&lt;p&gt;2) Specify a schema name to the DatabaseConnection or DatabaseDataSourceConnection constructor.&lt;/p&gt;
+
+&lt;p&gt;3) Enable the qualified table name support (see How-to documentation).&lt;/p&gt;
+
+&lt;p&gt;Another common reason for this exception to be thrown is when an XML file contains the same table multiple times whereas a different table is between the definition of the duplicate table.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;2の案ね。&lt;/p&gt;
+
+&lt;p&gt;どうでも良いけど&lt;a href=&#34;http://www.dbunit.org/&#34;&gt;DBUnit.orgの本家サイトがドメイン切れて税理士紹介サイトに取られてる&lt;/a&gt;。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scp on 順道制勝</title>
+    <link>https://naoharu.github.io/tags/scp/index.xml</link>
+    <description>Recent content in Scp on 順道制勝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/naoharu&#34;&gt;Naoharu SASAKI&lt;/a&gt; 2017</copyright>
+    <atom:link href="https://naoharu.github.io/tags/scp/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>checkboxにチェックしていないことを送信</title>
+      <link>https://naoharu.github.io/archives/12144</link>
+      <pubDate>Thu, 17 Dec 2015 09:51:30 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/12144</guid>
+      <description>&lt;p&gt;久しぶりにクライミング以外の話題。&lt;/p&gt;
+
+&lt;p&gt;まぁ当たり前なのだけど、HTMLのcheckboxでformを送信するとき、checkが入っていないとサーバーに値自体送信されない。&lt;/p&gt;
+
+&lt;p&gt;このため、例えばサーバー側で情報をセッション領域などに入れて持ちまわす場合、&lt;/p&gt;
+
+&lt;p&gt;一旦チェックを入れた状態を保持してしまうと、それを外すことが画面からの操作ではできなくなってしまう。&lt;/p&gt;
+
+&lt;p&gt;その問題の解決には、Springではcheckboxと一緒にhidden項目を作って、それを一緒に送信するのがセオリーみたい。&lt;/p&gt;
+
+&lt;pre class=&#34;lang:xhtml decode:true&#34;&gt;&amp;lt;input type=&#34;checkbox&#34; value=&#34;true&#34; name=&#34;springCheckboxTest&#34; id=&#34;springCheckboxTest&#34;&amp;gt;
+&amp;lt;input type=&#34;hidden&#34; value=&#34;on&#34; name=&#34;_springCheckboxTest&#34;&amp;gt;
+&lt;/pre&gt;
+
+&lt;p&gt;こんな感じでcheckboxのnameの先頭にアンスコつけたnameのhidden項目を送信すると、&lt;/p&gt;
+
+&lt;p&gt;勝手にspring側でバインドしてくれるみたい。&lt;/p&gt;
+
+&lt;p&gt;そして、上記のようなhtmlはspringのformタグを使えば出力可能とのこと。&lt;/p&gt;
+
+&lt;pre class=&#34;lang:xhtml decode:true &#34; &gt;&amp;lt;form:checkbox path=&#34;springCheckboxTest&#34; /&amp;gt;
+&lt;/pre&gt;
+
+&lt;p&gt;参考：&lt;a href=&#34;http://docs.spring.io/spring/docs/2.0.x/reference/mvc.html#mvc-formtaglib-checkboxtag&#34;&gt;13.9.4. The checkbox tag&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;なるほどね！&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

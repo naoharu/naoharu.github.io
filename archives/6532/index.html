@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>デジタル一眼レフカメラ | 順道制勝</title>
+<link rel="stylesheet" href="https://naoharu.github.io//css/style.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/github.min.css">
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://naoharu.github.io/"><h1 class="title is-4">順道制勝</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/naoharu">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/naoharu">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="/index.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">November 6, 2008</h2>
+    <h1 class="title">デジタル一眼レフカメラ</h1>
+    <div class="content">
+      <p>欲しい欲しいと思ってたら、金石に先をこされた・・・。<a href="http://www.nikon-image.com/jpn/products/camera/slr/digital/d40/">Nikon D40</a>狙ってたのになぁ。他の候補としては、<a href="http://cweb.canon.jp/camera/eosd/kissf/index.html">Canon EOS KISS F</a>とか、<a href="http://www.nikon-image.com/jpn/products/camera/slr/digital/d60/index.htm">Nikon D60</a>とか、<a href="http://www.pentax.jp/japan/imaging/digital/slr/k-m/feature.html">PENTAX k-m</a>+<a href="http://www.pentax.jp/japan/imaging/digital/lens/index35_normal.html">DA40mmF2.8</a>のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。</p>
+
+<p>ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。</p>
+
+<p>`欲しい欲しいと思ってたら、金石に先をこされた・・・。<a href="http://www.nikon-image.com/jpn/products/camera/slr/digital/d40/">Nikon D40</a>狙ってたのになぁ。他の候補としては、<a href="http://cweb.canon.jp/camera/eosd/kissf/index.html">Canon EOS KISS F</a>とか、<a href="http://www.nikon-image.com/jpn/products/camera/slr/digital/d60/index.htm">Nikon D60</a>とか、<a href="http://www.pentax.jp/japan/imaging/digital/slr/k-m/feature.html">PENTAX k-m</a>+<a href="http://www.pentax.jp/japan/imaging/digital/lens/index35_normal.html">DA40mmF2.8</a>のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。</p>
+
+<p>ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。</p>
+
+<p>`</p>
+
+<blockquote>
+<p><code>[sasaki@localhost ~]$ echo -n password | md5sum</code></p>
+
+<p><code>5f4dcc3b5aa765d61d8327deb882cf99  -</code></p>
+
+<p>``</p>
+</blockquote>
+
+<p>``</p>
+
+<p>とかして、pukiwiki.ini.phpの中の、</p>
+
+<p>```欲しい欲しいと思ってたら、金石に先をこされた・・・。<a href="http://www.nikon-image.com/jpn/products/camera/slr/digital/d40/">Nikon D40</a>狙ってたのになぁ。他の候補としては、<a href="http://cweb.canon.jp/camera/eosd/kissf/index.html">Canon EOS KISS F</a>とか、<a href="http://www.nikon-image.com/jpn/products/camera/slr/digital/d60/index.htm">Nikon D60</a>とか、<a href="http://www.pentax.jp/japan/imaging/digital/slr/k-m/feature.html">PENTAX k-m</a>+<a href="http://www.pentax.jp/japan/imaging/digital/lens/index35_normal.html">DA40mmF2.8</a>のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。</p>
+
+<p>ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。</p>
+
+<p>`欲しい欲しいと思ってたら、金石に先をこされた・・・。<a href="http://www.nikon-image.com/jpn/products/camera/slr/digital/d40/">Nikon D40</a>狙ってたのになぁ。他の候補としては、<a href="http://cweb.canon.jp/camera/eosd/kissf/index.html">Canon EOS KISS F</a>とか、<a href="http://www.nikon-image.com/jpn/products/camera/slr/digital/d60/index.htm">Nikon D60</a>とか、<a href="http://www.pentax.jp/japan/imaging/digital/slr/k-m/feature.html">PENTAX k-m</a>+<a href="http://www.pentax.jp/japan/imaging/digital/lens/index35_normal.html">DA40mmF2.8</a>のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。</p>
+
+<p>ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。</p>
+
+<p>`</p>
+
+<blockquote>
+<p><code>[sasaki@localhost ~]$ echo -n password | md5sum</code></p>
+
+<p><code>5f4dcc3b5aa765d61d8327deb882cf99  -</code></p>
+
+<p>``</p>
+</blockquote>
+
+<p>``</p>
+
+<p>とかして、pukiwiki.ini.phpの中の、</p>
+
+<pre><code>
+&gt;  `$auth_users = array(`
+  
+&gt;  `'User1' =&gt; '{x-php-md5}1a1dc91c907325c69271ddf0c944bc72';`
+  
+&gt;  `'User2' =&gt; '{x-php-md5}1a1dc91c907325c69271ddf0c944bc72';`
+  
+&gt;  `);`
+  
+&gt; ``
+
+ ``
+  
+みたいなところに追加し、ユーザーを登録。そのユーザーに対して、閲覧・編集の権限を設定できるらしい。
+  
+````欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+`欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+` 
+
+&gt;  `[sasaki@localhost ~]$ echo -n password | md5sum`
+  
+&gt;  `5f4dcc3b5aa765d61d8327deb882cf99  -`
+  
+&gt; ``
+
+ ``
+  
+とかして、pukiwiki.ini.phpの中の、
+  
+```欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+`欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+` 
+
+&gt;  `[sasaki@localhost ~]$ echo -n password | md5sum`
+  
+&gt;  `5f4dcc3b5aa765d61d8327deb882cf99  -`
+  
+&gt; ``
+
+ ``
+  
+とかして、pukiwiki.ini.phpの中の、
+  
+</code></pre>
+
+<blockquote>
+<p><code>$auth_users = array(</code></p>
+
+<p><code>'User1' =&gt; '{x-php-md5}1a1dc91c907325c69271ddf0c944bc72';</code></p>
+
+<p><code>'User2' =&gt; '{x-php-md5}1a1dc91c907325c69271ddf0c944bc72';</code></p>
+
+<p><code>);</code></p>
+
+<p>``</p>
+</blockquote>
+
+<p>``</p>
+
+<p>みたいなところに追加し、ユーザーを登録。そのユーザーに対して、閲覧・編集の権限を設定できるらしい。</p>
+
+<pre><code>
+&gt;  `$read_auth = 1; //認証を行う`
+  
+&gt;  `//中略`
+  
+&gt;  `$edit_auth = 1; //認証を行う`
+  
+&gt; ``
+
+ ``
+  
+んで、認証を行うページの対象を、ページ名で指定するんだけど、そこで正規表現でパターンを指し示すとのこと。
+  
+いや、正規表現とかしらないし。。。ってことで、ハマった。
+  
+だって、正規表現なんだから、
+  
+「とりあえず学生は全部閲覧制限だからー。」
+  
+と思って、
+  
+`````欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+`欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+` 
+
+&gt;  `[sasaki@localhost ~]$ echo -n password | md5sum`
+  
+&gt;  `5f4dcc3b5aa765d61d8327deb882cf99  -`
+  
+&gt; ``
+
+ ``
+  
+とかして、pukiwiki.ini.phpの中の、
+  
+```欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+`欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+` 
+
+&gt;  `[sasaki@localhost ~]$ echo -n password | md5sum`
+  
+&gt;  `5f4dcc3b5aa765d61d8327deb882cf99  -`
+  
+&gt; ``
+
+ ``
+  
+とかして、pukiwiki.ini.phpの中の、
+  
+``` 
+
+&gt;  `$auth_users = array(`
+  
+&gt;  `'User1' =&gt; '{x-php-md5}1a1dc91c907325c69271ddf0c944bc72';`
+  
+&gt;  `'User2' =&gt; '{x-php-md5}1a1dc91c907325c69271ddf0c944bc72';`
+  
+&gt;  `);`
+  
+&gt; ``
+
+ ``
+  
+みたいなところに追加し、ユーザーを登録。そのユーザーに対して、閲覧・編集の権限を設定できるらしい。
+  
+````欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+`欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+` 
+
+&gt;  `[sasaki@localhost ~]$ echo -n password | md5sum`
+  
+&gt;  `5f4dcc3b5aa765d61d8327deb882cf99  -`
+  
+&gt; ``
+
+ ``
+  
+とかして、pukiwiki.ini.phpの中の、
+  
+```欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+`欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+` 
+
+&gt;  `[sasaki@localhost ~]$ echo -n password | md5sum`
+  
+&gt;  `5f4dcc3b5aa765d61d8327deb882cf99  -`
+  
+&gt; ``
+
+ ``
+  
+とかして、pukiwiki.ini.phpの中の、
+  
+``` 
+
+&gt;  `$auth_users = array(`
+  
+&gt;  `'User1' =&gt; '{x-php-md5}1a1dc91c907325c69271ddf0c944bc72';`
+  
+&gt;  `'User2' =&gt; '{x-php-md5}1a1dc91c907325c69271ddf0c944bc72';`
+  
+&gt;  `);`
+  
+&gt; ``
+
+ ``
+  
+みたいなところに追加し、ユーザーを登録。そのユーザーに対して、閲覧・編集の権限を設定できるらしい。
+  
+</code></pre>
+
+<blockquote>
+<p><code>$read_auth = 1; //認証を行う</code></p>
+
+<p><code>//中略</code></p>
+
+<p><code>$edit_auth = 1; //認証を行う</code></p>
+
+<p>``</p>
+</blockquote>
+
+<p>``</p>
+
+<p>んで、認証を行うページの対象を、ページ名で指定するんだけど、そこで正規表現でパターンを指し示すとのこと。</p>
+
+<p>いや、正規表現とかしらないし。。。ってことで、ハマった。</p>
+
+<p>だって、正規表現なんだから、</p>
+
+<p>「とりあえず学生は全部閲覧制限だからー。」</p>
+
+<p>と思って、</p>
+
+<pre><code>
+&gt;  `$read_auth_pages = array(`
+  
+&gt;          `// Regex                   Username`
+  
+&gt;          `'*' =&gt; 'student',`
+  
+&gt; ``
+
+ ``
+  
+とかやっても、全然うまくいかない。むしろ閲覧できる。公式FAQをディグって、
+  
+``````欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+`欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+` 
+
+&gt;  `[sasaki@localhost ~]$ echo -n password | md5sum`
+  
+&gt;  `5f4dcc3b5aa765d61d8327deb882cf99  -`
+  
+&gt; ``
+
+ ``
+  
+とかして、pukiwiki.ini.phpの中の、
+  
+```欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+`欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+` 
+
+&gt;  `[sasaki@localhost ~]$ echo -n password | md5sum`
+  
+&gt;  `5f4dcc3b5aa765d61d8327deb882cf99  -`
+  
+&gt; ``
+
+ ``
+  
+とかして、pukiwiki.ini.phpの中の、
+  
+``` 
+
+&gt;  `$auth_users = array(`
+  
+&gt;  `'User1' =&gt; '{x-php-md5}1a1dc91c907325c69271ddf0c944bc72';`
+  
+&gt;  `'User2' =&gt; '{x-php-md5}1a1dc91c907325c69271ddf0c944bc72';`
+  
+&gt;  `);`
+  
+&gt; ``
+
+ ``
+  
+みたいなところに追加し、ユーザーを登録。そのユーザーに対して、閲覧・編集の権限を設定できるらしい。
+  
+````欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+`欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+` 
+
+&gt;  `[sasaki@localhost ~]$ echo -n password | md5sum`
+  
+&gt;  `5f4dcc3b5aa765d61d8327deb882cf99  -`
+  
+&gt; ``
+
+ ``
+  
+とかして、pukiwiki.ini.phpの中の、
+  
+```欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+`欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+` 
+
+&gt;  `[sasaki@localhost ~]$ echo -n password | md5sum`
+  
+&gt;  `5f4dcc3b5aa765d61d8327deb882cf99  -`
+  
+&gt; ``
+
+ ``
+  
+とかして、pukiwiki.ini.phpの中の、
+  
+``` 
+
+&gt;  `$auth_users = array(`
+  
+&gt;  `'User1' =&gt; '{x-php-md5}1a1dc91c907325c69271ddf0c944bc72';`
+  
+&gt;  `'User2' =&gt; '{x-php-md5}1a1dc91c907325c69271ddf0c944bc72';`
+  
+&gt;  `);`
+  
+&gt; ``
+
+ ``
+  
+みたいなところに追加し、ユーザーを登録。そのユーザーに対して、閲覧・編集の権限を設定できるらしい。
+  
+```` 
+
+&gt;  `$read_auth = 1; //認証を行う`
+  
+&gt;  `//中略`
+  
+&gt;  `$edit_auth = 1; //認証を行う`
+  
+&gt; ``
+
+ ``
+  
+んで、認証を行うページの対象を、ページ名で指定するんだけど、そこで正規表現でパターンを指し示すとのこと。
+  
+いや、正規表現とかしらないし。。。ってことで、ハマった。
+  
+だって、正規表現なんだから、
+  
+「とりあえず学生は全部閲覧制限だからー。」
+  
+と思って、
+  
+`````欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+`欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+` 
+
+&gt;  `[sasaki@localhost ~]$ echo -n password | md5sum`
+  
+&gt;  `5f4dcc3b5aa765d61d8327deb882cf99  -`
+  
+&gt; ``
+
+ ``
+  
+とかして、pukiwiki.ini.phpの中の、
+  
+```欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+`欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+` 
+
+&gt;  `[sasaki@localhost ~]$ echo -n password | md5sum`
+  
+&gt;  `5f4dcc3b5aa765d61d8327deb882cf99  -`
+  
+&gt; ``
+
+ ``
+  
+とかして、pukiwiki.ini.phpの中の、
+  
+``` 
+
+&gt;  `$auth_users = array(`
+  
+&gt;  `'User1' =&gt; '{x-php-md5}1a1dc91c907325c69271ddf0c944bc72';`
+  
+&gt;  `'User2' =&gt; '{x-php-md5}1a1dc91c907325c69271ddf0c944bc72';`
+  
+&gt;  `);`
+  
+&gt; ``
+
+ ``
+  
+みたいなところに追加し、ユーザーを登録。そのユーザーに対して、閲覧・編集の権限を設定できるらしい。
+  
+````欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+`欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+` 
+
+&gt;  `[sasaki@localhost ~]$ echo -n password | md5sum`
+  
+&gt;  `5f4dcc3b5aa765d61d8327deb882cf99  -`
+  
+&gt; ``
+
+ ``
+  
+とかして、pukiwiki.ini.phpの中の、
+  
+```欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+`欲しい欲しいと思ってたら、金石に先をこされた・・・。[Nikon D40][1]狙ってたのになぁ。他の候補としては、[Canon EOS KISS F][2]とか、[Nikon D60][3]とか、[PENTAX k-m][4]+[DA40mmF2.8][5]のセットとかかね。とにかく欲しい！Y田君お勧めはNikonだったな。。。
+
+ということで、今日はBOSSの授業用pukiwikiを立ち上げるために色々と戦った。 wikiは基本的には「みんなで編集、みんなで閲覧」という考え方で、基本的にidとかユーザーアカウントとかいう概念が無いらしく、認証などの設定が面倒なのな。。。かといって、誰でも講義資料とかが見えるわけにはいかないし、家からとかでも見ようと思ったら、研究室ローカルみたいにipでフィルタリングもしたくない。ってことで、wiki標準の認証機能を使うことに。
+
+` 
+
+&gt;  `[sasaki@localhost ~]$ echo -n password | md5sum`
+  
+&gt;  `5f4dcc3b5aa765d61d8327deb882cf99  -`
+  
+&gt; ``
+
+ ``
+  
+とかして、pukiwiki.ini.phpの中の、
+  
+``` 
+
+&gt;  `$auth_users = array(`
+  
+&gt;  `'User1' =&gt; '{x-php-md5}1a1dc91c907325c69271ddf0c944bc72';`
+  
+&gt;  `'User2' =&gt; '{x-php-md5}1a1dc91c907325c69271ddf0c944bc72';`
+  
+&gt;  `);`
+  
+&gt; ``
+
+ ``
+  
+みたいなところに追加し、ユーザーを登録。そのユーザーに対して、閲覧・編集の権限を設定できるらしい。
+  
+```` 
+
+&gt;  `$read_auth = 1; //認証を行う`
+  
+&gt;  `//中略`
+  
+&gt;  `$edit_auth = 1; //認証を行う`
+  
+&gt; ``
+
+ ``
+  
+んで、認証を行うページの対象を、ページ名で指定するんだけど、そこで正規表現でパターンを指し示すとのこと。
+  
+いや、正規表現とかしらないし。。。ってことで、ハマった。
+  
+だって、正規表現なんだから、
+  
+「とりあえず学生は全部閲覧制限だからー。」
+  
+と思って、
+  
+</code></pre>
+
+<blockquote>
+<p><code>$read_auth_pages = array(</code></p>
+
+<pre><code>     `// Regex                   Username`
+
+     `'*' =&gt; 'student',`
+</code></pre>
+
+<p>``</p>
+</blockquote>
+
+<p>``</p>
+
+<p>とかやっても、全然うまくいかない。むしろ閲覧できる。公式FAQをディグって、</p>
+
+<p>``````</p>
+
+<blockquote>
+<p><code>$read_auth_pages = array(</code></p>
+
+<pre><code>     `// Regex                   Username`
+
+     `'#*#' =&gt; 'student',`
+</code></pre>
+
+<p>``</p>
+</blockquote>
+
+<p>``</p>
+
+<p>ってすればウマく行くとわかったけど。いやいや、意味不明。何その「#」は。。</p>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'naoharu1218';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; <a href="https://twitter.com/naoharu">Naoharu SASAKI</a> 2017</p>
+  </div>
+</section>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/languages/go.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/languages/dockerfile.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-4774178-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+

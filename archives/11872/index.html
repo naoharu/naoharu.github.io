@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WP Super Cache導入 | 順道制勝</title>
+<link rel="stylesheet" href="https://naoharu.github.io//css/style.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/github.min.css">
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://naoharu.github.io/"><h1 class="title is-4">順道制勝</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/naoharu">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/naoharu">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="/index.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">April 10, 2015</h2>
+    <h1 class="title">WP Super Cache導入</h1>
+    <div class="content">
+      <blockquote>
+<p>「順道制勝って常に重いよね。」</p>
+</blockquote>
+
+<p>って前から言われていて、特にtwitterにリンクつぶやいた時とか？</p>
+
+<p>結構描画までに時間がかかってたっぽいので、調べてみた。</p>
+
+<blockquote>
+<p>bash-3.2$ ab -n 3 -c 1 <a href="http://defenceless.org/wordpress/">http://defenceless.org/wordpress/</a></p>
+
+<p>This is ApacheBench, Version 2.3 &lt;$Revision: 1554214 $&gt;</p>
+
+<p>Copyright 1996 Adam Twiss, Zeus Technology Ltd, <a href="http://www.zeustech.net/">http://www.zeustech.net/</a></p>
+
+<p>Licensed to The Apache Software Foundation, <a href="http://www.apache.org/">http://www.apache.org/</a></p>
+
+<p>Benchmarking defenceless.org (be patient)&#8230;..done</p>
+
+<p>Server Software: Apache</p>
+
+<p>Server Hostname: defenceless.org</p>
+
+<p>Server Port: 80</p>
+
+<p>Document Path: /wordpress/</p>
+
+<p>Document Length: 39535 bytes</p>
+
+<p>Concurrency Level: 1</p>
+
+<p>Time taken for tests: 1.850 seconds</p>
+
+<p>Complete requests: 3</p>
+
+<p>Failed requests: 0</p>
+
+<p>Total transferred: 119244 bytes</p>
+
+<p>HTML transferred: 118605 bytes</p>
+
+<p><strong>Requests per second: 1.62 [#/sec] (mean)</strong></p>
+
+<p>Time per request: 616.798 [ms] (mean)</p>
+
+<p>Time per request: 616.798 [ms] (mean, across all concurrent requests)</p>
+
+<p>Transfer rate: 62.93 [Kbytes/sec] received</p>
+</blockquote>
+
+<p>秒間1.6リクエストしか捌けてない。こりゃ結構だね。。</p>
+
+<p>まずはアプリレイヤーの小手先対応ということで、</p>
+
+<p>キャッシュ系のプラグインでも導入しますかと。</p>
+
+<p>といってもキャッシュ系って見えちゃいけないページが見えたりして怖いイメージあるけど。</p>
+
+<p>まぁ順道制勝はどのユーザが見てもURLによって内容は変わらないし、</p>
+
+<p>むしろキャッシュが効きまくるタイプでしょう、ということで。</p>
+
+<p>が、導入してみると、これってwordpressデフォルトのpermlinkのURLだと使えないのね。</p>
+
+<p>つまり、各記事のURLをgetパラメータを含む形（<a href="http://defenceless.org/wordpress/?p=***）じゃダメで、">http://defenceless.org/wordpress/?p=***）じゃダメで、</a></p>
+
+<p><a href="http://defenceless.org/wordpress/archives/***っていうフォーマットにしないといけない。">http://defenceless.org/wordpress/archives/***っていうフォーマットにしないといけない。</a></p>
+
+<p>ふーん、まぁ確かに最近ってみんなそうやってるよね。。SEO的にもいいんだっけか。内容とURLが一致してる感じが。</p>
+
+<p>別に変えるのはいいんだけど、過去、世界中からリンクされた<a href="http://defenceless.org/wordpress/?p=***って形式の">http://defenceless.org/wordpress/?p=***って形式の</a></p>
+
+<p>リンクが不通になるのは嫌だな〜って思ってたら、wordpressがよしなにrewriteしてくれるらしい。ありがとう！</p>
+
+<pre class="lang:xhtml decode:true ">&lt;Directory "/var/www/html/wordpress"&gt;
+        Options FollowSymLinks
+        AllowOverride All
+&lt;/Directory&gt;</pre>
+
+<p>としてhttpdをrestart。permlink設定も変えてWP Super Cacheを有効化。</p>
+
+<blockquote>
+<p>bash-3.2$ ab -n 3 -c 1 <a href="http://defenceless.org/wordpress/">http://defenceless.org/wordpress/</a></p>
+
+<p>This is ApacheBench, Version 2.3 &lt;$Revision: 1554214 $&gt;</p>
+
+<p>Copyright 1996 Adam Twiss, Zeus Technology Ltd, <a href="http://www.zeustech.net/">http://www.zeustech.net/</a></p>
+
+<p>Licensed to The Apache Software Foundation, <a href="http://www.apache.org/">http://www.apache.org/</a></p>
+
+<p>Benchmarking defenceless.org (be patient)&#8230;..done</p>
+
+<p>Server Software: Apache</p>
+
+<p>Server Hostname: defenceless.org</p>
+
+<p>Server Port: 80</p>
+
+<p>Document Path: /wordpress/</p>
+
+<p>Document Length: 41111 bytes</p>
+
+<p>Concurrency Level: 1</p>
+
+<p>Time taken for tests: 0.116 seconds</p>
+
+<p>Complete requests: 3</p>
+
+<p>Failed requests: 0</p>
+
+<p>Total transferred: 124167 bytes</p>
+
+<p>HTML transferred: 123333 bytes</p>
+
+<p><strong>Requests per second: 25.82 [#/sec] (mean)</strong></p>
+
+<p>Time per request: 38.725 [ms] (mean)</p>
+
+<p>Time per request: 38.725 [ms] (mean, across all concurrent requests)</p>
+
+<p>Transfer rate: 1043.73 [Kbytes/sec] received</p>
+</blockquote>
+
+<p>一側面に過ぎないけど15倍くらい速くなった。</p>
+
+<p>しばらくこれで様子を見てみますか。</p>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'naoharu1218';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; <a href="https://twitter.com/naoharu">Naoharu SASAKI</a> 2017</p>
+  </div>
+</section>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/languages/go.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/languages/dockerfile.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-4774178-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+

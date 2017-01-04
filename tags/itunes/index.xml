@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Itunes on 順道制勝</title>
+    <link>https://naoharu.github.io/tags/itunes/index.xml</link>
+    <description>Recent content in Itunes on 順道制勝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/naoharu&#34;&gt;Naoharu SASAKI&lt;/a&gt; 2017</copyright>
+    <atom:link href="https://naoharu.github.io/tags/itunes/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>iPhoneを初期化しかけた日</title>
+      <link>https://naoharu.github.io/archives/12373</link>
+      <pubDate>Thu, 05 May 2016 06:09:47 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/12373</guid>
+      <description>&lt;p&gt;いつもどおりMacBookにiPhoneを接続して同期しようとしたら&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;「iTunesはiPhone 6の内容を読み込めません。iPhone環境設定の[概要]タブで[復元]をクリックし、このiPhoneを出荷時の設定に復元してください。」&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;というダイアログが出て、iTunesがiPhoneを認識してくれない。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.google.co.jp/webhp?sourceid=chrome-instant&amp;amp;#038;ion=1&amp;amp;#038;espv=2&amp;amp;#038;ie=UTF-8#q=iphone%20%E5%87%BA%E8%8D%B7%E6%99%82%E3%81%AB%E6%88%BB%20itunes&#34;&gt;世界に聞いてみる&lt;/a&gt;と、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;iTunesを再インストールする&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;それでもダメなら&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;iPhoneを出荷時の状態に初期化する&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;しかないって感じ。&lt;/p&gt;
+
+&lt;p&gt;とりあえずiTunesを再インストールしても状況は変わらず。。&lt;/p&gt;
+
+&lt;p&gt;マジか初期化か〜。。。&lt;/p&gt;
+
+&lt;p&gt;と思ってたけど、ちょっと思いついて接続ケーブルを変えてみたら、うまく認識した！&lt;/p&gt;
+
+&lt;p&gt;あぶなかった！初期化するところだった。&lt;/p&gt;
+
+&lt;p&gt;充電は出来てたからケーブルは悪くないと思ったけど、&lt;/p&gt;
+
+&lt;p&gt;「充電できる」と「データ同期できる」の間に障害ポイントがあるのね。&lt;/p&gt;
+
+&lt;p&gt;というわけで、次回から同じ問題に直面したことがこのエントリーを発見することを願います。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

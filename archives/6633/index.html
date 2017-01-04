@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Widget開発（クリスマス・イブ） | 順道制勝</title>
+<link rel="stylesheet" href="https://naoharu.github.io//css/style.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/github.min.css">
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://naoharu.github.io/"><h1 class="title is-4">順道制勝</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/naoharu">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/naoharu">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="/index.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">December 23, 2008</h2>
+    <h1 class="title">Widget開発（クリスマス・イブ）</h1>
+    <div class="content">
+      <p><a href="http://wp.mmrt-jp.net/plugin-japanization-project/ig_syntax_hilite/">iG:Syntax Hiliter 日本語版</a>の導入・試験も兼ねて。。</p>
+
+<p>前にも書いたとおり、ACCESSが提供しているNetFrontBrowser Widget開発用のJavaScriptライブラリでは、</p>
+
+<p>Widgetを、dock状態、float状態、maximize状態へ遷移させるボタンと、押下時のイベントは</p>
+
+<p>ひとまとまりにdivタグでくくられて出力されている。（ちなみに、「押下」って「おうか」と初見で読めます？？）</p>
+
+<p>./access/nfbwdgt.js</p>
+
+<p>[js]</p>
+
+<p>function nfbw_displayModeButton(arg)</p>
+
+<p>{</p>
+
+<p>（中略）</p>
+
+<p>////////////////////////////////</p>
+
+<p>// main</p>
+
+<p>//</p>
+
+<p>eButtons = document.createElement(&#8216;DIV&#8217;);</p>
+
+<p>if (arg.idName) {</p>
+
+<p>eButtons.setAttribute(&#8216;id&#8217;, arg.idName);</p>
+
+<p>}</p>
+
+<p>eDock = nfbw_createButtonS({&#8216;onclickfunc&#8217;:&#8217;widget.dock();&#8217;,</p>
+
+<p>&#8216;imgName&#8217;:arg.buttons.dockImgName,</p>
+
+<p>&#8216;imgWidth&#8217;:width,</p>
+
+<p>&#8216;imgHeight&#8217;:height,</p>
+
+<p>&#8216;isElement&#8217;:true});</p>
+
+<p>eDock.style.position = &#8216;absolute&#8217;;</p>
+
+<p>eDock.style.top = &#8216;0px&#8217;;</p>
+
+<p>eDock.style.left = &#8216;0px&#8217;;</p>
+
+<p>eMini = nfbw_createButtonS({&#8216;onclickfunc&#8217;:&#8217;widget.restore();&#8217;,</p>
+
+<p>&#8216;imgName&#8217;:arg.buttons.floatImgName,</p>
+
+<p>&#8216;imgWidth&#8217;:width,</p>
+
+<p>&#8216;imgHeight&#8217;:height,</p>
+
+<p>&#8216;isElement&#8217;:true});</p>
+
+<p>eMini.style.position = &#8216;absolute&#8217;;</p>
+
+<p>eMini.style.top = &#8216;0px&#8217;;</p>
+
+<p>eMini.style.left = width/3 + gaplen + &#8216;px&#8217;;</p>
+
+<p>eMini.style.display = &#8216;none&#8217;;</p>
+
+<p>eMaxi = nfbw_createButtonS({&#8216;onclickfunc&#8217;:&#8217;widget.maximize();&#8217;,</p>
+
+<p>&#8216;imgName&#8217;:arg.buttons.maxImgName,</p>
+
+<p>&#8216;imgWidth&#8217;:width,</p>
+
+<p>&#8216;imgHeight&#8217;:height,</p>
+
+<p>&#8216;isElement&#8217;:true});</p>
+
+<p>eMaxi.style.position = &#8216;absolute&#8217;;</p>
+
+<p>eMaxi.style.top = &#8216;0px&#8217;;</p>
+
+<p>eMaxi.style.left = width/3 + gaplen + &#8216;px&#8217;;</p>
+
+<p>[/js]</p>
+
+<p>と、各状態へ遷移させる関数</p>
+
+<p>`<a href="http://wp.mmrt-jp.net/plugin-japanization-project/ig_syntax_hilite/">iG:Syntax Hiliter 日本語版</a>の導入・試験も兼ねて。。</p>
+
+<p>前にも書いたとおり、ACCESSが提供しているNetFrontBrowser Widget開発用のJavaScriptライブラリでは、</p>
+
+<p>Widgetを、dock状態、float状態、maximize状態へ遷移させるボタンと、押下時のイベントは</p>
+
+<p>ひとまとまりにdivタグでくくられて出力されている。（ちなみに、「押下」って「おうか」と初見で読めます？？）</p>
+
+<p>./access/nfbwdgt.js</p>
+
+<p>[js]</p>
+
+<p>function nfbw_displayModeButton(arg)</p>
+
+<p>{</p>
+
+<p>（中略）</p>
+
+<p>////////////////////////////////</p>
+
+<p>// main</p>
+
+<p>//</p>
+
+<p>eButtons = document.createElement(&#8216;DIV&#8217;);</p>
+
+<p>if (arg.idName) {</p>
+
+<p>eButtons.setAttribute(&#8216;id&#8217;, arg.idName);</p>
+
+<p>}</p>
+
+<p>eDock = nfbw_createButtonS({&#8216;onclickfunc&#8217;:&#8217;widget.dock();&#8217;,</p>
+
+<p>&#8216;imgName&#8217;:arg.buttons.dockImgName,</p>
+
+<p>&#8216;imgWidth&#8217;:width,</p>
+
+<p>&#8216;imgHeight&#8217;:height,</p>
+
+<p>&#8216;isElement&#8217;:true});</p>
+
+<p>eDock.style.position = &#8216;absolute&#8217;;</p>
+
+<p>eDock.style.top = &#8216;0px&#8217;;</p>
+
+<p>eDock.style.left = &#8216;0px&#8217;;</p>
+
+<p>eMini = nfbw_createButtonS({&#8216;onclickfunc&#8217;:&#8217;widget.restore();&#8217;,</p>
+
+<p>&#8216;imgName&#8217;:arg.buttons.floatImgName,</p>
+
+<p>&#8216;imgWidth&#8217;:width,</p>
+
+<p>&#8216;imgHeight&#8217;:height,</p>
+
+<p>&#8216;isElement&#8217;:true});</p>
+
+<p>eMini.style.position = &#8216;absolute&#8217;;</p>
+
+<p>eMini.style.top = &#8216;0px&#8217;;</p>
+
+<p>eMini.style.left = width/3 + gaplen + &#8216;px&#8217;;</p>
+
+<p>eMini.style.display = &#8216;none&#8217;;</p>
+
+<p>eMaxi = nfbw_createButtonS({&#8216;onclickfunc&#8217;:&#8217;widget.maximize();&#8217;,</p>
+
+<p>&#8216;imgName&#8217;:arg.buttons.maxImgName,</p>
+
+<p>&#8216;imgWidth&#8217;:width,</p>
+
+<p>&#8216;imgHeight&#8217;:height,</p>
+
+<p>&#8216;isElement&#8217;:true});</p>
+
+<p>eMaxi.style.position = &#8216;absolute&#8217;;</p>
+
+<p>eMaxi.style.top = &#8216;0px&#8217;;</p>
+
+<p>eMaxi.style.left = width/3 + gaplen + &#8216;px&#8217;;</p>
+
+<p>[/js]</p>
+
+<p>と、各状態へ遷移させる関数</p>
+
+<p>`</p>
+
+<p>onclickイベントに割り当てている。</p>
+
+<p>これだと個別にボタンを作成できないので、</p>
+
+<p>ライブラリに入る手前の段階（つまり、function nfbw_displayModeButton(arg)の呼び出し元）で、</p>
+
+<p>nfbw_createButtonS()によるボタンの作成を行わなければならない。</p>
+
+<p>が、その問題として・・・（続く）</p>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'naoharu1218';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; <a href="https://twitter.com/naoharu">Naoharu SASAKI</a> 2017</p>
+  </div>
+</section>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/languages/go.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/languages/dockerfile.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-4774178-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Theme on 順道制勝</title>
+    <link>https://naoharu.github.io/tags/theme/index.xml</link>
+    <description>Recent content in Theme on 順道制勝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/naoharu&#34;&gt;Naoharu SASAKI&lt;/a&gt; 2017</copyright>
+    <atom:link href="https://naoharu.github.io/tags/theme/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hemingway WordPress Theme</title>
+      <link>https://naoharu.github.io/archives/11141</link>
+      <pubDate>Mon, 14 Apr 2014 08:11:20 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/11141</guid>
+      <description>&lt;p&gt;春だし、衣替え～！&lt;/p&gt;
+
+&lt;p&gt;ってことでブログのデザイン変えてみた。Hemingwayって名前のテーマなのだけど、Hemingwayって&lt;a href=&#34;http://warpspire.com/hemingway/&#34;&gt;こういう&lt;/a&gt;のじゃなかったけ？違うバージョンなのかな？&lt;a href=&#34;http://www.andersnoren.se/teman/hemingway-wordpress-theme/&#34;&gt;結構良さげなのを発見&lt;/a&gt;したので導入！一部CSSに納得いかない箇所（Linkの文字に下線が引かれない等）があるけど、まぁここら辺は全体の整合性を考えて後で微調整しよう。&lt;/p&gt;
+
+&lt;p&gt;これで順道制勝も&lt;a href=&#34;http://www.coprosystem.co.jp/tipsblog/2013/06/28.html&#34;&gt;レスポンシブウェブデザイン&lt;/a&gt;！スマホでも見やすくなった～。最近のアクセス解析見ると、ボルダリング系の日記は何故か突出してスマホからのアクセスの割合が多いのだよねえ。ボルダラーはモバイラー？&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
