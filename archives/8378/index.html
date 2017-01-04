@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WordPress 2.9.1 (automatically upgrade) | 順道制勝</title>
+<link rel="stylesheet" href="https://naoharu.github.io//css/style.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://naoharu.github.io/"><h1 class="title is-4">順道制勝</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">January 6, 2010</h2>
+    <h1 class="title">WordPress 2.9.1 (automatically upgrade)</h1>
+    <div class="content">
+      <p>WordPress 2.7を今まで使ってて、特に不便もなかったんだけど、ログインしてみるとダッシュボードに</p>
+
+<blockquote>
+<p>WordPress 2.9.1 is available!</p>
+</blockquote>
+
+<p>との文字が。流石に0.2もバージョン空けてしまうのはタコいでしょうということで、アップグレードすることに。とりあえずバックアップを取ってautomatically upgrade しようとするも、</p>
+
+<blockquote>
+<p>Unable to locate WordPress directory</p>
+</blockquote>
+
+<p>と言われて、アップグレードに失敗。「これは手動でやれということなのか？」と思ったけども、とりあえずこんな超有名なブログツールなんだから、しかもサーバも超有名なxrea.comなんだから、絶対俺と同じ症状の人おるでしょうということで、調べてみると、[WordPress 2.7を今まで使ってて、特に不便もなかったんだけど、ログインしてみるとダッシュボードに</p>
+
+<blockquote>
+<p>WordPress 2.9.1 is available!</p>
+</blockquote>
+
+<p>との文字が。流石に0.2もバージョン空けてしまうのはタコいでしょうということで、アップグレードすることに。とりあえずバックアップを取ってautomatically upgrade しようとするも、</p>
+
+<blockquote>
+<p>Unable to locate WordPress directory</p>
+</blockquote>
+
+<p>と言われて、アップグレードに失敗。「これは手動でやれということなのか？」と思ったけども、とりあえずこんな超有名なブログツールなんだから、しかもサーバも超有名なxrea.comなんだから、絶対俺と同じ症状の人おるでしょうということで、調べてみると、]<a href="http://sb.xrea.com/showthread.php?p=90014">1</a> という情報を発見。</p>
+
+<p>wp-admin/　ディレクトリ直下に、以下の内容の .htaccess ファイルを設置したら、無事automatically upgradeできました〜。</p>
+
+<blockquote>
+<p><files async-upload.php></p>
+
+<p>AddHandler application/x-httpd-phpcgi .php</p>
+
+<p></files></p>
+
+<p><Files plugin-install.php></p>
+
+<p>AddHandler application/x-httpd-phpcgi .php</p>
+
+<p></Files></p>
+
+<p><Files update.php></p>
+
+<p>AddHandler application/x-httpd-phpcgi .php</p>
+
+<p></Files></p>
+
+<p><Files update-core.php></p>
+
+<p>AddHandler application/x-httpd-phpcgi .php</p>
+
+<p></Files></p>
+</blockquote>
+
+<p>というわけでWordPress 2.9.1です。ネクストレヴェル！！</p>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+

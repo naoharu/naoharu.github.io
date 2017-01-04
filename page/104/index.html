@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>順道制勝</title>
+<link rel="stylesheet" href="https://naoharu.github.io//css/style.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://naoharu.github.io/"><h1 class="title is-4">順道制勝</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    
+    <article>
+      <h2 class="subtitle is-6">December 26, 2008</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/6636">2008年仕事納め</a></h1>
+      <div class="content">
+        いやー今年は激動の年だった。。
+というわけで、本日26日、フランステレコムのバイトをもって、
+2008年の仕事全部おわりーーー！やたーーー！
+（自宅にて。←嘘）
+では皆さん、よいお年を！
+        
+      </div>
+    </article>
+    
+    <article>
+      <h2 class="subtitle is-6">December 23, 2008</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/6633">Widget開発（クリスマス・イブ）</a></h1>
+      <div class="content">
+        iG:Syntax Hiliter 日本語版の導入・試験も兼ねて。。
+前にも書いたとおり、ACCESSが提供しているNetFrontBrowser Widget開発用のJavaScriptライブラリでは、
+Widgetを、dock状態、float状態、maximize状態へ遷移させるボタンと、押下時のイベントは
+ひとまとまりにdivタグでくくられて出力されている。（ちなみに、「押下」って「おうか」と初見で読めます？？）
+./access/nfbwdgt.js
+[js]
+function nfbw_displayModeButton(arg)
+{
+（中略）
+////////////////////////////////
+// main
+//
+eButtons = document.createElement(&#8216;DIV&#8217;);
+if (arg.idName) {
+eButtons.setAttribute(&#8216;id&#8217;, arg.idName);
+}
+eDock = nfbw_createButtonS({&#8216;onclickfunc&#8217;:&#8217;widget.dock();&#8217;,
+&#8216;imgName&#8217;:arg.buttons.dockImgName,
+&#8216;imgWidth&#8217;:width,
+&#8216;imgHeight&#8217;:height,
+&#8216;isElement&#8217;:true});
+eDock.style.position = &#8216;absolute&#8217;;
+eDock.style.top = &#8216;0px&#8217;;
+eDock.style.left = &#8216;0px&#8217;;
+eMini = nfbw_createButtonS({&#8216;onclickfunc&#8217;:&#8217;widget.restore();&#8217;,
+&#8216;imgName&#8217;:arg.buttons.floatImgName,
+&#8216;imgWidth&#8217;:width,
+&#8216;imgHeight&#8217;:height,
+&#8216;isElement&#8217;:true});
+eMini.style.position = &#8216;absolute&#8217;;
+eMini.style.top = &#8216;0px&#8217;;
+eMini.style.left = width/3 + gaplen + &#8216;px&#8217;;
+eMini.style.display = &#8216;none&#8217;;
+eMaxi = nfbw_createButtonS({&#8216;onclickfunc&#8217;:&#8217;widget.maximize();&#8217;,
+&#8216;imgName&#8217;:arg.buttons.maxImgName,
+&#8216;imgWidth&#8217;:width,
+        
+        ...<a class="button is-link" href="https://naoharu.github.io/archives/6633" style="height:28px">
+          Read more
+          <span class="icon is-small">
+            <i class="fa fa-angle-double-right"></i>
+          </span>
+        </a>
+        
+      </div>
+    </article>
+    
+    <article>
+      <h2 class="subtitle is-6">December 22, 2008</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/6621">久々の雨（クリスマス・イブ・イブ・イブ）</a></h1>
+      <div class="content">
+        「宇宙から見たオーロラ展2009」
+という、もう俺の趣味ど真ん中ストライクな催しものが、
+新宿のコニカミノルタプラザで来年1月に開催されるのですが。。
+ 「宇宙から見たら、自分の悩みなんて・・・。」
+ みたいな人、いましたら行ってみませんかね。。
+YNOがBOSSにドクター進学を促されてている図。
+講座のドクター所有者たち。というか、博士を持ってる人は頭の構造が人とは違うんじゃないかと。。
+        
+      </div>
+    </article>
+    
+    <article>
+      <h2 class="subtitle is-6">December 19, 2008</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/6604">博士学位授与</a></h1>
+      <div class="content">
+        というわけで、totyさんの博士学位授与式が厳かな空気の中で行われた。
+それに伴って、講座全体の忘年会も行われた。
+（着物が似合うのは何故だろう。）
+ totyさん「私のドクターは皆のおかげ。研究は、辛いけど、とても楽しいです。皆さんも頑張って。」
+ 「皆さんのおかげ」と「皆さんも頑張って」という言葉の両方を残せるってのが、
+totyさんのスゴさだなぁと感じましたねぇ。
+さぁ今年もいよいよ残りわずか。年末年始の予定もボチボチと。。
+とりあえず、今週の土日は休んで、
+ 22日・・・普通に学校
+23日・・・普通に学校（調布飛行場裏、武蔵の森公園で某誌の撮影会・・・？）
+24日・・・ACCESSバイト（クリスマスイブ）
+25日・・・アプリケーション開発ゼミ（クリスマス）
+26日・・・FTバイト（っていうか納期）
+27日・・・普通に学校（忘年会）
+28日・・・普通に学校（忘年会）
+29日・・・朝飛行機で帰省
+30日・・・ボード
+31日～1日・・・特に予定なし
+2日・・・昼予定なし（夜地元飲み）
+3日・・・ボード
+4日・・・予定なし
+5日・・・東京へ。
+ ですかね。今のところ。
+4日予定ありませんので、広島に行こうかな。。
+というか5日が広島空港から始発だから、寝過ごさないように朝まで飲んでたほうがいい気がする。
+あーー早く島根帰りたい。というか忘年会の次の日の飛行機が怖かったり。気をつけよ。
+        
+      </div>
+    </article>
+    
+    <article>
+      <h2 class="subtitle is-6">December 17, 2008</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/6587">ラオウ「ハッピバースデーうーぬー♪」</a></h1>
+      <div class="content">
+        というわけで、無事23歳になることができました。
+22歳は何かと激動の年でした。
+（上京、大学院進学、修士研究生活、NTT docomoインターン、FTやACCESSでのアルバイトなどなど・・・。）
+23歳は前半戦に就職活動があるので、そこを頑張って、後半戦はやはり研究生活でしょうかね。頑張ろう。
+（今年こそ、大人の飲み方を覚えます。。）
+メール、mixiメッセージなどくださった方、ありがとうございます。
+とりいそぎ。
+        
+      </div>
+    </article>
+    
+    <article>
+      <h2 class="subtitle is-6">December 17, 2008</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/6570">ACCESS社のライブラリを使用したNetFront Widget開発</a></h1>
+      <div class="content">
+        NetFront Widgetを開発するときの裏ワザとして、ACCESS社が作成したライブラリを入手・使用するというものがある。βバージョンから開発ツールを使用されていた皆さんはすでにご存知かと思われるが、NetFront Widgetはその特徴から半強制的にオープンソースである。というのも、開発ツールによってパッケージングされた.wgtというファイルは、実はindex.html + config.xml + etcをフォルダにまとめ、zip圧縮しただけのものなので、
+ 公式サイトからダウンロードした.wgtファイルをダウンロード ファイルの拡張子を.wgtから.zipに変更 .zipファイルの解凍  という作業で、ソースコードが入手可能となる。また、ACCESSが開発したWidget（たとえば、公式サイトにある楽天Widgetなど）を上記の方法で調べてみると、ACCESS独自のJavascriptのライブラリ（./ACCESS/nfbwdgt.js）が用いられていることがわかる。このファイルには、
+ 携帯画面がVGA、QVGAかどうかの判別 スクロールバーの作成、制御 ウィジェットの各状態間の遷移ボタンの作成  などの機能を実現するソースコードがまとめられているので、参考にされたし。。このライブラリをソフトバンク用のウィジェットの開発にも用いることができれば便利だと思うけれど、今のところウィルコム用のものとの仕様の違いで、なかなか上手く機能を流用できない。たとえば、ソフトバンク用ウィジェットには、そもそもdock状態などがないため、function nfbw_displayModeButton(arg)などで、
+[javascript]
+eButtons = document.createElement(&#8216;DIV&#8217;);
+if (arg.idName) {
+　eButtons.setAttribute(&#8216;id&#8217;, arg.idName);
+}
+eDock = nfbw_createButtonS({&#8216;onclickfunc&#8217;:&#8217;widget.dock();&#8217;,
+　&#8217;imgName&#8217;:arg.buttons.dockImgName,
+　&#8217;imgWidth&#8217;:width,
+　&#8217;imgHeight&#8217;:height,
+　&#8217;isElement&#8217;:true});
+eDock.style.position = &#8216;absolute&#8217;;
+eDock.style.top = &#8216;0px&#8217;;
+eDock.style.left = &#8216;0px&#8217;;
+eMini = nfbw_createButtonS({&#8216;onclickfunc&#8217;:&#8217;widget.restore();&#8217;,
+　&#8217;imgName&#8217;:arg.buttons.floatImgName,
+　&#8217;imgWidth&#8217;:width,
+　&#8217;imgHeight&#8217;:height,
+　&#8217;isElement&#8217;:true});
+eMini.style.position = &#8216;absolute&#8217;;
+eMini.style.top = &#8216;0px&#8217;;
+eMini.style.left = width/3 + gaplen + &#8216;px&#8217;;
+        
+        ...<a class="button is-link" href="https://naoharu.github.io/archives/6570" style="height:28px">
+          Read more
+          <span class="icon is-small">
+            <i class="fa fa-angle-double-right"></i>
+          </span>
+        </a>
+        
+      </div>
+    </article>
+    
+    <article>
+      <h2 class="subtitle is-6">December 12, 2008</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/6566">FT飲み、講座飲み、カラオケ（熱唱）</a></h1>
+      <div class="content">
+        ・金曜の日記
+FTに出社。
+今日をもって、フランス本社に栄転されるNKNさんとはお別れ。。残念。
+またフランス語教えてください。ということで、EGWさん、NKNさん、Mr.NKL、俺で飲み。
+色々と、もったいないお言葉を頂いた。その言葉に追いつけるように頑張ります。
+21時ごろに調布に帰ってきたらYNOから電話。調布駅北口で飲んでるから来い。と。
+一回家に帰って、カメラもって出動。それにしてもウチの講座はイケメン揃いである。
+IIJM氏
+YNO氏
+UCHR氏
+ひとしきり飲みあげた後、先輩方は帰宅され、俺とYNOで二人でカラオケへ。
+店員に、この時期に男二人でカラオケって。。。って顔された。あからさまに。
+↓何の曲か、わかったらスゴい。
+↓納得のいかないマイクの持ち方
+↓何の曲か、わかったらスゴい。
+ひとしきり歌い上げて、3時AMくらいに帰宅。
+それはそうと、
+金石 da mymenがFlickr始めたようです。Nikonユーザーということで、天敵ですな。
+        
+      </div>
+    </article>
+    
+    <article>
+      <h2 class="subtitle is-6">December 11, 2008</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/6565">港の見える丘公園</a></h1>
+      <div class="content">
+        B&#8217;zの曲名ではない。
+今日は天気が良いので、横浜にある「港の見える丘公園」に行ってきた。あと、その公園の近くで、電子情報通信学会ヒューマンコミュニケーショングループWI2研究会の第13回研究会があったので、ついでにそれにも聴講として参加した。内容としては、XMLなどの半構造増データ処理とかメタ言語やら、Webインタラクションなどなど。ブログ上での風評の広がり方、SNSでの○○、2ちゃんねるでの○○など。楽しかった！
+あとチュートリアルの「ウェブインテリジェンスを支える XML (再) 入門」では、卒論のネタになった某F社のHWの話が登場した。久しぶりに聞いたけど、やっぱり良いネーミングセンスだ。
+背景ボケのテスト
+F値=16
+F値=1.4 （絞り開放）
+        
+      </div>
+    </article>
+    
+    <article>
+      <h2 class="subtitle is-6">December 10, 2008</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/6564">腹が痛すぎる</a></h1>
+      <div class="content">
+        いや、別に テルマのスッピンを見たからではなくて。。。
+ってか、
+ 今日起きてパシャリ(ノ_・。)
+blogでは初すっぴんかな？（笑）
+ って言われても。（笑）って言われても。
+まぁブログ見てるけど。毎日見てるけど。
+しっかし、今年の風邪は腹痛系？？結構ヤバいんすけども・・・。
+しかも、うちの研究室トイレ遠いし！と言っても、トイレに罪は無いが。
+まぁ、今日はガッツリとメシ食ってやったから、明日には治っているはず。
+今日はアプリケーション開発ゼミに向けて色々と。
+そろそろ、忘れそうだから書いておこう。
+ 当初、インストールしたserでmysqlをシバき、ユーザー登録、メッセージのやり取りをpidgin←→ Adium間で行おうとするも、pidgin→ Adium方向しか送れず。原因不明。 しょうがないので、開発が止まったserの後継といわれているopenserをインストール。サーバー側に問題があるのかなぁと。この後の設定はSZK君に割り振らせてもらったので、彼に明文化してもらわねば。 結局、openserでも同様に一方向からしか送れず。もう意味不明。しょうがないのでwiresharkを出動させて、SIP/SIMPLEのパケットモニタリング。リクエスト、200（OK）、・・・とか。そうしてたら、とあるSIP/SIMPLEクライアントに問題があることが判明。 クライアントを変えてやってみたら、双方向のメッセージのやり取りが可能に。 結局、serとかopenserの問題じゃなくて、 Adium固有の問題（問題というか、なんというか。。）だったのか？なんか、LAN内でやってるのに、pidgin側から見てたらsource ipがグローバルになってるし。一回外でてるし！ 自分らとしては、別にメッセンジャーで何かしたいわけではないので、pidgin←→pidginでやり取りできた時点で、OKと。そういう感じで。  というわけで、SIPサーバ＆デーベ班は仕事ひと段落。
+途中、
+ select * from uri;
+ とかやって確認するのがダルくなったので、まさかと思って``いや、別に テルマのスッピンを見たからではなくて。。。
+ってか、
+ 今日起きてパシャリ(ノ_・。)
+blogでは初すっぴんかな？（笑）
+ って言われても。（笑）って言われても。
+まぁブログ見てるけど。毎日見てるけど。
+しっかし、今年の風邪は腹痛系？？結構ヤバいんすけども・・・。
+しかも、うちの研究室トイレ遠いし！と言っても、トイレに罪は無いが。
+まぁ、今日はガッツリとメシ食ってやったから、明日には治っているはず。
+今日はアプリケーション開発ゼミに向けて色々と。
+そろそろ、忘れそうだから書いておこう。
+ 当初、インストールしたserでmysqlをシバき、ユーザー登録、メッセージのやり取りをpidgin←→ Adium間で行おうとするも、pidgin→ Adium方向しか送れず。原因不明。 しょうがないので、開発が止まったserの後継といわれているopenserをインストール。サーバー側に問題があるのかなぁと。この後の設定はSZK君に割り振らせてもらったので、彼に明文化してもらわねば。 結局、openserでも同様に一方向からしか送れず。もう意味不明。しょうがないのでwiresharkを出動させて、SIP/SIMPLEのパケットモニタリング。リクエスト、200（OK）、・・・とか。そうしてたら、とあるSIP/SIMPLEクライアントに問題があることが判明。 クライアントを変えてやってみたら、双方向のメッセージのやり取りが可能に。 結局、serとかopenserの問題じゃなくて、 Adium固有の問題（問題というか、なんというか。。）だったのか？なんか、LAN内でやってるのに、pidgin側から見てたらsource ipがグローバルになってるし。一回外でてるし！ 自分らとしては、別にメッセンジャーで何かしたいわけではないので、pidgin←→pidginでやり取りできた時点で、OKと。そういう感じで。  というわけで、SIPサーバ＆デーベ班は仕事ひと段落。
+途中、
+ select * from uri;
+ とかやって確認するのがダルくなったので、まさかと思って``
+ #yum install -y phpmyadmin
+        
+        ...<a class="button is-link" href="https://naoharu.github.io/archives/6564" style="height:28px">
+          Read more
+          <span class="icon is-small">
+            <i class="fa fa-angle-double-right"></i>
+          </span>
+        </a>
+        
+      </div>
+    </article>
+    
+    <article>
+      <h2 class="subtitle is-6">December 9, 2008</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/6563">双子座流星群memo</a></h1>
+      <div class="content">
+        マイミクさとっ君（つーか、あなた、あの坂本研かよ・・・。）の日記を見て、思い出した。
+ので、メモ。今年ももうそんな時期ですか。寒いわけだ！風邪もひくさ！
+  ２００８年１２月のふたご座流星群
+
+２００１年１１月のしし座流星群のような派手な出現は期待しないでください。
+２００８年に 予想されている極大時刻は、 １２月１４日０８時±２時間頃です。
+理想的な条件のもとに換算した１時間あたり出現数の 予報は１２０個、となっています。
+１２月１３日の夕方から１４日明け方にかけて、多くの流星が見られそうですが､ １３日が満月であるため、１３日の夕方から１４日明け方にかけては満月近い明るい月が 夜の間ずっと、空を照らすことになり、流星を見るには劣悪な条件です！
+（各地の月の出没時刻　／ 月のかたち）
+１９時頃、ふたご座は東のほうからのぼってきており、 真夜中前後は、ふたご座が頭上高くのぼっています。
+月明かりの妨害にもめげずに､なるべく時間限定で見たいかたには、 極大時刻により近い、１２月１４日未明、 天文薄明が 始まる時刻頃まで がおすすめかもしれません。視界に、明るい月や街灯がなるべく入らないよう工夫しましょう。 （木々や建物でまぶしい光を遮断するなど。観察時は寒いですから、くれぐれも防寒に注意！）
+極大が予報どおりになるとは限りません。また、極大の前の日か後の日でもある程度出現があります。最近の極大での出現数は、理想的な条件下で１時間当たり１１０～１３０個現れており、ある程度の出現が１日くらい持続するということです。
+任意の日時の、ふたご座の位置を知りたい人は、こちら
+空のどこを見ていてもかまいませんが、放射状に流星がとぶようすを実感するには、ふたご座の方を見ているのがよいでしょう。 （今年は１２月１３日夜から１４日明け方、ふたご座に月があり、まぶしいです！！） 頭上高くにふたご座がのぼるのは、真夜中頃になります。
+ ふたご座流星群ガイド（http://astro.ysc.go.jp/geminid.html#2008 ）
+2006年、2004年と、なぜか偶数年に日記に書く俺。
+        
+      </div>
+    </article>
+    
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <nav class="level is-mobile">
+      <div class="level-left">
+        <div class="level-item">
+          
+          <a class="button" href="/page/103/">
+            <span class="icon is-small is-marginless">
+              <i class="fa fa-angle-left"></i>
+            </span>
+            Newer
+          </a>
+          
+        </div>
+      </div>
+      <div class="level-right is-marginless">
+        <div class="level-item">
+          
+          <a class="button" href="/page/105/">
+            Older
+            <span class="icon is-small is-marginless">
+              <i class="fa fa-angle-right"></i>
+            </span>
+          </a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+

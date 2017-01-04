@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shell on 順道制勝</title>
+    <link>https://naoharu.github.io/tags/shell/index.xml</link>
+    <description>Recent content in Shell on 順道制勝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://naoharu.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>無類のモンタージュ好き。（またDIY系）</title>
+      <link>https://naoharu.github.io/archives/9346</link>
+      <pubDate>Mon, 13 Dec 2010 17:27:44 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/9346</guid>
+      <description>&lt;p&gt;モンタージュっていうのが正しいのか未だに疑問ですが、よく写真展とかでフィルムの人がやってる、こういうふうに写真を連結して見せる手法ってありますよね。最近、よく真似してやってます。なんか2枚の間に時間の広がりを感じで、グッとくるんですよねえ。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i1.wp.com/farm6.static.flickr.com/5130/5257695367_a408403193_z.jpg?w=700&#34; alt=&#34;&#34; data-recalc-dims=&#34;1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;あと白黒もmyブーム。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i0.wp.com/farm6.static.flickr.com/5164/5257602059_8236eb2ce5_z.jpg?w=700&#34; alt=&#34;&#34; data-recalc-dims=&#34;1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;このモンタージュ化を、毎回Photoshopとかでやるのはバカバカしいので、自作系。&lt;/p&gt;
+
+&lt;p&gt;他にも、縦撮りで横2枚（まぁコレと同じか）とか、横撮りで2×2とか、まぁいろいろ作れますが、そこらへんは皆さんやってみてください！&lt;/p&gt;
+
+&lt;p&gt;あ、ちなみに、これは2枚の画像のサイズが違うと失敗しちゃうので、そこだけご留意ください。&lt;/p&gt;
+
+&lt;p&gt;（自分がいつもRaw現像でサイズ指定しててて問題無いので、このコード内でリサイズ処理はしてないです。。）&lt;/p&gt;
+
+&lt;p&gt;まず、前に&lt;a href=&#34;http://defenceless.org/wordpress/?p=9196&#34;&gt;レターボックス化&lt;/a&gt;の時も紹介しましたが、ImageMagickをインストールします。Macの人は、portが利用可能です。&lt;/p&gt;
+
+&lt;p&gt;[shell]&lt;/p&gt;
+
+&lt;p&gt;$ sudo port install ImageMagick&lt;/p&gt;
+
+&lt;p&gt;[/shell]&lt;/p&gt;
+
+&lt;p&gt;その後、下記を実行します。&lt;/p&gt;
+
+&lt;p&gt;[shell]&lt;/p&gt;
+
+&lt;p&gt;#!/bin/bash&lt;/p&gt;
+
+&lt;p&gt;#&lt;/p&gt;
+
+&lt;p&gt;# 2枚の画像を上下に並べて連結&lt;/p&gt;
+
+&lt;p&gt;#&lt;/p&gt;
+
+&lt;p&gt;# ~$ ./1x2montage.sh 画像1 画像2&lt;/p&gt;
+
+&lt;p&gt;#&lt;/p&gt;
+
+&lt;p&gt;# 出力ファイルの構成（ファイル名：out.jpg）&lt;/p&gt;
+
+&lt;p&gt;#&lt;/p&gt;
+
+&lt;p&gt;# 画像1&lt;/p&gt;
+
+&lt;p&gt;# 画像2&lt;/p&gt;
+
+&lt;p&gt;# 画像1の下辺に白線を付ける&lt;/p&gt;
+
+&lt;p&gt;tmp_height=`identify -format %h $1`&lt;/p&gt;
+
+&lt;p&gt;width=`identify -format %w $1`&lt;/p&gt;
+
+&lt;p&gt;height=`expr ${tmp_height} / 200`&lt;/p&gt;
+
+&lt;p&gt;convert -quality 100 $1 -size ${width}x${height} xc:white -append temp1.jpg&lt;/p&gt;
+
+&lt;p&gt;#画像1と画像2を縦に連結&lt;/p&gt;
+
+&lt;p&gt;convert -append temp1.jpg $2 out.jpg&lt;/p&gt;
+
+&lt;p&gt;[/shell]&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>無類のレターボックス好き（久しぶりにDIY系）</title>
+      <link>https://naoharu.github.io/archives/9196</link>
+      <pubDate>Tue, 14 Sep 2010 20:03:42 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/9196</guid>
+      <description>&lt;p&gt;写真や映画の映像とかで、上下に黒い帯がついているのって見た事ないですか？あれは本来、「レターボックス」っていう名前で、アスペクト比の異なる表示規格の間で互換性を得るためのものでした。なので、いわば「レターボックス」という手法は、一種の妥協案なんですが、あの黒い帯によって、ちょっと背景が明るくても色味が綺麗に見えたり、どことなくノスタルジックな雰囲気になったりして、個人的には好きだったりします。&lt;/p&gt;
+
+&lt;p&gt;ちょっと例を挙げると、&lt;/p&gt;
+
+&lt;p&gt;こちらが普通の縦横比の画像。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i1.wp.com/farm5.static.flickr.com/4106/4991232096_bfc8790ffe.jpg?w=700&#34; alt=&#34;&#34; data-recalc-dims=&#34;1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;そして、こちらがレターボックスによって1:1の縦横比にした画像。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i2.wp.com/farm5.static.flickr.com/4089/4990640515_01d764c7f5.jpg?w=700&#34; alt=&#34;&#34; data-recalc-dims=&#34;1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;こんな感じです。（モデル：アベ君）&lt;/p&gt;
+
+&lt;p&gt;ただ、このようなレターボックスの画像を作る時、いちいちPhotoShopやGIMPなんて起動して手作業でやるのは面倒なので、自作スクリプトからImageMagickというツールを利用して、自動化してみました。&lt;/p&gt;
+
+&lt;p&gt;ターミナルやシェルスクリプトをちょっと知っている、MacもしくはUnixユーザの人向きです。（Windowsでも同様なことは当然出来ると思いますが、やる気がおこらなかったので、誰かWindows向けにまとめてもらえると嬉しいです。）&lt;/p&gt;
+
+&lt;p&gt;まず、画像の編集などが行えるImageMagickをインストールします。Mac を使っている人は portが利用出来ます。&lt;/p&gt;
+
+&lt;p&gt;[shell]&lt;/p&gt;
+
+&lt;p&gt;$ sudo port install ImageMagick&lt;/p&gt;
+
+&lt;p&gt;[/shell]&lt;/p&gt;
+
+&lt;p&gt;その後は、下記のシェルスクリプトを、レターボックス化したい画像ファイルを引数として実行します。しばらくすると、入力ファイル名の先頭に”LB_”が付加された名前で、レターボックス化された画像ファイルが出力されます。&lt;/p&gt;
+
+&lt;p&gt;[shell]&lt;/p&gt;
+
+&lt;p&gt;#!/bin/bash&lt;/p&gt;
+
+&lt;p&gt;#&lt;/p&gt;
+
+&lt;p&gt;# letterbox.sh&lt;/p&gt;
+
+&lt;p&gt;# 一般的なデジタルカメラのアスペクト比（3:2）の画像を、レターボックスで正方形にする。&lt;/p&gt;
+
+&lt;p&gt;#&lt;/p&gt;
+
+&lt;p&gt;# 使い方&lt;/p&gt;
+
+&lt;p&gt;# ~$ ./letterbox.sh 入力画像ファイル&lt;/p&gt;
+
+&lt;p&gt;#&lt;/p&gt;
+
+&lt;p&gt;# 入力画像と同じ横幅、1/4の縦幅の、黒い帯画像の生成&lt;/p&gt;
+
+&lt;p&gt;width=`identify -format %w $1`&lt;/p&gt;
+
+&lt;p&gt;tmp_h=` identify -format %h $1`&lt;/p&gt;
+
+&lt;p&gt;height=`expr ${tmp_h} / 4`&lt;/p&gt;
+
+&lt;p&gt;convert -size ${width}x${height} xc:black black_line.jpg&lt;/p&gt;
+
+&lt;p&gt;# 画像の下辺に黒い帯をつける&lt;/p&gt;
+
+&lt;p&gt;convert -quality 100 $1 black_line.jpg -append temp.jpg&lt;/p&gt;
+
+&lt;p&gt;# 画像の上辺に黒い帯をつけて、入力ファイル名の先頭に&amp;rdquo;LB_&amp;ldquo;をつけて出力する&lt;/p&gt;
+
+&lt;p&gt;convert -quality 100 black_line.jpg temp.jpg -append &amp;ldquo;LB_${1}&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;# 一時ファイルを削除&lt;/p&gt;
+
+&lt;p&gt;rm black_line.jpg&lt;/p&gt;
+
+&lt;p&gt;rm temp.jpg&lt;/p&gt;
+
+&lt;p&gt;[/shell]&lt;/p&gt;
+
+&lt;p&gt;関係無いですが、こういうシェルがサクっと書ける・利用出来るってのも、Macの良いところかもしれないですね。Windowsだとなかなかやる気が、、、（結局やる気の問題）&lt;/p&gt;
+
+&lt;p&gt;P.S.&lt;/p&gt;
+
+&lt;p&gt;今回の作業中に、&lt;a href=&#34;http://www.imagemagick.org/&#34;&gt;ImageMagick&lt;/a&gt;について少し調べましたが、今流行の&lt;a href=&#34;http://www.imagemagick.org/script/high-dynamic-range.php&#34;&gt;ハイダイナミックレンジ&lt;/a&gt;周りもサポートしてるみたいですね！ほんと多機能なツールで、しかもコマンドラインから利用可能なので、ばしばしシェルを書いて効率よく使い倒したいところです。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

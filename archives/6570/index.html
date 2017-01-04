@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ACCESS社のライブラリを使用したNetFront Widget開発 | 順道制勝</title>
+<link rel="stylesheet" href="https://naoharu.github.io//css/style.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://naoharu.github.io/"><h1 class="title is-4">順道制勝</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">December 17, 2008</h2>
+    <h1 class="title">ACCESS社のライブラリを使用したNetFront Widget開発</h1>
+    <div class="content">
+      <p>NetFront Widgetを開発するときの裏ワザとして、ACCESS社が作成したライブラリを入手・使用するというものがある。βバージョンから開発ツールを使用されていた皆さんはすでにご存知かと思われるが、NetFront Widgetはその特徴から<strong>半強制的にオープンソース</strong>である。というのも、開発ツールによってパッケージングされた.wgtというファイルは、実はindex.html + config.xml + etcをフォルダにまとめ、zip圧縮しただけのものなので、</p>
+
+<ol>
+<li><a href="http://widgets.access-company.com/jp/top.php">公式サイト</a>からダウンロードした.wgtファイルをダウンロード</li>
+<li>ファイルの拡張子を.wgtから.zipに変更</li>
+<li>.zipファイルの解凍</li>
+</ol>
+
+<p>という作業で、ソースコードが入手可能となる。また、ACCESSが開発したWidget（たとえば、<a href="http://widgets.access-company.com/jp/top.php">公式サイト</a>にある楽天Widgetなど）を上記の方法で調べてみると、ACCESS独自のJavascriptのライブラリ（./ACCESS/nfbwdgt.js）が用いられていることがわかる。このファイルには、</p>
+
+<ul>
+<li>携帯画面がVGA、QVGAかどうかの判別</li>
+<li>スクロールバーの作成、制御</li>
+<li>ウィジェットの各状態間の遷移ボタンの作成</li>
+</ul>
+
+<p>などの機能を実現するソースコードがまとめられているので、参考にされたし。。このライブラリをソフトバンク用のウィジェットの開発にも用いることができれば便利だと思うけれど、今のところウィルコム用のものとの仕様の違いで、なかなか上手く機能を流用できない。たとえば、ソフトバンク用ウィジェットには、そもそもdock状態などがないため、<code>function nfbw_displayModeButton(arg)</code>などで、</p>
+
+<p>[javascript]</p>
+
+<p>eButtons = document.createElement(&#8216;DIV&#8217;);</p>
+
+<p>if (arg.idName) {</p>
+
+<p>　　　　eButtons.setAttribute(&#8216;id&#8217;, arg.idName);</p>
+
+<p>}</p>
+
+<p>eDock = nfbw_createButtonS({&#8216;onclickfunc&#8217;:&#8217;widget.dock();&#8217;,</p>
+
+<p>　　　　　　　　　　　　　　　　　　　　　　　　&#8217;imgName&#8217;:arg.buttons.dockImgName,</p>
+
+<p>　　　　　　　　　　　　　　　　　　　　　　　　&#8217;imgWidth&#8217;:width,</p>
+
+<p>　　　　　　　　　　　　　　　　　　　　　　　　&#8217;imgHeight&#8217;:height,</p>
+
+<p>　　　　　　　　　　　　　　　　　　　　　　　　&#8217;isElement&#8217;:true});</p>
+
+<p>eDock.style.position = &#8216;absolute&#8217;;</p>
+
+<p>eDock.style.top = &#8216;0px&#8217;;</p>
+
+<p>eDock.style.left = &#8216;0px&#8217;;</p>
+
+<p>eMini = nfbw_createButtonS({&#8216;onclickfunc&#8217;:&#8217;widget.restore();&#8217;,</p>
+
+<p>　　　　　　　　　　　　　　　　　　　　　　　　&#8217;imgName&#8217;:arg.buttons.floatImgName,</p>
+
+<p>　　　　　　　　　　　　　　　　　　　　　　　　&#8217;imgWidth&#8217;:width,</p>
+
+<p>　　　　　　　　　　　　　　　　　　　　　　　　&#8217;imgHeight&#8217;:height,</p>
+
+<p>　　　　　　　　　　　　　　　　　　　　　　　　&#8217;isElement&#8217;:true});</p>
+
+<p>eMini.style.position = &#8216;absolute&#8217;;</p>
+
+<p>eMini.style.top = &#8216;0px&#8217;;</p>
+
+<p>eMini.style.left = width/3 + gaplen + &#8216;px&#8217;;</p>
+
+<p>eMini.style.display = &#8216;none&#8217;;</p>
+
+<p>eMaxi = nfbw_createButtonS({&#8216;onclickfunc&#8217;:&#8217;widget.maximize();&#8217;,</p>
+
+<p>　　　　　　　　　　　　　　　　　　　　　　　　&#8217;imgName&#8217;:arg.buttons.maxImgName,</p>
+
+<p>　　　　　　　　　　　　　　　　　　　　　　　　&#8217;imgWidth&#8217;:width,</p>
+
+<p>　　　　　　　　　　　　　　　　　　　　　　　　&#8217;imgHeight&#8217;:height,</p>
+
+<p>　　　　　　　　　　　　　　　　　　　　　　　　&#8217;isElement&#8217;:true});</p>
+
+<p>eMaxi.style.position = &#8216;absolute&#8217;;</p>
+
+<p>eMaxi.style.top = &#8216;0px&#8217;;</p>
+
+<p>eMaxi.style.left = width/3 + gaplen + &#8216;px&#8217;;</p>
+
+<p>eButtons.style.width = width/3 * 2 + gaplen + &#8216;px&#8217;;</p>
+
+<p>eButtons.appendChild(eDock);</p>
+
+<p>eButtons.appendChild(eMini);</p>
+
+<p>eButtons.appendChild(eMaxi);[/javascript]</p>
+
+<p>と、最小化、最大化、float化させるボタンをひとまとめにDIV要素としているところあたりは若干の修正が必要となる気がする。というか、このライブラリ自体、はなっから絶対にウィルコム端末だけのことを考えて作ってるだろ、と。。（もしくはソフトバンク端末とこんんだけ仕様が違ってくるとは思ってなかったか。）というわけで、ここらへんを修正し、ソフトバンクモバイル用にウィジェット開発用のライブラリを作成できたらなーと思っております。</p>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+

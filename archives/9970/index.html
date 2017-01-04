@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>maven2でJavaEE5のマルチモジュールプロジェクトひな形作成 | 順道制勝</title>
+<link rel="stylesheet" href="https://naoharu.github.io//css/style.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://naoharu.github.io/"><h1 class="title is-4">順道制勝</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">March 27, 2012</h2>
+    <h1 class="title">maven2でJavaEE5のマルチモジュールプロジェクトひな形作成</h1>
+    <div class="content">
+      <p>やっぱmavenすごいってことで、めも。予め下記をダウンロードする。</p>
+
+<ul>
+<li>JSF 1.2/Servlet 2.5対応archetypeモジュール： <a href="https://blogs.oracle.com/nishigaya/resource/ee5-archetype-war-jsf-1.1.jar">ee5-archetype-war-jsf-1.1.jar</a></li>
+<li>EJB 3.0対応archetypeモジュール： <a href="https://blogs.oracle.com/nishigaya/resource/ee5-archetype-ejb-1.1.jar">ee5-archetype-ejb-1.1.jar</a></li>
+<li>Java EE 5対応EAR archetypeモジュール： <a href="https://blogs.oracle.com/nishigaya/resource/ee5-archetype-ear-1.1.jar">ee5-archetype-ear-1.1.jar</a></li>
+</ul>
+
+<p>[shell]</p>
+
+<p># それぞれinstallする</p>
+
+<p>$ mvn install:install-file -Dfile=ee5-archetype-war-jsf-1.1.jar -DgroupId=sample.plugin -DartifactId=ee5-archetype-war-jsf -Dversion=1.1 -Dpackaging=maven-plugin</p>
+
+<p>$ mvn install:install-file -Dfile=ee5-archetype-ejb-1.1.jar -DgroupId=sample.plugin -DartifactId=ee5-archetype-ejb -Dversion=1.1 -Dpackaging=maven-plugin</p>
+
+<p>$ mvn install:install-file -Dfile=ee5-archetype-ear-1.1.jar -DgroupId=sample.plugin -DartifactId=ee5-archetype-ear -Dversion=1.1 -Dpackaging=maven-plugin</p>
+
+<p>#top levelのprojectを作成</p>
+
+<p>$ mvn archetype:create -DarchetypeArtifactId=maven-archetype-site-simple -DartifactId=myapp -DgroupId=com.example</p>
+
+<p>#warとかearとかejbのprojectを作成</p>
+
+<p>$ mvn archetype:create -DarchetypeArtifactId=ee5-archetype-war-jsf -DarchetypeGroupId=sample.plugin -DarchetypeVersion=1.1 -DartifactId=myapp-war -DgroupId=com.example</p>
+
+<p>$ mvn archetype:create -DarchetypeArtifactId=ee5-archetype-ejb -DarchetypeGroupId=sample.plugin -DarchetypeVersion=1.1 -DartifactId=myapp-ejb -DgroupId=com.example</p>
+
+<p>$ mvn archetype:create -DarchetypeArtifactId=ee5-archetype-ear -DarchetypeGroupId=sample.plugin -DarchetypeVersion=1.1 -DartifactId=myapp-ear -DgroupId=com.example</p>
+
+<p>[/shell]</p>
+
+<p>自動的に下記のような構成になっている。</p>
+
+<p>[shell]</p>
+
+<p>myapp</p>
+
+<p>|&#8211; myapp-ear/</p>
+
+<p>| `&#8211; pom.xml</p>
+
+<p>|&#8211; myapp-ejb/</p>
+
+<p>| |&#8211; pom.xml</p>
+
+<p>| `&#8211; src/</p>
+
+<p>| |&#8211; main/</p>
+
+<p>| | |&#8211; java/</p>
+
+<p>| | | `&#8211; com/</p>
+
+<p>| | | `&#8211; example/</p>
+
+<p>| | | |&#8211; Sample.java</p>
+
+<p>| | | `&#8211; SampleImpl.java</p>
+
+<p>| | `&#8211; resources/</p>
+
+<p>| | `&#8211; META-INF/</p>
+
+<p>| | `&#8211; ejb-jar.xml</p>
+
+<p>| `&#8211; test/</p>
+
+<p>| `&#8211; java/</p>
+
+<p>| `&#8211; com/</p>
+
+<p>| `&#8211; example/</p>
+
+<p>| `&#8211; SampleImplTest.java</p>
+
+<p>|&#8211; myapp-war/</p>
+
+<p>| |&#8211; pom.xml</p>
+
+<p>| `&#8211; src/</p>
+
+<p>| `&#8211; main/</p>
+
+<p>| |&#8211; java/</p>
+
+<p>| | `&#8211; com/</p>
+
+<p>| | `&#8211; example/</p>
+
+<p>| | `&#8211; Page.java</p>
+
+<p>| |&#8211; resources/</p>
+
+<p>| `&#8211; webapp/</p>
+
+<p>| |&#8211; META-INF/</p>
+
+<p>| | `&#8211; context.xml</p>
+
+<p>| |&#8211; WEB-INF/</p>
+
+<p>| | |&#8211; faces-config.xml</p>
+
+<p>| | `&#8211; web.xml</p>
+
+<p>| |&#8211; index.html</p>
+
+<p>| `&#8211; page.jsp</p>
+
+<p>|&#8211; pom.xml</p>
+
+<p>`&#8211; src/</p>
+
+<p>`&#8211; site/</p>
+
+<p>|&#8211; apt/</p>
+
+<p>| `&#8211; index.apt</p>
+
+<p>`&#8211; site.xml</p>
+
+<p>[/shell]</p>
+
+<p>top level projectのmyappのpom.xmlにモジュールが追加されている。</p>
+
+<p>[xml]</p>
+
+<p>&lt;project xmlns=&ldquo;<a href="http://maven.apache.org/POM/4.0.0&quot;">http://maven.apache.org/POM/4.0.0&quot;</a></p>
+
+<p>xmlns:xsi=&ldquo;<a href="http://www.w3.org/2001/XMLSchema-instance&quot;">http://www.w3.org/2001/XMLSchema-instance&quot;</a></p>
+
+<p>xsi:schemaLocation=&ldquo;<a href="http://maven.apache.org/POM/4.0.0">http://maven.apache.org/POM/4.0.0</a></p>
+
+<p><a href="http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;">http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;</a></p>
+
+<p><modelVersion>4.0.0</modelVersion></p>
+
+<p><groupId>com.example</groupId></p>
+
+<p><artifactId>myapp</artifactId></p>
+
+<p><version>1.0-SNAPSHOT</version></p>
+
+<p><packaging>pom</packaging></p>
+
+<p><distributionManagement></p>
+
+<p><site></p>
+
+<p><id>website</id></p>
+
+<p><url>scp://webhost.company.com/www/website</url></p>
+
+<p></site></p>
+
+<p></distributionManagement></p>
+
+<p><modules></p>
+
+<p><module>myapp-war</module></p>
+
+<p><module>myapp-ejb</module></p>
+
+<p><module>myapp-ear</module></p>
+
+<p></modules></p>
+
+<p></project></p>
+
+<p>[/xml]</p>
+
+<p>maven packageする。（myapp.earの作成）</p>
+
+<p>[shell]</p>
+
+<p>$ cd ~/src/myapp</p>
+
+<p>$ ls</p>
+
+<p>myapp-ear/ myapp-ejb/ myapp-war/ pom.xml src/</p>
+
+<p>$ mvn package</p>
+
+<p>[INFO] Scanning for projects&#8230;</p>
+
+<p>:</p>
+
+<p>$ ls myapp-ear/target/</p>
+
+<p>application.xml myapp/ myapp.ear</p>
+
+<p>[/shell]</p>
+
+<p>う〜んmavenカッチョよすぎる。。 antの1024倍はカッチョよい。</p>
+
+<p>あとおまけ。GrassFishはこれでear deployらしい。ほんと？（確認してない）</p>
+
+<p>いくらCoCといえども、これはdefaultなさそうなので、さすがに設定必要そうだけど。</p>
+
+<p>[shell]</p>
+
+<p>$$ASROOT/bin/asadmin deploy myapp-ear/target/myapp.ear</p>
+
+<p>[/shell]</p>
+
+<p>JavaEE6とJBoss AS 7とかGrassFish v3.1の組み合わせも相当よさげ〜。</p>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+

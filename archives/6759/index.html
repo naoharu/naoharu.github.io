@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Widgetプラットフォームでのスクロールバー実装 | 順道制勝</title>
+<link rel="stylesheet" href="https://naoharu.github.io//css/style.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://naoharu.github.io/"><h1 class="title is-4">順道制勝</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">January 26, 2009</h2>
+    <h1 class="title">Widgetプラットフォームでのスクロールバー実装</h1>
+    <div class="content">
+      <p>このエントリーでは、Webページのコンテンツ量がブラウザの表示領域の大きさを超えた時に表示されるスクロールバーを、Webページのコンテンツとして生成する方法を、特に一般的なWidgetプラットフォーム上での実装に主眼をおき、簡単なサンプルをまじえながら紹介する。</p>
+
+<p>Widgetというと、HTML+JavaScript+XMLといった、敷居が比較的低いプログラミング言語（？）で実装されており、少しWebページを作成したことのある人ならば簡単に開発可能な、今もっとも手軽に作れるアプリーケーションであると言える。</p>
+
+<p>しかし、いくら「Webページを作るのと同じ感覚」と言っても、実際PC上で動作しているWebブラウザとWidgetのプラットフォームを比較すると、やはりまだ機能的に追いつけていない点や、携帯電話ネイティブがゆえに、「あえて追いかけていない」点がある。</p>
+
+<p>その具体例として、スクロールバーがある。</p>
+
+<p>PC上のブラウザだと、Webページのコンテンツの内容がブラウザの表示領域の縦幅を超えると、自動的にスクロールバーを生成するが、</p>
+
+<p>多くのWidgetプラットフォームが、モバイル端末の多様性（タッチパネル、方向キーの有無など）もよって、スクロールバーを一元的にサポートしていない。</p>
+
+<p>したがって、コンテンツ量が多くなる場合にはWidgetコンテンツ側でスクロールバーを用意する必要があり、実際に多くの既存のWidgetが独自の方法でスクロールバーの実装を行っている。</p>
+
+<p>以下は、<a href="http://widgets.access-company.com/jp/top.php">ACCESSのNetFrontBrouserWidget</a>プラットフォーム上で動作する楽天市場Widgetである。スクロールバーがコンテンツとして実装されている。</p>
+
+<p><img src="https://i0.wp.com/farm4.static.flickr.com/3133/3229154648_c768714a6b.jpg?w=700" alt="null" data-recalc-dims="1" /></p>
+
+<p>これらのWidgetは、スクロールバーが動作する領域と、それによって移動させられるコンテンツを、divタグにonClick属性やonMouse属性を持たせることによって実現している。</p>
+
+<p>以下に、サンプルを示す。</p>
+
+<p><img src="https://i1.wp.com/farm4.static.flickr.com/3351/3228304277_2c87cee981.jpg?w=700" alt="" data-recalc-dims="1" /></p>
+
+<p>上記のように、Widgetの縦幅を超えるコンテンツ量が存在する場合、スクロールバーウを実装しなければならない。</p>
+
+<p>そこで、</p>
+
+<p><img src="https://i1.wp.com/farm4.static.flickr.com/3399/3228352433_ff8a9234a9.jpg?w=700" alt="" data-recalc-dims="1" /></p>
+
+<p>上記のように、Widgetの表示領域を閲覧コンテンツ用スペースと制御用のスペースに分けて、制御用のスペースでは、スクロールバー（scrollbarface）やスクロールバーが稼働する範囲（scrollbarbackground）、スクロールバーを上下させるボタンなどを表示する部分を設ける。</p>
+
+<p>このスクロールバーの画像にonClick属性を仕込み、Clickすることで、</p>
+
+<p>document.body.scrollTopの値を足しこむ、もしくは引き込むことによって、上記の図にて赤い部分である、閲覧するコンテンツ（body部分）のスクロールが可能である。</p>
+
+<p>また、コンテンツ量全体に対するdocument.body.scrollTopの値を調べ、scrollbarfaceの位置に反映させることで、スクロールバーが上下する様子も再現可能である。</p>
+
+<p>以下は、<a href="http://defenceless.org/widgets/scroll.zip">上記のサンプルのNetFrontBrowserWidgetプラットフォーム上で動作するWidgetのソースコード</a>と、それに含まれるJavaScript（scroll.js）の例である。</p>
+
+<pre name="code" class="javascript">function vscrollbar(scrollface, scrollbackground, scrolltop) {
+    var scrollLimit = scrollbackground.offsetHeight - scrollface.offsetHeight;
+    var dragFlag = false;
+    var pointerPos = 0;
+    var scrollFacePos = 0;
+    var delta = 0;
+
+    this.scrollUp = function() {
+        document.body.scrollTop -= 20;
+        scrollFacePos = document.body.scrollTop * scrollLimit / (document.body.scrollHeight - window.innerHeight);
+        scrollface.style.top = scrolltop + scrollFacePos;
+    };
+
+    this.scrollDown = function() {
+        document.body.scrollTop += 20;
+        scrollFacePos = document.body.scrollTop * scrollLimit / (document.body.scrollHeight - window.innerHeight);
+        scrollface.style.top = scrolltop + scrollFacePos;
+    };
+
+    this.mouseDown = function(e) {
+        if (document.body.scrollHeight - window.innerHeight > 0) {
+            dragFlag = true;
+            pointerPos = e.screenY;
+        }
+    };
+
+    this.mouseUp = function(e) {
+        dragFlag = false;
+    };
+
+    this.mouseOut = function(e) {
+        dragFlag = false;
+    };
+
+    this.mouseMove = function(e) {
+        if (dragFlag == true) {
+            delta = e.screenY/*e.pageY*/ - pointerPos;
+            //alert(e.pageY + "," + pointerPos);
+            pointerPos = e.screenY; //pageY;
+
+            scrollFacePos += delta;
+            if (scrollFacePos &lt; 0) {
+                scrollFacePos = 0;
+            } else if (scrollFacePos > scrollLimit) {
+                scrollFacePos = scrollLimit;
+            }
+            scrollface.style.top = scrolltop + scrollFacePos;
+
+            //alert(scrollface.style.top);
+
+            document.body.scrollTop += Math.floor(delta * (document.body.scrollHeight - window.innerHeight) / scrollLimit);
+        }
+    };
+
+    this.setPosition = function() {
+        scrollFacePos = document.body.scrollTop * scrollLimit / (document.body.scrollHeight - window.innerHeight);
+        scrollface.style.top = scrolltop + scrollFacePos;
+    };
+
+    this.alt = function() {
+        alert('--');
+    };
+}
+
+function onMaximize() {
+    var windowWidth = window.innerWidth;
+    var windowHeight = window.innerHeight;
+
+    document.getElementById("scrollbackground").style.height = window.innerHeight - 120;
+
+    if (document.body.scrollHeight - window.innerHeight > 0) {
+        scrollbar = new vscrollbar(document.getElementById("scrollface"), document.getElementById("scrollbackground"), 80);
+        document.getElementById("scrollup").onclick = scrollbar.scrollUp;
+        document.getElementById("scrolldown").onclick = scrollbar.scrollDown;
+        document.getElementById("scrollface").onmousedown = scrollbar.mouseDown;
+        document.getElementById("scrollface").onmouseup = scrollbar.mouseUp;
+        document.getElementById("scrollface").onmouseout = scrollbar.mouseOut;
+        document.getElementById("scrollface").onmousemove = scrollbar.mouseMove;
+    } else {
+        document.getElementById("scrollface").style.display = "none";
+    }
+
+    setPosition();
+}
+</pre>
+
+<p>このようにWidget上でもコンテンツ量にあわせてスクロールバーを実装することによって、プラットフォーム側の実装に依存せずに、コンテンツ量に対してスクロールバーを表示させるWidgetを作成することが可能である。</p>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+

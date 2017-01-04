@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2chのスレで育ってるNTEmacsが良い感じ | 順道制勝</title>
+<link rel="stylesheet" href="https://naoharu.github.io//css/style.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://naoharu.github.io/"><h1 class="title is-4">順道制勝</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">November 16, 2011</h2>
+    <h1 class="title">2chのスレで育ってるNTEmacsが良い感じ</h1>
+    <div class="content">
+      <p>これ。</p>
+
+<p><a href="http://ai11.net/2009/misc/">http://ai11.net/2009/misc/</a></p>
+
+<p>自分用メモ。何かわかる人は使えば良いと思う。</p>
+
+<p>[shell]</p>
+
+<p>;; -*- mode: emacs-lisp -*-</p>
+
+<p>(custom-set-variables</p>
+
+<p>;; custom-set-variables was added by Custom.</p>
+
+<p>;; If you edit it by hand, you could mess it up, so be careful.</p>
+
+<p>;; Your init file should contain only one such instance.</p>
+
+<p>;; If there is more than one, they won&#8217;t work right.</p>
+
+<p>&#8216;(column-number-mode t)</p>
+
+<p>&#8216;(show-paren-mode t))</p>
+
+<p>(custom-set-faces</p>
+
+<p>;; custom-set-faces was added by Custom.</p>
+
+<p>;; If you edit it by hand, you could mess it up, so be careful.</p>
+
+<p>;; Your init file should contain only one such instance.</p>
+
+<p>;; If there is more than one, they won&#8217;t work right.</p>
+
+<p>&#8216;(default ((t (:background &ldquo;gray93&rdquo; :foreground &ldquo;navy&rdquo;))))</p>
+
+<p>&#8216;(cperl-array-face ((t (:foreground &ldquo;darkslateblue&rdquo;))))</p>
+
+<p>&#8216;(cperl-hash-face ((t (:background &ldquo;lightyellow2&rdquo; :foreground &ldquo;firebrick&rdquo; :slant normal :weight bold))))</p>
+
+<p>&#8216;(cperl-nonoverridable-face ((t (:foreground &ldquo;royalblue&rdquo;))))</p>
+
+<p>&#8216;(cursor ((t (:background &ldquo;navy&rdquo;))))</p>
+
+<p>&#8216;(font-lock-builtin-face ((t (:foreground &ldquo;palevioletred&rdquo;))))</p>
+
+<p>&#8216;(font-lock-comment-face ((t (:foreground &ldquo;dimgray&rdquo;))))</p>
+
+<p>&#8216;(font-lock-constant-face ((t (:foreground &ldquo;seagreen&rdquo;))))</p>
+
+<p>&#8216;(font-lock-function-name-face ((t (:foreground &ldquo;mediumblue&rdquo; :weight bold))))</p>
+
+<p>&#8216;(font-lock-keyword-face ((t (:foreground &ldquo;slateblue&rdquo;))))</p>
+
+<p>&#8216;(font-lock-string-face ((t (:foreground &ldquo;mediumvioletred&rdquo;))))</p>
+
+<p>&#8216;(font-lock-type-face ((t (:foreground &ldquo;royalblue&rdquo;))))</p>
+
+<p>&#8216;(font-lock-variable-name-face ((t (:foreground &ldquo;chocolate&rdquo;))))</p>
+
+<p>&#8216;(font-lock-warning-face ((t (:foreground &ldquo;firebrick&rdquo;))))</p>
+
+<p>&#8216;(region ((((class color) (min-colors 88) (background light)) (:background &ldquo;LightSteelBlue1&rdquo;)))))</p>
+
+<p>(set-language-environment &ldquo;Japanese&rdquo;)</p>
+
+<p>(setq make-backup-files nil)</p>
+
+<p>(setq completion-ignore-case t)</p>
+
+<p>(setq default-indicate-empty-lines t)</p>
+
+<p>(setq mode-require-final-newline nil)</p>
+
+<p>(setq sentence-end-double-space nil)</p>
+
+<p>(setq-default indent-tabs-mode nil)</p>
+
+<p>(setenv &ldquo;TZ&rdquo; &ldquo;JST-9&rdquo;)</p>
+
+<p>(global-auto-revert-mode t)</p>
+
+<p>(blink-cursor-mode nil)</p>
+
+<p>(show-paren-mode t)</p>
+
+<p>(tooltip-mode nil)</p>
+
+<p>(setq ring-bell-function &#8216;ignore)</p>
+
+<p>(global-set-key [kanji] &#8216;ignore)</p>
+
+<p>(prefer-coding-system &#8216;utf-8-dos)</p>
+
+<p>(set-charset-priority &#8216;ascii &#8216;japanese-jisx0213.2004-1 &#8216;japanese-jisx0213-2</p>
+
+<p>&#8216;katakana-jisx0201 &#8216;cp932)</p>
+
+<p>(set-coding-system-priority &#8216;utf-8 &#8216;shift_jis-2004 &#8216;iso-2022-jp-2004</p>
+
+<p>&#8216;euc-jis-2004)</p>
+
+<p>(set-file-name-coding-system &#8216;cp932)</p>
+
+<p>(setq quail-keyboard-layout-type &ldquo;jp106&rdquo;)</p>
+
+<p>(dolist (coding-system &#8216;(sjis euc-jp iso-2022-jp iso-2022-7bit shift_jis-2004</p>
+
+<p>euc-jis-2004 iso-2022-jp-2004))</p>
+
+<p>(coding-system-put coding-system :decode-translation-table</p>
+
+<p>(get &#8216;japanese-ucs-jis-to-cp932-map &#8216;translation-table))</p>
+
+<p>(coding-system-put coding-system :encode-translation-table</p>
+
+<p>(get &#8216;japanese-ucs-cp932-to-jis-map &#8216;translation-table)))</p>
+
+<p>(defun jisx0213-post-read-conv (len)</p>
+
+<p>(translate-region (point-min) (point-max)</p>
+
+<p>(get &#8216;jisx0213-to-unicode &#8216;translation-table)))</p>
+
+<p>(defun jisx0213-pre-write-conv (from to)</p>
+
+<p>(translate-region (point-min) (point-max)</p>
+
+<p>(get &#8216;unicode-to-jisx0213 &#8216;translation-table)))</p>
+
+<p>(dolist (coding-system &#8216;(shift_jis-2004 iso-2022-jp-2004 euc-jis-2004))</p>
+
+<p>(coding-system-put coding-system :post-read-conversion</p>
+
+<p>&#8216;jisx0213-post-read-conv)</p>
+
+<p>(coding-system-put coding-system :pre-write-conversion</p>
+
+<p>&#8216;jisx0213-pre-write-conv))</p>
+
+<p>(setq-default w32-ime-mode-line-state-indicator &ldquo;-&rdquo;)</p>
+
+<p>(setq w32-ime-show-mode-line nil)</p>
+
+<p>(w32-ime-initialize)</p>
+
+<p>(setq default-input-method &ldquo;W32-IME&rdquo;)</p>
+
+<p>(setq default-frame-alist</p>
+
+<p>(append &#8216;((top . 20)</p>
+
+<p>(left . 20)</p>
+
+<p>(height . 47))</p>
+
+<p>default-frame-alist))</p>
+
+<p>(setq scalable-fonts-allowed t)</p>
+
+<p>(setq w32-enable-synthesized-fonts t)</p>
+
+<p>(set-face-attribute &#8216;default nil</p>
+
+<p>:family &ldquo;Consolas&rdquo;</p>
+
+<p>:height 100)</p>
+
+<p>(setq ttf-japanese &ldquo;メイリオ&rdquo;)</p>
+
+<p>(set-fontset-font &ldquo;fontset-default&rdquo;</p>
+
+<p>&#8216;japanese-jisx0212</p>
+
+<p>&#8216;(&ldquo;ＭＳ ゴシック&rdquo; . &ldquo;iso10646-1&rdquo;))</p>
+
+<p>(set-fontset-font &ldquo;fontset-default&rdquo;</p>
+
+<p>&#8216;japanese-jisx0213.2004-1</p>
+
+<p>`(,ttf-japanese . &ldquo;iso10646-1&rdquo;))</p>
+
+<p>(set-fontset-font &ldquo;fontset-default&rdquo;</p>
+
+<p>&#8216;japanese-jisx0213-2</p>
+
+<p>`(,ttf-japanese . &ldquo;iso10646-1&rdquo;))</p>
+
+<p>(set-fontset-font &ldquo;fontset-default&rdquo;</p>
+
+<p>&#8216;katakana-jisx0201</p>
+
+<p>`(,ttf-japanese . &ldquo;iso10646-1&rdquo;))</p>
+
+<p>(set-fontset-font &ldquo;fontset-default&rdquo;</p>
+
+<p>&#8216;cp932</p>
+
+<p>`(,ttf-japanese . &ldquo;iso10646-1&rdquo;))</p>
+
+<p>(set-fontset-font &ldquo;fontset-default&rdquo;</p>
+
+<p>&#8216;(#x3099 . #x309A)</p>
+
+<p>`(,ttf-japanese . &ldquo;iso10646-1&rdquo;))</p>
+
+<p>(add-to-list &#8216;face-font-rescale-alist</p>
+
+<p>&#8216;(&ldquo;.*メイリオ.*&rdquo; . 1.1))</p>
+
+<p>(defun char-after-nozero ()</p>
+
+<p>(let ((c (char-after)))</p>
+
+<p>(if (numberp c) c 0)))</p>
+
+<p>(defun ucs-after ()</p>
+
+<p>(let ((c (char-after-nozero)))</p>
+
+<p>(encode-char c &#8216;ucs)))</p>
+
+<p>(defvar utf-sig-nosig-alist</p>
+
+<p>&#8216;((utf-16le-with-signature . utf-16le)</p>
+
+<p>(utf-16be-with-signature . utf-16be)</p>
+
+<p>(utf-8-with-signature . utf-8)</p>
+
+<p>(utf-32-be-unix . utf-32be-unix)</p>
+
+<p>(utf-32-be-dos . utf-32be-dos)</p>
+
+<p>(utf-32-be-mac . utf-32be-mac)</p>
+
+<p>(utf-32-le-unix . utf-32le-unix)</p>
+
+<p>(utf-32-le-dos . utf-32le-dos)</p>
+
+<p>(utf-32-le-mac . utf-32le-mac)))</p>
+
+<p>(defun char-to-hex-coding-patch (coding)</p>
+
+<p>(if (assq (coding-system-base coding) utf-sig-nosig-alist)</p>
+
+<p>(coding-system-change-eol-conversion</p>
+
+<p>(cdr (assq (coding-system-base coding) utf-sig-nosig-alist))</p>
+
+<p>(coding-system-eol-type coding))</p>
+
+<p>coding))</p>
+
+<p>(defun char-to-hex-coding (c coding)</p>
+
+<p>(let ((i 0)</p>
+
+<p>(estr (encode-coding-string</p>
+
+<p>(string c)</p>
+
+<p>(char-to-hex-coding-patch coding)))</p>
+
+<p>(used-c (char-to-hex-coding-patch coding))</p>
+
+<p>(res &ldquo;&rdquo;))</p>
+
+<p>(if (string-match &ldquo;iso-2022&rdquo; (symbol-name coding))</p>
+
+<p>(setq estr (replace-regexp-in-string &ldquo;\x1b\$?(?.&rdquo; &ldquo;&rdquo; estr)))</p>
+
+<p>(while (&lt; i (length estr))</p>
+
+<p>(setq res (concat res (format &ldquo;%02X&rdquo; (elt estr i))))</p>
+
+<p>(setq i (1+ i)))</p>
+
+<p>;; (setq res (concat res &ldquo;-&rdquo; (symbol-name used-c)))</p>
+
+<p>res))</p>
+
+<p>(defvar mode-line-show-buffer-code t</p>
+
+<p>&ldquo;*非nilならUnicodeのほかにバッファコードをモード行に表示する。&rdquo;)</p>
+
+<p>(defvar mode-line-char-code-added nil)</p>
+
+<p>(defun mode-line-show-char-code ()</p>
+
+<p>(let ((c (char-after-nozero)))</p>
+
+<p>(concat</p>
+
+<p>(format &ldquo;&#8211;%04X&rdquo; (ucs-after))</p>
+
+<p>(if mode-line-show-buffer-code</p>
+
+<p>(format &ldquo;&#8211;%c:%s&rdquo;</p>
+
+<p>(coding-system-mnemonic buffer-file-coding-system)</p>
+
+<p>(char-to-hex-coding (char-after-nozero)</p>
+
+<p>buffer-file-coding-system)))</p>
+
+<p>)))</p>
+
+<p>(defun mode-line-add-char-code ()</p>
+
+<p>(let ((len (length default-mode-line-format))</p>
+
+<p>(term (elt default-mode-line-format</p>
+
+<p>(1- (length default-mode-line-format)))))</p>
+
+<p>(delq term default-mode-line-format)</p>
+
+<p>(setq default-mode-line-format</p>
+
+<p>(append default-mode-line-format</p>
+
+<p>`((char-code-mode (:eval (mode-line-show-char-code)))</p>
+
+<p>,term)</p>
+
+<p>))</p>
+
+<p>(setq mode-line-char-code-added t)))</p>
+
+<p>(define-minor-mode char-code-mode</p>
+
+<p>nil</p>
+
+<p>nil nil nil</p>
+
+<p>:global t</p>
+
+<p>(if (and char-code-mode (not column-number-mode))</p>
+
+<p>(column-number-mode t))</p>
+
+<p>(unless mode-line-char-code-added</p>
+
+<p>(mode-line-add-char-code)))</p>
+
+<p>(char-code-mode t)</p>
+
+<p>(defun japan-composition-function (gstring)</p>
+
+<p>(if (= (lgstring-char-len gstring) 1)</p>
+
+<p>(compose-gstring-for-graphic gstring)</p>
+
+<p>(or (font-shape-gstring gstring)</p>
+
+<p>(let ((glyph-len (lgstring-glyph-len gstring))</p>
+
+<p>(last-char (lgstring-char gstring</p>
+
+<p>(1- (lgstring-char-len gstring))))</p>
+
+<p>(i 0)</p>
+
+<p>glyph)</p>
+
+<p>(while (and (&lt; i glyph-len)</p>
+
+<p>(setq glyph (lgstring-glyph gstring i)))</p>
+
+<p>(setq i (1+ i)))</p>
+
+<p>(compose-glyph-string-relative gstring 0 i 0.1)))))</p>
+
+<p>(aset composition-function-table ?゙</p>
+
+<p>&#8216;([&rdquo;[うかきくけこさしすせそたちつてとはひふへほゝウカキクケコサシスセソタチツテトハヒフヘホワヰヱヲヽ].[゙]?&rdquo;</p>
+
+<p>1 japan-composition-function]</p>
+
+<p>[nil 0 japan-composition-function]))</p>
+
+<p>(aset composition-function-table ?゚</p>
+
+<p>&#8216;([&rdquo;[かきくけこはひふへほカキクケコセツトハヒフヘホㇷ].[゚]?&rdquo;</p>
+
+<p>1 japan-composition-function]</p>
+
+<p>[nil 0 japan-composition-function]))</p>
+
+<p>(aset composition-function-table ?˩</p>
+
+<p>&#8216;([&rdquo;[˥].[˩]?&rdquo; 1 japan-composition-function]</p>
+
+<p>[nil 0 japan-composition-function]))</p>
+
+<p>(aset composition-function-table ?˥</p>
+
+<p>&#8216;([&rdquo;[˩].[˥]?&rdquo; 1 japan-composition-function]</p>
+
+<p>[nil 0 japan-composition-function]))</p>
+
+<p>;; 透過</p>
+
+<p>(set-frame-parameter nil &#8216;alpha 90)</p>
+
+<p>(add-to-list &#8216;default-frame-alist &#8216;(alpha . (0.85 0.75)))</p>
+
+<p>;; No toolbar</p>
+
+<p>(tool-bar-mode nil)</p>
+
+<p>;; No splash</p>
+
+<p>(setq inhibit-startup-message t)</p>
+
+<p>[/shell]</p>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+

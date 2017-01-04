@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>httpRequest周りのあれこれ | 順道制勝</title>
+<link rel="stylesheet" href="https://naoharu.github.io//css/style.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://naoharu.github.io/"><h1 class="title is-4">順道制勝</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">May 20, 2009</h2>
+    <h1 class="title">httpRequest周りのあれこれ</h1>
+    <div class="content">
+      <p>いろんなウィジェットで使うし、</p>
+
+<p>毎回同じ処理書いたりするのも無駄なので、</p>
+
+<p>ここらで一旦まとめよーってことで。</p>
+
+<p>あと、<a href="http://wordpress.org/extend/plugins/google-syntax-highlighter/">Google Syntax Highlighter for WordPress</a>のテストも兼ねて。</p>
+
+<pre name="code" class="javaScript">/***************************************
+ * my_httpRequest
+ * Class: object
+ * Description: a kind of wrapper for httpRequest
+ * NOTE:
+ */
+function my_httpRequest(url, timeout_ms, func_success, func_fail)
+{
+    this.requestUrl = url;
+    var request = new XMLHttpRequest();
+    var timer = null;
+
+    this.setRequestUrl = function(url_str) {
+    this.requestUrl = url_str;
+    };
+
+    //  request send
+    this.send = function() {
+    request.onreadystatechange = function() {
+        if (request.readyState == 4) {
+        clearTimeout(timer);
+        timer = null;
+        if (request.status == 200) {
+            if (func_success != null) {
+            func_success(request);
+            }
+        } else {
+            if (func_fail != null) {
+            func_fail(request);
+            }
+        }
+        }
+    };
+    request.open("GET", this.requestUrl, true);
+    request.send();
+    if (timeout_ms > 0) {
+        timer = setTimeout("timeout()", timeout_ms);
+    }
+    };
+
+    //  request abort
+    this.abort = function() {
+    clearTimeout(timer);
+    timer = null;
+    request.abort();
+    };
+
+    //  request timeout
+    timeout = function() {
+    if (timer != null) {
+        clearTimeout(timer);
+        timer = null;
+        request.abort();
+
+        if (func_fail != null) {
+        func_fail(request);
+        }
+    }
+    };
+</pre>
+
+<p>なんかインデントがダメダメだなー。</p>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+

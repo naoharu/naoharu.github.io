@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wordpress on 順道制勝</title>
+    <link>https://naoharu.github.io/tags/wordpress/index.xml</link>
+    <description>Recent content in Wordpress on 順道制勝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://naoharu.github.io/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ピンバック機能を無効化した日</title>
+      <link>https://naoharu.github.io/archives/12324</link>
+      <pubDate>Sat, 09 Apr 2016 02:58:36 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/12324</guid>
+      <description>&lt;p&gt;今朝起きたら携帯に「サイトが落ちてるよ」という自動メールが。&lt;/p&gt;
+
+&lt;p&gt;なんだ〜？と思って色々痕跡を調べてたらダウンした時刻の直前にaccess_logに怪しいアクセスが。&lt;/p&gt;
+
+&lt;p&gt;調べてみると、&lt;/p&gt;
+
+&lt;p&gt;要するにDDoS攻撃に利用されてる（かどうかは不明だけど少なくともトライされた）っぽい。&lt;/p&gt;
+
+&lt;p&gt;けどトライされてる途中でこちらのサーバが応答しなくなったと。&lt;/p&gt;
+
+&lt;p&gt;それはそれでどうなんだっていう議論があるが。。&lt;/p&gt;
+
+&lt;p&gt;詳しい仕組みは&lt;a href=&#34;http://d.hatena.ne.jp/Kango/20140313/1394673178&#34;&gt;こちら&lt;/a&gt;参照。&lt;/p&gt;
+
+&lt;p&gt;嫌だね〜。こういう「知らないうちに自分が加害者」っていうパターン。&lt;/p&gt;
+
+&lt;p&gt;古くは&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;「自宅サーバってグローバルIPさえあれば立てられますか？」&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;って質問するだけでタコ呼ばれて各方面からマサカリが飛んできたものだけど&lt;/p&gt;
+
+&lt;p&gt;今は特にそういう感じじゃないもんね。&lt;/p&gt;
+
+&lt;p&gt;都市化が進んで近所付き合いが無くなったと同時に、&lt;/p&gt;
+
+&lt;p&gt;隣の家の子供を注意しなくなった、って感じか。（たぶん違う。）&lt;/p&gt;
+
+&lt;p&gt;とにかく、勉強不足状態で何かを公開するってことのリスクを思い出した。&lt;/p&gt;
+
+&lt;p&gt;悪意の無い加害者が一番タチが悪いってことも。。&lt;/p&gt;
+
+&lt;p&gt;とりいそぎピンバック機能を無効化するプラグインを入れて様子を見ることに。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>コメントスパムがウザイ・・・。</title>
+      <link>https://naoharu.github.io/archives/12125</link>
+      <pubDate>Tue, 24 Nov 2015 11:26:15 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/12125</guid>
+      <description>&lt;p&gt;なんか最近コメントスパムが増えてきた～。&lt;/p&gt;
+
+&lt;p&gt;怪しいURLを貼ってるスパムは前からAkismetプラグインで弾いているんだけど、&lt;/p&gt;
+
+&lt;p&gt;そうじゃないやつは弾けないっぽい。&lt;/p&gt;
+
+&lt;p&gt;オール半角文字列のコメントは一旦保留状態にするってできないものかしら。&lt;/p&gt;
+
+&lt;p&gt;っていうかURL貼ってないスパムコメント投稿するbotの存在価値がわからん。。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Crayon Syntax Highlighter に脆弱性があった</title>
+      <link>https://naoharu.github.io/archives/11906</link>
+      <pubDate>Mon, 20 Apr 2015 03:31:34 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/11906</guid>
+      <description>&lt;p&gt;3日前くらいから、やけに変なスパムコメントが増えてる（承認してないから表示はされてないけど）と思って、&lt;/p&gt;
+
+&lt;p&gt;実際のコメント本文を見てみたら、下記のような内容。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;pre class=&amp;#8221;lang:php&amp;#8221; data-url=&amp;#8221;/wp-config.php&amp;#8221;&gt;&lt;/pre&gt; 
+&lt;/blockquote&gt;
+
+&lt;p&gt;なんか怪しい～。&lt;/p&gt;
+
+&lt;p&gt;DBへの接続パスワードなど、wordpressの設定情報が書かれたファイルを表示させようとしている感じ。&lt;/p&gt;
+
+&lt;p&gt;もちろんこのファイル/ディレクトリの権限的に表示させないようにしてるんだけども、&lt;/p&gt;
+
+&lt;p&gt;最近やけにこの方法のアタックが多い。変な脆弱性見つかったのかな？&lt;/p&gt;
+
+&lt;p&gt;と思ってググって見ると、これかな？&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.kevinsubileau.fr/informatique/hacking-securite/crayon-syntax-highlighter-local-file-disclosure-vulnerability.html&#34;&gt;Local file disclosure vulnerability in Crayon Syntax Highlighter&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;要するに、ソースコードを見やすく表示するのに便利なCrayon Syntax Highlighterというプラグインに、&lt;/p&gt;
+
+&lt;p&gt;サーバのローカルファイルを暴露されてしまうセキュリティホールが見つかりましたよ。とのこと。あぶね～。&lt;/p&gt;
+
+&lt;p&gt;最新バージョン(&amp;gt;= 2.7.0)にアップデートすれば問題は修正されているということなので、即update!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>WP Super Cache導入</title>
+      <link>https://naoharu.github.io/archives/11872</link>
+      <pubDate>Fri, 10 Apr 2015 04:03:57 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/11872</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;「順道制勝って常に重いよね。」&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;って前から言われていて、特にtwitterにリンクつぶやいた時とか？&lt;/p&gt;
+
+&lt;p&gt;結構描画までに時間がかかってたっぽいので、調べてみた。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;bash-3.2$ ab -n 3 -c 1 &lt;a href=&#34;http://defenceless.org/wordpress/&#34;&gt;http://defenceless.org/wordpress/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This is ApacheBench, Version 2.3 &amp;lt;$Revision: 1554214 $&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;Copyright 1996 Adam Twiss, Zeus Technology Ltd, &lt;a href=&#34;http://www.zeustech.net/&#34;&gt;http://www.zeustech.net/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Licensed to The Apache Software Foundation, &lt;a href=&#34;http://www.apache.org/&#34;&gt;http://www.apache.org/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Benchmarking defenceless.org (be patient)&amp;#8230;..done&lt;/p&gt;
+
+&lt;p&gt;Server Software: Apache&lt;/p&gt;
+
+&lt;p&gt;Server Hostname: defenceless.org&lt;/p&gt;
+
+&lt;p&gt;Server Port: 80&lt;/p&gt;
+
+&lt;p&gt;Document Path: /wordpress/&lt;/p&gt;
+
+&lt;p&gt;Document Length: 39535 bytes&lt;/p&gt;
+
+&lt;p&gt;Concurrency Level: 1&lt;/p&gt;
+
+&lt;p&gt;Time taken for tests: 1.850 seconds&lt;/p&gt;
+
+&lt;p&gt;Complete requests: 3&lt;/p&gt;
+
+&lt;p&gt;Failed requests: 0&lt;/p&gt;
+
+&lt;p&gt;Total transferred: 119244 bytes&lt;/p&gt;
+
+&lt;p&gt;HTML transferred: 118605 bytes&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Requests per second: 1.62 [#/sec] (mean)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Time per request: 616.798 [ms] (mean)&lt;/p&gt;
+
+&lt;p&gt;Time per request: 616.798 [ms] (mean, across all concurrent requests)&lt;/p&gt;
+
+&lt;p&gt;Transfer rate: 62.93 [Kbytes/sec] received&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;秒間1.6リクエストしか捌けてない。こりゃ結構だね。。&lt;/p&gt;
+
+&lt;p&gt;まずはアプリレイヤーの小手先対応ということで、&lt;/p&gt;
+
+&lt;p&gt;キャッシュ系のプラグインでも導入しますかと。&lt;/p&gt;
+
+&lt;p&gt;といってもキャッシュ系って見えちゃいけないページが見えたりして怖いイメージあるけど。&lt;/p&gt;
+
+&lt;p&gt;まぁ順道制勝はどのユーザが見てもURLによって内容は変わらないし、&lt;/p&gt;
+
+&lt;p&gt;むしろキャッシュが効きまくるタイプでしょう、ということで。&lt;/p&gt;
+
+&lt;p&gt;が、導入してみると、これってwordpressデフォルトのpermlinkのURLだと使えないのね。&lt;/p&gt;
+
+&lt;p&gt;つまり、各記事のURLをgetパラメータを含む形（&lt;a href=&#34;http://defenceless.org/wordpress/?p=***）じゃダメで、&#34;&gt;http://defenceless.org/wordpress/?p=***）じゃダメで、&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://defenceless.org/wordpress/archives/***っていうフォーマットにしないといけない。&#34;&gt;http://defenceless.org/wordpress/archives/***っていうフォーマットにしないといけない。&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ふーん、まぁ確かに最近ってみんなそうやってるよね。。SEO的にもいいんだっけか。内容とURLが一致してる感じが。&lt;/p&gt;
+
+&lt;p&gt;別に変えるのはいいんだけど、過去、世界中からリンクされた&lt;a href=&#34;http://defenceless.org/wordpress/?p=***って形式の&#34;&gt;http://defenceless.org/wordpress/?p=***って形式の&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;リンクが不通になるのは嫌だな〜って思ってたら、wordpressがよしなにrewriteしてくれるらしい。ありがとう！&lt;/p&gt;
+
+&lt;pre class=&#34;lang:xhtml decode:true &#34;&gt;&amp;lt;Directory &#34;/var/www/html/wordpress&#34;&amp;gt;
+        Options FollowSymLinks
+        AllowOverride All
+&amp;lt;/Directory&amp;gt;&lt;/pre&gt;
+
+&lt;p&gt;としてhttpdをrestart。permlink設定も変えてWP Super Cacheを有効化。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;bash-3.2$ ab -n 3 -c 1 &lt;a href=&#34;http://defenceless.org/wordpress/&#34;&gt;http://defenceless.org/wordpress/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This is ApacheBench, Version 2.3 &amp;lt;$Revision: 1554214 $&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;Copyright 1996 Adam Twiss, Zeus Technology Ltd, &lt;a href=&#34;http://www.zeustech.net/&#34;&gt;http://www.zeustech.net/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Licensed to The Apache Software Foundation, &lt;a href=&#34;http://www.apache.org/&#34;&gt;http://www.apache.org/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Benchmarking defenceless.org (be patient)&amp;#8230;..done&lt;/p&gt;
+
+&lt;p&gt;Server Software: Apache&lt;/p&gt;
+
+&lt;p&gt;Server Hostname: defenceless.org&lt;/p&gt;
+
+&lt;p&gt;Server Port: 80&lt;/p&gt;
+
+&lt;p&gt;Document Path: /wordpress/&lt;/p&gt;
+
+&lt;p&gt;Document Length: 41111 bytes&lt;/p&gt;
+
+&lt;p&gt;Concurrency Level: 1&lt;/p&gt;
+
+&lt;p&gt;Time taken for tests: 0.116 seconds&lt;/p&gt;
+
+&lt;p&gt;Complete requests: 3&lt;/p&gt;
+
+&lt;p&gt;Failed requests: 0&lt;/p&gt;
+
+&lt;p&gt;Total transferred: 124167 bytes&lt;/p&gt;
+
+&lt;p&gt;HTML transferred: 123333 bytes&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Requests per second: 25.82 [#/sec] (mean)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Time per request: 38.725 [ms] (mean)&lt;/p&gt;
+
+&lt;p&gt;Time per request: 38.725 [ms] (mean, across all concurrent requests)&lt;/p&gt;
+
+&lt;p&gt;Transfer rate: 1043.73 [Kbytes/sec] received&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;一側面に過ぎないけど15倍くらい速くなった。&lt;/p&gt;
+
+&lt;p&gt;しばらくこれで様子を見てみますか。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hemingwayのヘッダ画像編集でプチハマりした日</title>
+      <link>https://naoharu.github.io/archives/11309</link>
+      <pubDate>Thu, 29 May 2014 22:27:11 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/11309</guid>
+      <description>&lt;p&gt;Hemingwayのテーマはご覧のとおりヘッダに画像を設定できるのだけど、&lt;/p&gt;
+
+&lt;p&gt;デフォルトじゃなくて自分の好みの画像に置き換えようとしたら下記のエラーが発生。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;画像を処理できませんでした。もう一度お試しください&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.google.co.jp/search?q=%E7%94%BB%E5%83%8F%E3%82%92%E5%87%A6%E7%90%86%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%9B%E3%82%93%E3%81%A7%E3%81%97%E3%81%9F%E3%80%82%E3%82%82%E3%81%86%E4%B8%80%E5%BA%A6%E3%81%8A%E8%A9%A6%E3%81%97%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84&amp;amp;#038;oq=%E7%94%BB%E5%83%8F%E3%82%92%E5%87%A6%E7%90%86%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%9B%E3%82%93%E3%81%A7%E3%81%97%E3%81%9F%E3%80%82%E3%82%82%E3%81%86%E4%B8%80%E5%BA%A6%E3%81%8A%E8%A9%A6%E3%81%97%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84&amp;amp;#038;aqs=chrome..69i57j69i59j69i61.436j0j7&amp;amp;#038;sourceid=chrome&amp;amp;#038;es_sm=91&amp;amp;#038;ie=UTF-8&#34;&gt;世界に聞いてみると&lt;/a&gt;、サーバにphp-gdがインストールされていないことが原因っぽい。&lt;/p&gt;
+
+&lt;p&gt;自分の場合php5.3なので&lt;/p&gt;
+
+&lt;pre class=&#34;lang:sh decode:true &#34; &gt;# yum install php53-gd 
+# /etc/init.d/httpd restart
+&lt;/pre&gt;
+
+&lt;p&gt;してみると、無事ヘッダ画像が変更できるようになった〜。&lt;/p&gt;
+
+&lt;p&gt;ってことで三宅島行く途中にすれ違った豪華客船の写真にした。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hemingway customize</title>
+      <link>https://naoharu.github.io/archives/11150</link>
+      <pubDate>Tue, 15 Apr 2014 16:21:39 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/11150</guid>
+      <description>&lt;p&gt;メイリオ周りかな。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hemingway WordPress Theme</title>
+      <link>https://naoharu.github.io/archives/11141</link>
+      <pubDate>Mon, 14 Apr 2014 08:11:20 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/11141</guid>
+      <description>&lt;p&gt;春だし、衣替え～！&lt;/p&gt;
+
+&lt;p&gt;ってことでブログのデザイン変えてみた。Hemingwayって名前のテーマなのだけど、Hemingwayって&lt;a href=&#34;http://warpspire.com/hemingway/&#34;&gt;こういう&lt;/a&gt;のじゃなかったけ？違うバージョンなのかな？&lt;a href=&#34;http://www.andersnoren.se/teman/hemingway-wordpress-theme/&#34;&gt;結構良さげなのを発見&lt;/a&gt;したので導入！一部CSSに納得いかない箇所（Linkの文字に下線が引かれない等）があるけど、まぁここら辺は全体の整合性を考えて後で微調整しよう。&lt;/p&gt;
+
+&lt;p&gt;これで順道制勝も&lt;a href=&#34;http://www.coprosystem.co.jp/tipsblog/2013/06/28.html&#34;&gt;レスポンシブウェブデザイン&lt;/a&gt;！スマホでも見やすくなった～。最近のアクセス解析見ると、ボルダリング系の日記は何故か突出してスマホからのアクセスの割合が多いのだよねえ。ボルダラーはモバイラー？&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>GitHub Gistを使ってみるテスト</title>
+      <link>https://naoharu.github.io/archives/11027</link>
+      <pubDate>Thu, 20 Feb 2014 12:30:57 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/11027</guid>
+      <description>&lt;p&gt;今日たまたま発見したんだけど、GitHubが提供する&lt;a href=&#34;https://gist.github.com/&#34;&gt;gist&lt;/a&gt;っていうサービスが良い。&lt;/p&gt;
+
+&lt;p&gt;要するに、ちょっとしたコードスニペットを登録しておけるサービスなのだけど、言ってもGitHubなので、versionも管理できるし、他の人がforkしたりできる。（もちろんオリジナルの人にお知らせが飛ぶ。）あとgitのリモートレポジトリなので、普通にクライアントも使える。&lt;/p&gt;
+
+&lt;p&gt;あと、（個人的には一番これが嬉しいんだけど）ソースコードをブログにembedできる！&lt;/p&gt;
+
+&lt;p&gt;今までwordpressにソースコードを貼ろうとすると、syntax highlighter的なものを使わないといけなかったんだけど、大抵そういうプラグインってメチャ大量にcssとか読みにいくし、そもそもそのプラグイン一回でも使っちゃったらずーっとプラグイン指しっぱなしじゃないと行けないし。。そんな一生を友にするプラグインなんて選べないよ！ってことで、これは良い感じにアウトソースされてて良い。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>DISQUS導入した日</title>
+      <link>https://naoharu.github.io/archives/10342</link>
+      <pubDate>Sat, 27 Apr 2013 03:40:08 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/10342</guid>
+      <description>&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;ja&#34;&gt;
+  &lt;p&gt;
+    ブログをFC2から移します。適当に作ってるんで攻撃しないでください&lt;a href=&#34;http://t.co/s9ueQ4ftG2&#34; title=&#34;http://forestbump.net/wordpress/&#34;&gt;forestbump.net/wordpress/&lt;/a&gt;
+  &lt;/p&gt;
+  
+  &lt;p&gt;
+    &amp;mdash; オフロスキーさん (@ForestBUMP) &lt;a href=&#34;https://twitter.com/ForestBUMP/status/327711683810308097&#34;&gt;2013年4月26日&lt;/a&gt;
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ということだったので早速&lt;a href=&#34;http://forestbump.net/wordpress/archives/45&#34;&gt;forestbump.net&lt;/a&gt;訪れてみると、DISQUS導入してあって今風〜！以前入れようとして放置してたのだけど、思い出させてもらって導入した〜。よそのブログにコメント書いた時って、その後のリプライ通知って普通は受け取れないし、どうしても忘れちゃうんだよねえ。ってことで。これで一元管理するぞお！皆さんもソーシャルアカウントでバシバシログインしてdefenceless.orgにコメントください。&lt;/p&gt;
+
+&lt;p&gt;追記:&lt;/p&gt;
+
+&lt;p&gt;あれ、DISQUS入れると過去のコメント（普通のwordpressへのコメント）って見れなくなっちゃうのかなぁ。そんなバカな。。。&lt;/p&gt;
+
+&lt;p&gt;追記の追記:&lt;/p&gt;
+
+&lt;p&gt;そんな、既存の枠組みの中に参入するプラグインなのに、imp/expする仕組みが提供されてないはずないよね！ってことで、&lt;a href=&#34;http://import.disqus.com/&#34; title=&#34;import.disqus.com&#34;&gt;import.disqus.com&lt;/a&gt;を発見。これで既存のコメントをDISQUSのコメントとして取り込めそう。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ブログ移転しました</title>
+      <link>https://naoharu.github.io/archives/9256</link>
+      <pubDate>Tue, 05 Oct 2010 13:26:54 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/9256</guid>
+      <description>&lt;p&gt;といっても、ほんと内部的な話で、外からは何も変わっていないように見えると思いますが・・・。&lt;/p&gt;
+
+&lt;p&gt;この前、&lt;a href=&#34;http://defenceless.org/wordpress/?p=9247&#34;&gt;さくらVPSはじめました&lt;/a&gt;ってエントリー書きましたが、ひとまずブログを以前使ってた&lt;a href=&#34;http://www.xrea.com&#34;&gt;xrea.com&lt;/a&gt;からこちらへ移転。VPS始めたから移したってだけで、&lt;a href=&#34;http://www.xrea.com&#34;&gt;xrea.com&lt;/a&gt;も非常に満足のいくサービスを提供してくださいました。今までありがとうございました〜。※&lt;del datetime=&#34;2010-10-07T02:16:20+00:00&#34;&gt;でもやっぱsshログインしたいっすわ。&lt;/del&gt;さらなる自由を求めて、ということで。&lt;/p&gt;
+
+&lt;p&gt;※2010/10/07 追記　すんません！&lt;a href=&#34;http://www.xrea.com/&#34;&gt;xrea.comさん、普通にsshできました&lt;/a&gt;！僕が使ってないだけでした！笑&lt;/p&gt;
+
+&lt;p&gt;とりあえず引っ越しでやったことメモ。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;旧サーバからエクスポート
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;　1.1 wordpress 管理画面左部の「ツール」→「エクスポート」&lt;/p&gt;
+
+&lt;p&gt;　1.2 /wordpress/wp-contens/ 配下（plugins, themes など）をダウンロード&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;新サーバへwordpressインストール&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;[shell]&lt;/p&gt;
+
+&lt;p&gt;[root@www6384u ~]# yum install httpd php php-mbstring php-mysql php-gd mysql-server&lt;/p&gt;
+
+&lt;p&gt;[root@www6384u ~]# chkconfig &amp;#8211;level 345 httpd on&lt;/p&gt;
+
+&lt;p&gt;[root@www6384u ~]# chkconfig &amp;#8211;level 345 mysqld on&lt;/p&gt;
+
+&lt;p&gt;[root@www6384u ~]# /etc/init.d/httpd start&lt;/p&gt;
+
+&lt;p&gt;[root@www6384u ~]# /etc/init.d/mysqld start&lt;/p&gt;
+
+&lt;p&gt;[root@www6384u ~]# mysql -u root -p&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;create database &amp;#8216;wordpressdb&amp;#8217; default character set utf8 collate utf8_general_ci;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;[root@www6384u ~]# cd /var/www/html/&lt;/p&gt;
+
+&lt;p&gt;[root@www6384u ~]# wget &lt;a href=&#34;http://ja.wordpress.org/wordpress-3.0.1-ja.tar.gz&#34;&gt;http://ja.wordpress.org/wordpress-3.0.1-ja.tar.gz&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;[root@www6384u ~]# tar zxvf wordpress-3.0.1-ja.tar.gz&lt;/p&gt;
+
+&lt;p&gt;[root@www6384u ~]# chown -R apache:apache wordpress&lt;/p&gt;
+
+&lt;p&gt;[root@www6384u ~]# chmod +w wordpress&lt;/p&gt;
+
+&lt;p&gt;[/shell]&lt;/p&gt;
+
+&lt;p&gt;3.新サーバへのインポート&lt;/p&gt;
+
+&lt;p&gt;　3.1 wordpress 管理画面左部の「ツール」→「インポート」&lt;/p&gt;
+
+&lt;p&gt;　3.2 /wordpress/wp-contens/ 配下（plugins, themes など）へアップロード&lt;/p&gt;
+
+&lt;p&gt;4.wordpressの設定&lt;/p&gt;
+
+&lt;p&gt;　4.1 ブラウザから/wordpress/wp-admin/install.php へアクセスし各種設定入力&lt;/p&gt;
+
+&lt;p&gt;こんな感じでしたかね。&lt;/p&gt;
+
+&lt;p&gt;というか、いっつも思うんですが、プログラムコードをブログに載せるときは&lt;a href=&#34;http://wordpress.org/extend/plugins/syntaxhighlighter/screenshots/&#34;&gt;SyntaxHighlighter Evolved&lt;/a&gt;にお世話になってますが、いわゆる.bash_history的なものとかってどうのせたら良いんですかね・・・。rootのプロンプトでコメントアウトされちゃうし。&lt;/p&gt;
+
+&lt;p&gt;まったく関係無いけど、最近聴いてる。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://bmr.jp/news/detail/0000009443.html&#34;&gt;来年2月に来日&lt;/a&gt;らしいっすよ！&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

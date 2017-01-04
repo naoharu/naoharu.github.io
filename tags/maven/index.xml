@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maven on 順道制勝</title>
+    <link>https://naoharu.github.io/tags/maven/index.xml</link>
+    <description>Recent content in Maven on 順道制勝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://naoharu.github.io/tags/maven/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>maven2でJavaEE5のマルチモジュールプロジェクトひな形作成</title>
+      <link>https://naoharu.github.io/archives/9970</link>
+      <pubDate>Tue, 27 Mar 2012 16:25:34 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/9970</guid>
+      <description>&lt;p&gt;やっぱmavenすごいってことで、めも。予め下記をダウンロードする。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;JSF 1.2/Servlet 2.5対応archetypeモジュール： &lt;a href=&#34;https://blogs.oracle.com/nishigaya/resource/ee5-archetype-war-jsf-1.1.jar&#34;&gt;ee5-archetype-war-jsf-1.1.jar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;EJB 3.0対応archetypeモジュール： &lt;a href=&#34;https://blogs.oracle.com/nishigaya/resource/ee5-archetype-ejb-1.1.jar&#34;&gt;ee5-archetype-ejb-1.1.jar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Java EE 5対応EAR archetypeモジュール： &lt;a href=&#34;https://blogs.oracle.com/nishigaya/resource/ee5-archetype-ear-1.1.jar&#34;&gt;ee5-archetype-ear-1.1.jar&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;[shell]&lt;/p&gt;
+
+&lt;p&gt;# それぞれinstallする&lt;/p&gt;
+
+&lt;p&gt;$ mvn install:install-file -Dfile=ee5-archetype-war-jsf-1.1.jar -DgroupId=sample.plugin -DartifactId=ee5-archetype-war-jsf -Dversion=1.1 -Dpackaging=maven-plugin&lt;/p&gt;
+
+&lt;p&gt;$ mvn install:install-file -Dfile=ee5-archetype-ejb-1.1.jar -DgroupId=sample.plugin -DartifactId=ee5-archetype-ejb -Dversion=1.1 -Dpackaging=maven-plugin&lt;/p&gt;
+
+&lt;p&gt;$ mvn install:install-file -Dfile=ee5-archetype-ear-1.1.jar -DgroupId=sample.plugin -DartifactId=ee5-archetype-ear -Dversion=1.1 -Dpackaging=maven-plugin&lt;/p&gt;
+
+&lt;p&gt;#top levelのprojectを作成&lt;/p&gt;
+
+&lt;p&gt;$ mvn archetype:create -DarchetypeArtifactId=maven-archetype-site-simple -DartifactId=myapp -DgroupId=com.example&lt;/p&gt;
+
+&lt;p&gt;#warとかearとかejbのprojectを作成&lt;/p&gt;
+
+&lt;p&gt;$ mvn archetype:create -DarchetypeArtifactId=ee5-archetype-war-jsf -DarchetypeGroupId=sample.plugin -DarchetypeVersion=1.1 -DartifactId=myapp-war -DgroupId=com.example&lt;/p&gt;
+
+&lt;p&gt;$ mvn archetype:create -DarchetypeArtifactId=ee5-archetype-ejb -DarchetypeGroupId=sample.plugin -DarchetypeVersion=1.1 -DartifactId=myapp-ejb -DgroupId=com.example&lt;/p&gt;
+
+&lt;p&gt;$ mvn archetype:create -DarchetypeArtifactId=ee5-archetype-ear -DarchetypeGroupId=sample.plugin -DarchetypeVersion=1.1 -DartifactId=myapp-ear -DgroupId=com.example&lt;/p&gt;
+
+&lt;p&gt;[/shell]&lt;/p&gt;
+
+&lt;p&gt;自動的に下記のような構成になっている。&lt;/p&gt;
+
+&lt;p&gt;[shell]&lt;/p&gt;
+
+&lt;p&gt;myapp&lt;/p&gt;
+
+&lt;p&gt;|&amp;#8211; myapp-ear/&lt;/p&gt;
+
+&lt;p&gt;| `&amp;#8211; pom.xml&lt;/p&gt;
+
+&lt;p&gt;|&amp;#8211; myapp-ejb/&lt;/p&gt;
+
+&lt;p&gt;| |&amp;#8211; pom.xml&lt;/p&gt;
+
+&lt;p&gt;| `&amp;#8211; src/&lt;/p&gt;
+
+&lt;p&gt;| |&amp;#8211; main/&lt;/p&gt;
+
+&lt;p&gt;| | |&amp;#8211; java/&lt;/p&gt;
+
+&lt;p&gt;| | | `&amp;#8211; com/&lt;/p&gt;
+
+&lt;p&gt;| | | `&amp;#8211; example/&lt;/p&gt;
+
+&lt;p&gt;| | | |&amp;#8211; Sample.java&lt;/p&gt;
+
+&lt;p&gt;| | | `&amp;#8211; SampleImpl.java&lt;/p&gt;
+
+&lt;p&gt;| | `&amp;#8211; resources/&lt;/p&gt;
+
+&lt;p&gt;| | `&amp;#8211; META-INF/&lt;/p&gt;
+
+&lt;p&gt;| | `&amp;#8211; ejb-jar.xml&lt;/p&gt;
+
+&lt;p&gt;| `&amp;#8211; test/&lt;/p&gt;
+
+&lt;p&gt;| `&amp;#8211; java/&lt;/p&gt;
+
+&lt;p&gt;| `&amp;#8211; com/&lt;/p&gt;
+
+&lt;p&gt;| `&amp;#8211; example/&lt;/p&gt;
+
+&lt;p&gt;| `&amp;#8211; SampleImplTest.java&lt;/p&gt;
+
+&lt;p&gt;|&amp;#8211; myapp-war/&lt;/p&gt;
+
+&lt;p&gt;| |&amp;#8211; pom.xml&lt;/p&gt;
+
+&lt;p&gt;| `&amp;#8211; src/&lt;/p&gt;
+
+&lt;p&gt;| `&amp;#8211; main/&lt;/p&gt;
+
+&lt;p&gt;| |&amp;#8211; java/&lt;/p&gt;
+
+&lt;p&gt;| | `&amp;#8211; com/&lt;/p&gt;
+
+&lt;p&gt;| | `&amp;#8211; example/&lt;/p&gt;
+
+&lt;p&gt;| | `&amp;#8211; Page.java&lt;/p&gt;
+
+&lt;p&gt;| |&amp;#8211; resources/&lt;/p&gt;
+
+&lt;p&gt;| `&amp;#8211; webapp/&lt;/p&gt;
+
+&lt;p&gt;| |&amp;#8211; META-INF/&lt;/p&gt;
+
+&lt;p&gt;| | `&amp;#8211; context.xml&lt;/p&gt;
+
+&lt;p&gt;| |&amp;#8211; WEB-INF/&lt;/p&gt;
+
+&lt;p&gt;| | |&amp;#8211; faces-config.xml&lt;/p&gt;
+
+&lt;p&gt;| | `&amp;#8211; web.xml&lt;/p&gt;
+
+&lt;p&gt;| |&amp;#8211; index.html&lt;/p&gt;
+
+&lt;p&gt;| `&amp;#8211; page.jsp&lt;/p&gt;
+
+&lt;p&gt;|&amp;#8211; pom.xml&lt;/p&gt;
+
+&lt;p&gt;`&amp;#8211; src/&lt;/p&gt;
+
+&lt;p&gt;`&amp;#8211; site/&lt;/p&gt;
+
+&lt;p&gt;|&amp;#8211; apt/&lt;/p&gt;
+
+&lt;p&gt;| `&amp;#8211; index.apt&lt;/p&gt;
+
+&lt;p&gt;`&amp;#8211; site.xml&lt;/p&gt;
+
+&lt;p&gt;[/shell]&lt;/p&gt;
+
+&lt;p&gt;top level projectのmyappのpom.xmlにモジュールが追加されている。&lt;/p&gt;
+
+&lt;p&gt;[xml]&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;project xmlns=&amp;ldquo;&lt;a href=&#34;http://maven.apache.org/POM/4.0.0&amp;quot;&#34;&gt;http://maven.apache.org/POM/4.0.0&amp;quot;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;xmlns:xsi=&amp;ldquo;&lt;a href=&#34;http://www.w3.org/2001/XMLSchema-instance&amp;quot;&#34;&gt;http://www.w3.org/2001/XMLSchema-instance&amp;quot;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;xsi:schemaLocation=&amp;ldquo;&lt;a href=&#34;http://maven.apache.org/POM/4.0.0&#34;&gt;http://maven.apache.org/POM/4.0.0&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://maven.apache.org/maven-v4_0_0.xsd&amp;quot;&amp;gt;&#34;&gt;http://maven.apache.org/maven-v4_0_0.xsd&amp;quot;&amp;gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;groupId&gt;com.example&lt;/groupId&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;artifactId&gt;myapp&lt;/artifactId&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;packaging&gt;pom&lt;/packaging&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;distributionManagement&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;site&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;id&gt;website&lt;/id&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;url&gt;scp://webhost.company.com/www/website&lt;/url&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/site&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/distributionManagement&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;modules&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;module&gt;myapp-war&lt;/module&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;module&gt;myapp-ejb&lt;/module&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;module&gt;myapp-ear&lt;/module&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/modules&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/project&gt;&lt;/p&gt;
+
+&lt;p&gt;[/xml]&lt;/p&gt;
+
+&lt;p&gt;maven packageする。（myapp.earの作成）&lt;/p&gt;
+
+&lt;p&gt;[shell]&lt;/p&gt;
+
+&lt;p&gt;$ cd ~/src/myapp&lt;/p&gt;
+
+&lt;p&gt;$ ls&lt;/p&gt;
+
+&lt;p&gt;myapp-ear/ myapp-ejb/ myapp-war/ pom.xml src/&lt;/p&gt;
+
+&lt;p&gt;$ mvn package&lt;/p&gt;
+
+&lt;p&gt;[INFO] Scanning for projects&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;:&lt;/p&gt;
+
+&lt;p&gt;$ ls myapp-ear/target/&lt;/p&gt;
+
+&lt;p&gt;application.xml myapp/ myapp.ear&lt;/p&gt;
+
+&lt;p&gt;[/shell]&lt;/p&gt;
+
+&lt;p&gt;う〜んmavenカッチョよすぎる。。 antの1024倍はカッチョよい。&lt;/p&gt;
+
+&lt;p&gt;あとおまけ。GrassFishはこれでear deployらしい。ほんと？（確認してない）&lt;/p&gt;
+
+&lt;p&gt;いくらCoCといえども、これはdefaultなさそうなので、さすがに設定必要そうだけど。&lt;/p&gt;
+
+&lt;p&gt;[shell]&lt;/p&gt;
+
+&lt;p&gt;$$ASROOT/bin/asadmin deploy myapp-ear/target/myapp.ear&lt;/p&gt;
+
+&lt;p&gt;[/shell]&lt;/p&gt;
+
+&lt;p&gt;JavaEE6とJBoss AS 7とかGrassFish v3.1の組み合わせも相当よさげ〜。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

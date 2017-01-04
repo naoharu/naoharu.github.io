@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crayon Syntax Highlighter に脆弱性があった | 順道制勝</title>
+<link rel="stylesheet" href="https://naoharu.github.io//css/style.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://naoharu.github.io/"><h1 class="title is-4">順道制勝</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">April 20, 2015</h2>
+    <h1 class="title">Crayon Syntax Highlighter に脆弱性があった</h1>
+    <div class="content">
+      <p>3日前くらいから、やけに変なスパムコメントが増えてる（承認してないから表示はされてないけど）と思って、</p>
+
+<p>実際のコメント本文を見てみたら、下記のような内容。</p>
+
+<blockquote>
+<pre class=&#8221;lang:php&#8221; data-url=&#8221;/wp-config.php&#8221;></pre> 
+</blockquote>
+
+<p>なんか怪しい～。</p>
+
+<p>DBへの接続パスワードなど、wordpressの設定情報が書かれたファイルを表示させようとしている感じ。</p>
+
+<p>もちろんこのファイル/ディレクトリの権限的に表示させないようにしてるんだけども、</p>
+
+<p>最近やけにこの方法のアタックが多い。変な脆弱性見つかったのかな？</p>
+
+<p>と思ってググって見ると、これかな？</p>
+
+<p><a href="http://www.kevinsubileau.fr/informatique/hacking-securite/crayon-syntax-highlighter-local-file-disclosure-vulnerability.html">Local file disclosure vulnerability in Crayon Syntax Highlighter</a></p>
+
+<p>要するに、ソースコードを見やすく表示するのに便利なCrayon Syntax Highlighterというプラグインに、</p>
+
+<p>サーバのローカルファイルを暴露されてしまうセキュリティホールが見つかりましたよ。とのこと。あぶね～。</p>
+
+<p>最新バージョン(&gt;= 2.7.0)にアップデートすれば問題は修正されているということなので、即update!</p>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+

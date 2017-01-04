@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>checkboxにチェックしていないことを送信 | 順道制勝</title>
+<link rel="stylesheet" href="https://naoharu.github.io//css/style.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://naoharu.github.io/"><h1 class="title is-4">順道制勝</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">December 17, 2015</h2>
+    <h1 class="title">checkboxにチェックしていないことを送信</h1>
+    <div class="content">
+      <p>久しぶりにクライミング以外の話題。</p>
+
+<p>まぁ当たり前なのだけど、HTMLのcheckboxでformを送信するとき、checkが入っていないとサーバーに値自体送信されない。</p>
+
+<p>このため、例えばサーバー側で情報をセッション領域などに入れて持ちまわす場合、</p>
+
+<p>一旦チェックを入れた状態を保持してしまうと、それを外すことが画面からの操作ではできなくなってしまう。</p>
+
+<p>その問題の解決には、Springではcheckboxと一緒にhidden項目を作って、それを一緒に送信するのがセオリーみたい。</p>
+
+<pre class="lang:xhtml decode:true">&lt;input type="checkbox" value="true" name="springCheckboxTest" id="springCheckboxTest"&gt;
+&lt;input type="hidden" value="on" name="_springCheckboxTest"&gt;
+</pre>
+
+<p>こんな感じでcheckboxのnameの先頭にアンスコつけたnameのhidden項目を送信すると、</p>
+
+<p>勝手にspring側でバインドしてくれるみたい。</p>
+
+<p>そして、上記のようなhtmlはspringのformタグを使えば出力可能とのこと。</p>
+
+<pre class="lang:xhtml decode:true " >&lt;form:checkbox path="springCheckboxTest" /&gt;
+</pre>
+
+<p>参考：<a href="http://docs.spring.io/spring/docs/2.0.x/reference/mvc.html#mvc-formtaglib-checkboxtag">13.9.4. The checkbox tag</a></p>
+
+<p>なるほどね！</p>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+

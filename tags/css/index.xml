@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Css on 順道制勝</title>
+    <link>https://naoharu.github.io/tags/css/index.xml</link>
+    <description>Recent content in Css on 順道制勝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://naoharu.github.io/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hemingway customize</title>
+      <link>https://naoharu.github.io/archives/11150</link>
+      <pubDate>Tue, 15 Apr 2014 16:21:39 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/11150</guid>
+      <description>&lt;p&gt;メイリオ周りかな。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Thematicのthemeを変更した日</title>
+      <link>https://naoharu.github.io/archives/10658</link>
+      <pubDate>Fri, 30 Aug 2013 17:18:44 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/10658</guid>
+      <description>&lt;p&gt;以前からWordPressのthemeとしてThematicを使ってるんだけど、このテーマ、デフォルトだとカラム幅が狭い。今日びそんなのありえないでしょ〜youtubeのembedで超えちゃうよ〜。ってことで、恒例の、themeアップデート後のcss編集。といっても、chromeの要素の検証とかを利用しつつ、適切な幅を調節し、解が見つかれば、それでサーバ上のcssを書き換えるっていう超アナログ運用。&lt;/p&gt;
+
+&lt;p&gt;[css light=&amp;#8221;true&amp;#8221;]&lt;/p&gt;
+
+&lt;p&gt;#main {&lt;/p&gt;
+
+&lt;p&gt;width:1200px;&lt;/p&gt;
+
+&lt;p&gt;margin:auto;&lt;/p&gt;
+
+&lt;p&gt;overflow:hidden;&lt;/p&gt;
+
+&lt;p&gt;position:relative;&lt;/p&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;#container {&lt;/p&gt;
+
+&lt;p&gt;width:620px;&lt;/p&gt;
+
+&lt;p&gt;float:left;&lt;/p&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;#content {&lt;/p&gt;
+
+&lt;p&gt;margin:10px;&lt;/p&gt;
+
+&lt;p&gt;width:840px;&lt;/p&gt;
+
+&lt;p&gt;overflow:hidden;&lt;/p&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;[/css]&lt;/p&gt;
+
+&lt;p&gt;こんなもんなんじゃねーのー。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

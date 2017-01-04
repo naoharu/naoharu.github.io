@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on 順道制勝</title>
+    <link>https://naoharu.github.io/tags/blog/index.xml</link>
+    <description>Recent content in Blog on 順道制勝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://naoharu.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>コメントスパムがウザイ・・・。</title>
+      <link>https://naoharu.github.io/archives/12125</link>
+      <pubDate>Tue, 24 Nov 2015 11:26:15 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/12125</guid>
+      <description>&lt;p&gt;なんか最近コメントスパムが増えてきた～。&lt;/p&gt;
+
+&lt;p&gt;怪しいURLを貼ってるスパムは前からAkismetプラグインで弾いているんだけど、&lt;/p&gt;
+
+&lt;p&gt;そうじゃないやつは弾けないっぽい。&lt;/p&gt;
+
+&lt;p&gt;オール半角文字列のコメントは一旦保留状態にするってできないものかしら。&lt;/p&gt;
+
+&lt;p&gt;っていうかURL貼ってないスパムコメント投稿するbotの存在価値がわからん。。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gimp on 順道制勝</title>
+    <link>https://naoharu.github.io/tags/gimp/index.xml</link>
+    <description>Recent content in Gimp on 順道制勝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://naoharu.github.io/tags/gimp/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>GIMP on OS X</title>
+      <link>https://naoharu.github.io/archives/10118</link>
+      <pubDate>Sat, 20 Oct 2012 02:07:57 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/10118</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.gimp.org/downloads/&#34;&gt;GIMP on OS X&lt;/a&gt;って！&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Since the 2.8.2 version GIMP runs on OSX natively. No X11 environment is required.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;え〜！知らなかった〜！自分のバージョン調べてみると、まさかの2.6！　人としてどうなの。&lt;/p&gt;
+
+&lt;p&gt;というわけで、デジカメで撮った写真を綺麗に調整するフリーのツール「GIMP」がメチャクチャ進化していたのに、気づいていなかったですね、という話。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i0.wp.com/farm9.staticflickr.com/8474/8104190038_b86b1b0c7c_c.jpg?w=700&#34; alt=&#34;&#34; data-recalc-dims=&#34;1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;X11経由しなくなった分なのか、起動が速くなった！あと、パラメータ調整した時のキャンバスの再描画も速くなった！UIのイケてなさは相変わらずだけど、まぁMac版のDPPよりは・・・という感じ。GEGL統合される2.10が楽しみだけど、2.8でもリリースが4ヶ月遅れてる（さらにそれに対して2ヶ月遅れて気づく俺だ）から、使えるのはだいぶ先になりそう。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MacOS X lionでrvmでrubyをインストールしようとしてハマった日 | 順道制勝</title>
+<link rel="stylesheet" href="https://naoharu.github.io//css/style.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://naoharu.github.io/"><h1 class="title is-4">順道制勝</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">May 3, 2012</h2>
+    <h1 class="title">MacOS X lionでrvmでrubyをインストールしようとしてハマった日</h1>
+    <div class="content">
+      <p>ちょっとした野暮用で、Mac OS X(Lion)にRuby on Rails 3.2の開発環境を構築することになったのだけど結構ハマった。のでメモ。</p>
+
+<p>ひとまず、</p>
+
+<p>[c]</p>
+
+<p>sasaki% rvm install 1.9.2-p320</p>
+
+<p>The provided CC(/usr/bin/gcc) is LLVM based, it is not yet fully supported by ruby and gems, please read `rvm requirements`.</p>
+
+<p>[/c]</p>
+
+<p>と怒られる。調べてみると、どうやらlionからデフォのCCが本家GCCではなくLLVM basedなものになっているらしい。<a href="https://github.com/kennethreitz/osx-gcc-installer">本家GCCをダウンロード</a>＆インストールして、CCを書き換え。</p>
+
+<p>[c]</p>
+
+<p>sasaki$ echo &ldquo;export CC=/usr/bin/gcc-4.2&rdquo; &gt;&gt; ~/.bash_profile</p>
+
+<p>[/c]</p>
+
+<p>いったんゴミを消して、改めてrvm install 1.9.2してみる。</p>
+
+<p>[c]</p>
+
+<p>sasaki$ rvm remove 1.9.2-p320</p>
+
+<p>sasaki% rvm install 1.9.2-p320</p>
+
+<p>[/c]</p>
+
+<p>そしたら、readlineのbuildでコケるので、logを見る。</p>
+
+<p>[c]</p>
+
+<p>sasaki$ vi /Users/sasaki/.rvm/log/ruby-1.9.3-p0/make.log</p>
+
+<p>[/c]</p>
+
+<p>該当部分は下記の通り。</p>
+
+<p>[c]</p>
+
+<p>compiling readline.c</p>
+
+<p>readline.c: In function ‘username_completion_proc_call’:</p>
+
+<p>readline.c:1472: error: ‘username_completion_function’ undeclared (first use in this function)</p>
+
+<p>readline.c:1472: error: (Each undeclared identifier is reported only once</p>
+
+<p>readline.c:1472: error: for each function it appears in.)</p>
+
+<p>make[2]: *** [readline.o] Error 1</p>
+
+<p>make<a href="https://github.com/kennethreitz/osx-gcc-installer">1</a>: *** [ext/readline/all] Error 2</p>
+
+<p>make: *** [build-ext] Error 2</p>
+
+<p>[/c]</p>
+
+<p>これも世界に聞いてみると、readlineだけ別buildすれば良いとのことなので、</p>
+
+<p>[c]</p>
+
+<p>sasaki$ rvm pkg install readline</p>
+
+<p>[/c]</p>
+
+<p>で、ビタmakeできた。その後、ようやく</p>
+
+<p>[c]</p>
+
+<p>sasaki$ rvm remove 1.9.2-p320</p>
+
+<p>sasaki% rvm install 1.9.2-p320</p>
+
+<p>（略）</p>
+
+<p>Install of ruby-1.9.2-p320 &#8211; #complete</p>
+
+<p>[/c]</p>
+
+<p>で、完了。</p>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+

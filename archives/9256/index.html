@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ブログ移転しました | 順道制勝</title>
+<link rel="stylesheet" href="https://naoharu.github.io//css/style.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://naoharu.github.io/"><h1 class="title is-4">順道制勝</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">October 5, 2010</h2>
+    <h1 class="title">ブログ移転しました</h1>
+    <div class="content">
+      <p>といっても、ほんと内部的な話で、外からは何も変わっていないように見えると思いますが・・・。</p>
+
+<p>この前、<a href="http://defenceless.org/wordpress/?p=9247">さくらVPSはじめました</a>ってエントリー書きましたが、ひとまずブログを以前使ってた<a href="http://www.xrea.com">xrea.com</a>からこちらへ移転。VPS始めたから移したってだけで、<a href="http://www.xrea.com">xrea.com</a>も非常に満足のいくサービスを提供してくださいました。今までありがとうございました〜。※<del datetime="2010-10-07T02:16:20+00:00">でもやっぱsshログインしたいっすわ。</del>さらなる自由を求めて、ということで。</p>
+
+<p>※2010/10/07 追記　すんません！<a href="http://www.xrea.com/">xrea.comさん、普通にsshできました</a>！僕が使ってないだけでした！笑</p>
+
+<p>とりあえず引っ越しでやったことメモ。</p>
+
+<ol>
+<li>旧サーバからエクスポート
+<br /></li>
+</ol>
+
+<p>　1.1 wordpress 管理画面左部の「ツール」→「エクスポート」</p>
+
+<p>　1.2 /wordpress/wp-contens/ 配下（plugins, themes など）をダウンロード</p>
+
+<ol>
+<li>新サーバへwordpressインストール</li>
+</ol>
+
+<p>[shell]</p>
+
+<p>[root@www6384u ~]# yum install httpd php php-mbstring php-mysql php-gd mysql-server</p>
+
+<p>[root@www6384u ~]# chkconfig &#8211;level 345 httpd on</p>
+
+<p>[root@www6384u ~]# chkconfig &#8211;level 345 mysqld on</p>
+
+<p>[root@www6384u ~]# /etc/init.d/httpd start</p>
+
+<p>[root@www6384u ~]# /etc/init.d/mysqld start</p>
+
+<p>[root@www6384u ~]# mysql -u root -p</p>
+
+<blockquote>
+<p>create database &#8216;wordpressdb&#8217; default character set utf8 collate utf8_general_ci;</p>
+</blockquote>
+
+<p>[root@www6384u ~]# cd /var/www/html/</p>
+
+<p>[root@www6384u ~]# wget <a href="http://ja.wordpress.org/wordpress-3.0.1-ja.tar.gz">http://ja.wordpress.org/wordpress-3.0.1-ja.tar.gz</a></p>
+
+<p>[root@www6384u ~]# tar zxvf wordpress-3.0.1-ja.tar.gz</p>
+
+<p>[root@www6384u ~]# chown -R apache:apache wordpress</p>
+
+<p>[root@www6384u ~]# chmod +w wordpress</p>
+
+<p>[/shell]</p>
+
+<p>3.新サーバへのインポート</p>
+
+<p>　3.1 wordpress 管理画面左部の「ツール」→「インポート」</p>
+
+<p>　3.2 /wordpress/wp-contens/ 配下（plugins, themes など）へアップロード</p>
+
+<p>4.wordpressの設定</p>
+
+<p>　4.1 ブラウザから/wordpress/wp-admin/install.php へアクセスし各種設定入力</p>
+
+<p>こんな感じでしたかね。</p>
+
+<p>というか、いっつも思うんですが、プログラムコードをブログに載せるときは<a href="http://wordpress.org/extend/plugins/syntaxhighlighter/screenshots/">SyntaxHighlighter Evolved</a>にお世話になってますが、いわゆる.bash_history的なものとかってどうのせたら良いんですかね・・・。rootのプロンプトでコメントアウトされちゃうし。</p>
+
+<p>まったく関係無いけど、最近聴いてる。</p>
+
+<p><a href="http://bmr.jp/news/detail/0000009443.html">来年2月に来日</a>らしいっすよ！</p>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JJUG CCC 2013 SpringとBouldering Day 3の日 | 順道制勝</title>
+<link rel="stylesheet" href="https://naoharu.github.io//css/style.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://naoharu.github.io/"><h1 class="title is-4">順道制勝</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">May 12, 2013</h2>
+    <h1 class="title">JJUG CCC 2013 SpringとBouldering Day 3の日</h1>
+    <div class="content">
+      <p>最近土日開催になって、個人的には参加しやすくなった<a href="http://www.java-users.jp/?page_id=330">JJUG（ジェイジャグ）</a>に参加して来た。今回はJava EE 7とか、ScaleなどのJVM言語などのリリース話、まぁ後は<del datetime="2013-05-11T15:05:09+00:00">コズミネクサスがどんだけスゴいかっていう宣伝</del>スポンサー様の講演などなど。相変わらず狭義のJavaにとどまらない多種多様なセッションがあって非常にためになった。</p>
+
+<p>個人的には、直近のプロジェクトでは、開発標準化支援や、もっと低級なところだとAPI設計・ネーミングルール策定とかをワシワシやっているので、<a href="https://twitter.com/yusuke">山本裕介（@yusuke）</a>の下記の発表が本当に勉強になった。Twitter4Jのような広く一般的に拡散していくライブラリのAPI設計方針と、MUT行程でPGが100人を超すくらいの規模のSIでの共通部品設計方針って、結構似たところがあるなあと思った。</p>
+
+<ul>
+<li><span style="line-height: 13px;">性悪説に基づく</span>
+
+<ul>
+<li>そのAPIに基づく全ての開発者が高いレベルを有しているわけではない</li>
+<li>開発者はJavaDocなどを確認せずにメソッド名から機能を推察して利用する</li>
+<li>コピペ開発</li>
+</ul></li>
+<li>拡散したものに手を加えて修正することは大変</li>
+<li>すぐにはupdateしてもらえない</li>
+<li>etc&#8230;</li>
+</ul>
+
+<p>みたいな。そのような時にしっかり回すために大切なのは、わかりやすい（利用しやすい）API設計と、「No GGRKS（ノーググレカス）」ポリシーなのだねえ。非常に勉強になりました。発表資料もアップされていたので、あとでまた見返してみよう。</p>
+
+<div style="margin-bottom: 5px;">
+  <strong> <a title="失敗から学ぶAPI設計 #ccc_h4 #jjug #jjug_ccc JJUG CCC 2013 Spring " href="http://www.slideshare.net/yusukey/api-ccch4-jjug-jjugccc-jjug-ccc-2013-spring" target="_blank">失敗から学ぶAPI設計 #ccc_h4 #jjug #jjug_ccc JJUG CCC 2013 Spring </a> </strong> from <strong><a href="http://www.slideshare.net/yusukey" target="_blank">Yusuke Yamamoto</a></strong>
+</div>
+
+<p>特に印象に残ったのは、下記のくだり。</p>
+
+<p>例えば、Twitter側が「ユーザ情報」と、フォロワー数などの付加的な情報を「ユーザ詳細情報」みたいに分けて提供していたので、JavaのAPIのVersion1.0としても下記のように提供していました、と。</p>
+
+<p>Version1.0</p>
+
+<pre name="code" class="java">Class User{}
+Class UserWithStatus extends User{
+    getFriendsCount();
+    getFollowersCount();
+}
+</pre>
+
+<p>ところがTwitter側が提供するAPI仕様が変って、フォロワー数などの情報も「ユーザ詳細情報」ではなく「ユーザ情報」に含めるようになりました、と。こういうデカい仕様変更を、どうやってライブラリ側で緩衝していくか（利用者側に対して隠すか）というと、いきなり削除するのではなくて、いったんメソッドを非推奨にして、「利用は出来るんだけどもIDE上では警告が出る」ようにしますと。</p>
+
+<p>Version1.04</p>
+
+<pre name="code" class="java">Class User{
+    getFriendsCount();
+    getFollowersCount();
+}
+/** @deprecated */ 
+Class UserWithStatus extends User{
+}
+</pre>
+
+<p>そしてメジャーバージョンが上がるような大きな更新の時にバッサリ削除すると。</p>
+
+<p>Version2.0</p>
+
+<pre name="code" class="java">Class User{
+    getFriendsCount();
+    getFollowersCount();
+}
+</pre>
+
+<p>こうすると利用者側からも比較的変更が緩やかになるね、と。確かに。部品側のAPIを変えるのは利用者（SIだとアプリチームとか）からも苦情がくるし、億劫になりがちなんだけども、だからと言ってイビツな設計のまま時が経ってアプリが育っても、傷口が広がるだけだもんねぇ。こういうところはライブラリ管理方針とかリリース方針（○○な変更はメジャーバージョンアップあげますよ、とかの決めごと）などと合わせてプロジェクト内で整備していくと、利用者（アプリ）側も準備ができるし、事故が防げそうなので、実践していこう！勉強になりました！</p>
+
+<p>JJUGを見終わったら、アベ君から電話で</p>
+
+<blockquote>
+<p>「今日どっかで壁登りましょうよ〜〜。」</p>
+</blockquote>
+
+<p>と電話があったので、2日連続になっちゃうけど、二つ返事でOKして、恵比寿J&#038;Sへ。今日は先日残してた7級を平らげて終了！</p>
+
+<p><img src="https://i1.wp.com/sphotos-d.ak.fbcdn.net/hphotos-ak-ash4/308686_10201074068875127_1403491848_n.jpg?w=700" alt="" data-recalc-dims="1" /></p>
+
+<p>あべ君は6級を倒して、5級は苦戦してて宿題になってた。こちらも勉強になりました！</p>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+

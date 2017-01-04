@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on 順道制勝</title>
+    <link>https://naoharu.github.io/tags/java/index.xml</link>
+    <description>Recent content in Java on 順道制勝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://naoharu.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>DBUnit@Oracle DB時のAmbiguousTableNameException</title>
+      <link>https://naoharu.github.io/archives/12239</link>
+      <pubDate>Sat, 13 Feb 2016 04:15:16 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/12239</guid>
+      <description>&lt;p&gt;これまたオールドスクールなツールを使っていて問題発生。&lt;/p&gt;
+
+&lt;p&gt;DBUnitを使って単体テストを実施していた時なのだけど、下記の例外に遭遇。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;org.dbunit.database.AmbiguousTableNameException: AQ$_SCHEDULES&lt;/p&gt;
+
+&lt;p&gt;　at org.dbunit.database.DatabaseDataSet.initialize(DatabaseDataSet.java:140)&lt;/p&gt;
+
+&lt;p&gt;　at org.dbunit.database.DatabaseDataSet.getTableMetaData(DatabaseDataSet.java:186)&lt;/p&gt;
+
+&lt;p&gt;　at org.dbunit.operation.DeleteAllOperation.execute(DeleteAllOperation.java:98)&lt;/p&gt;
+
+&lt;p&gt;　at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:67)&lt;/p&gt;
+
+&lt;p&gt;&amp;#8230;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;どうやらOracleを使っていて違うschemaに同じtable名が存在するとこうなっていて、&lt;/p&gt;
+
+&lt;p&gt;この時は&lt;a href=&#34;http://dbunit.sourceforge.net/apidocs/org/dbunit/database/AmbiguousTableNameException.html&#34;&gt;コネクション生成するときにschemaを指定すべし&lt;/a&gt;とのこと。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;This exception is thrown by IDataSet when multiple tables having the same name are accessible. This usually occurs when the database connection have access to multiple schemas containing identical table names.&lt;/p&gt;
+
+&lt;p&gt;Possible solutions:&lt;/p&gt;
+
+&lt;p&gt;1) Use a database connection credential that has access to only one database schema.&lt;/p&gt;
+
+&lt;p&gt;2) Specify a schema name to the DatabaseConnection or DatabaseDataSourceConnection constructor.&lt;/p&gt;
+
+&lt;p&gt;3) Enable the qualified table name support (see How-to documentation).&lt;/p&gt;
+
+&lt;p&gt;Another common reason for this exception to be thrown is when an XML file contains the same table multiple times whereas a different table is between the definition of the duplicate table.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;2の案ね。&lt;/p&gt;
+
+&lt;p&gt;どうでも良いけど&lt;a href=&#34;http://www.dbunit.org/&#34;&gt;DBUnit.orgの本家サイトがドメイン切れて税理士紹介サイトに取られてる&lt;/a&gt;。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>checkboxにチェックしていないことを送信</title>
+      <link>https://naoharu.github.io/archives/12144</link>
+      <pubDate>Thu, 17 Dec 2015 09:51:30 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/12144</guid>
+      <description>&lt;p&gt;久しぶりにクライミング以外の話題。&lt;/p&gt;
+
+&lt;p&gt;まぁ当たり前なのだけど、HTMLのcheckboxでformを送信するとき、checkが入っていないとサーバーに値自体送信されない。&lt;/p&gt;
+
+&lt;p&gt;このため、例えばサーバー側で情報をセッション領域などに入れて持ちまわす場合、&lt;/p&gt;
+
+&lt;p&gt;一旦チェックを入れた状態を保持してしまうと、それを外すことが画面からの操作ではできなくなってしまう。&lt;/p&gt;
+
+&lt;p&gt;その問題の解決には、Springではcheckboxと一緒にhidden項目を作って、それを一緒に送信するのがセオリーみたい。&lt;/p&gt;
+
+&lt;pre class=&#34;lang:xhtml decode:true&#34;&gt;&amp;lt;input type=&#34;checkbox&#34; value=&#34;true&#34; name=&#34;springCheckboxTest&#34; id=&#34;springCheckboxTest&#34;&amp;gt;
+&amp;lt;input type=&#34;hidden&#34; value=&#34;on&#34; name=&#34;_springCheckboxTest&#34;&amp;gt;
+&lt;/pre&gt;
+
+&lt;p&gt;こんな感じでcheckboxのnameの先頭にアンスコつけたnameのhidden項目を送信すると、&lt;/p&gt;
+
+&lt;p&gt;勝手にspring側でバインドしてくれるみたい。&lt;/p&gt;
+
+&lt;p&gt;そして、上記のようなhtmlはspringのformタグを使えば出力可能とのこと。&lt;/p&gt;
+
+&lt;pre class=&#34;lang:xhtml decode:true &#34; &gt;&amp;lt;form:checkbox path=&#34;springCheckboxTest&#34; /&amp;gt;
+&lt;/pre&gt;
+
+&lt;p&gt;参考：&lt;a href=&#34;http://docs.spring.io/spring/docs/2.0.x/reference/mvc.html#mvc-formtaglib-checkboxtag&#34;&gt;13.9.4. The checkbox tag&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;なるほどね！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Servlet3.0の@WebFilterの微妙な点</title>
+      <link>https://naoharu.github.io/archives/11474</link>
+      <pubDate>Mon, 04 Aug 2014 10:58:01 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/11474</guid>
+      <description>&lt;p&gt;ボルダリングじゃなくて久々に本業系のエントリ！でもボルダラーって結構IT系の人が多いので意外と通じる？&lt;/p&gt;
+
+&lt;p&gt;#関係ないけどセッションってIT界隈でもボルダリング界隈でもある単語ですよね！&lt;/p&gt;
+
+&lt;p&gt;今年は新入社員のインストラクターになったので、色々とエンプラ系Javaのイロハを教育中なのだけども。その中でServletでいろいろ作って勉強しましょうということで。。久々に演習問題を作っていると、Tomcatは最新ではバージョンは7になっていて、Servlet3.0に追いついて、その目玉機能として、EoDとして「Annotation based configuration」が新しく定義されている。アノテーションを利用することでServletの開発が簡単になるという。いいね！自分が大分世の中から周回遅れにされていることがわかってショックだったけど、さっそく使ってみよう！&lt;/p&gt;
+
+&lt;p&gt;例えば、Servletの実行時間を測定するFilterで下記のようなものを作ってみるとか。&lt;/p&gt;
+
+&lt;p&gt;その後、FilterをChainさせて奥のほう（Servlet側）で例外をスローさせて下記のようなスタックトレースを眺めさせてChainの構造を考察＆理解させようと思っていたのだけど、、、。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;8 04, 2014 7:26:52 午後 org.apache.catalina.core.StandardWrapperValve invoke&lt;/p&gt;
+
+&lt;p&gt;SEVERE: サーブレット org.sasaki.Problem2 のServlet.service()が例外を投げました&lt;/p&gt;
+
+&lt;p&gt;java.lang.RuntimeException&lt;/p&gt;
+
+&lt;p&gt;at org.defenceless.filter.MeasuringTimeFilter.doFilter(MeasuringTimeFilter.java:47)&lt;/p&gt;
+
+&lt;p&gt;at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)&lt;/p&gt;
+
+&lt;p&gt;at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)&lt;/p&gt;
+
+&lt;p&gt;at org.defenceless.filter.ExceptionFilter.doFilter(ExceptionFilter.java:40)&lt;/p&gt;
+
+&lt;p&gt;at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)&lt;/p&gt;
+
+&lt;p&gt;at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)&lt;/p&gt;
+
+&lt;p&gt;at org.defenceless.filter.AnotherFilter.doFilter(AnotherFilter.java:40)&lt;/p&gt;
+
+&lt;p&gt;at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)&lt;/p&gt;
+
+&lt;p&gt;at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)&lt;/p&gt;
+
+&lt;p&gt;（略）&lt;/p&gt;
+
+&lt;p&gt;at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:314)&lt;/p&gt;
+
+&lt;p&gt;at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)&lt;/p&gt;
+
+&lt;p&gt;at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)&lt;/p&gt;
+
+&lt;p&gt;at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)&lt;/p&gt;
+
+&lt;p&gt;at java.lang.Thread.run(Thread.java:724)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ん、、&lt;a href=&#34;http://docs.oracle.com/javaee/6/api/javax/servlet/annotation/WebFilter.html&#34;&gt;アノテーションのAPIとして順番を指定するような仕様がない&lt;/a&gt;。。色々と調べてみると、下記の記事発見。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/6560969/how-to-define-servlet-filter-order-of-execution-using-annotations&#34;&gt;How to define Servlet filter order of execution using annotations&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;う～む。。。結局、Filterの刺さる順序をアノテーションでは指定できない。結局Web.xmlに書くしかない。。順番指摘できないFilter誰が使うのだろうか！？&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>JJUG CCC 2013 SpringとBouldering Day 3の日</title>
+      <link>https://naoharu.github.io/archives/10371</link>
+      <pubDate>Sun, 12 May 2013 01:31:03 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/10371</guid>
+      <description>&lt;p&gt;最近土日開催になって、個人的には参加しやすくなった&lt;a href=&#34;http://www.java-users.jp/?page_id=330&#34;&gt;JJUG（ジェイジャグ）&lt;/a&gt;に参加して来た。今回はJava EE 7とか、ScaleなどのJVM言語などのリリース話、まぁ後は&lt;del datetime=&#34;2013-05-11T15:05:09+00:00&#34;&gt;コズミネクサスがどんだけスゴいかっていう宣伝&lt;/del&gt;スポンサー様の講演などなど。相変わらず狭義のJavaにとどまらない多種多様なセッションがあって非常にためになった。&lt;/p&gt;
+
+&lt;p&gt;個人的には、直近のプロジェクトでは、開発標準化支援や、もっと低級なところだとAPI設計・ネーミングルール策定とかをワシワシやっているので、&lt;a href=&#34;https://twitter.com/yusuke&#34;&gt;山本裕介（@yusuke）&lt;/a&gt;の下記の発表が本当に勉強になった。Twitter4Jのような広く一般的に拡散していくライブラリのAPI設計方針と、MUT行程でPGが100人を超すくらいの規模のSIでの共通部品設計方針って、結構似たところがあるなあと思った。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&#34;line-height: 13px;&#34;&gt;性悪説に基づく&lt;/span&gt;
+
+&lt;ul&gt;
+&lt;li&gt;そのAPIに基づく全ての開発者が高いレベルを有しているわけではない&lt;/li&gt;
+&lt;li&gt;開発者はJavaDocなどを確認せずにメソッド名から機能を推察して利用する&lt;/li&gt;
+&lt;li&gt;コピペ開発&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;拡散したものに手を加えて修正することは大変&lt;/li&gt;
+&lt;li&gt;すぐにはupdateしてもらえない&lt;/li&gt;
+&lt;li&gt;etc&amp;#8230;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;みたいな。そのような時にしっかり回すために大切なのは、わかりやすい（利用しやすい）API設計と、「No GGRKS（ノーググレカス）」ポリシーなのだねえ。非常に勉強になりました。発表資料もアップされていたので、あとでまた見返してみよう。&lt;/p&gt;
+
+&lt;div style=&#34;margin-bottom: 5px;&#34;&gt;
+  &lt;strong&gt; &lt;a title=&#34;失敗から学ぶAPI設計 #ccc_h4 #jjug #jjug_ccc JJUG CCC 2013 Spring &#34; href=&#34;http://www.slideshare.net/yusukey/api-ccch4-jjug-jjugccc-jjug-ccc-2013-spring&#34; target=&#34;_blank&#34;&gt;失敗から学ぶAPI設計 #ccc_h4 #jjug #jjug_ccc JJUG CCC 2013 Spring &lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;http://www.slideshare.net/yusukey&#34; target=&#34;_blank&#34;&gt;Yusuke Yamamoto&lt;/a&gt;&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;p&gt;特に印象に残ったのは、下記のくだり。&lt;/p&gt;
+
+&lt;p&gt;例えば、Twitter側が「ユーザ情報」と、フォロワー数などの付加的な情報を「ユーザ詳細情報」みたいに分けて提供していたので、JavaのAPIのVersion1.0としても下記のように提供していました、と。&lt;/p&gt;
+
+&lt;p&gt;Version1.0&lt;/p&gt;
+
+&lt;pre name=&#34;code&#34; class=&#34;java&#34;&gt;Class User{}
+Class UserWithStatus extends User{
+    getFriendsCount();
+    getFollowersCount();
+}
+&lt;/pre&gt;
+
+&lt;p&gt;ところがTwitter側が提供するAPI仕様が変って、フォロワー数などの情報も「ユーザ詳細情報」ではなく「ユーザ情報」に含めるようになりました、と。こういうデカい仕様変更を、どうやってライブラリ側で緩衝していくか（利用者側に対して隠すか）というと、いきなり削除するのではなくて、いったんメソッドを非推奨にして、「利用は出来るんだけどもIDE上では警告が出る」ようにしますと。&lt;/p&gt;
+
+&lt;p&gt;Version1.04&lt;/p&gt;
+
+&lt;pre name=&#34;code&#34; class=&#34;java&#34;&gt;Class User{
+    getFriendsCount();
+    getFollowersCount();
+}
+/** @deprecated */ 
+Class UserWithStatus extends User{
+}
+&lt;/pre&gt;
+
+&lt;p&gt;そしてメジャーバージョンが上がるような大きな更新の時にバッサリ削除すると。&lt;/p&gt;
+
+&lt;p&gt;Version2.0&lt;/p&gt;
+
+&lt;pre name=&#34;code&#34; class=&#34;java&#34;&gt;Class User{
+    getFriendsCount();
+    getFollowersCount();
+}
+&lt;/pre&gt;
+
+&lt;p&gt;こうすると利用者側からも比較的変更が緩やかになるね、と。確かに。部品側のAPIを変えるのは利用者（SIだとアプリチームとか）からも苦情がくるし、億劫になりがちなんだけども、だからと言ってイビツな設計のまま時が経ってアプリが育っても、傷口が広がるだけだもんねぇ。こういうところはライブラリ管理方針とかリリース方針（○○な変更はメジャーバージョンアップあげますよ、とかの決めごと）などと合わせてプロジェクト内で整備していくと、利用者（アプリ）側も準備ができるし、事故が防げそうなので、実践していこう！勉強になりました！&lt;/p&gt;
+
+&lt;p&gt;JJUGを見終わったら、アベ君から電話で&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;「今日どっかで壁登りましょうよ〜〜。」&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;と電話があったので、2日連続になっちゃうけど、二つ返事でOKして、恵比寿J&amp;#038;Sへ。今日は先日残してた7級を平らげて終了！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i1.wp.com/sphotos-d.ak.fbcdn.net/hphotos-ak-ash4/308686_10201074068875127_1403491848_n.jpg?w=700&#34; alt=&#34;&#34; data-recalc-dims=&#34;1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;あべ君は6級を倒して、5級は苦戦してて宿題になってた。こちらも勉強になりました！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>maven2でJavaEE5のマルチモジュールプロジェクトひな形作成</title>
+      <link>https://naoharu.github.io/archives/9970</link>
+      <pubDate>Tue, 27 Mar 2012 16:25:34 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/9970</guid>
+      <description>&lt;p&gt;やっぱmavenすごいってことで、めも。予め下記をダウンロードする。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;JSF 1.2/Servlet 2.5対応archetypeモジュール： &lt;a href=&#34;https://blogs.oracle.com/nishigaya/resource/ee5-archetype-war-jsf-1.1.jar&#34;&gt;ee5-archetype-war-jsf-1.1.jar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;EJB 3.0対応archetypeモジュール： &lt;a href=&#34;https://blogs.oracle.com/nishigaya/resource/ee5-archetype-ejb-1.1.jar&#34;&gt;ee5-archetype-ejb-1.1.jar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Java EE 5対応EAR archetypeモジュール： &lt;a href=&#34;https://blogs.oracle.com/nishigaya/resource/ee5-archetype-ear-1.1.jar&#34;&gt;ee5-archetype-ear-1.1.jar&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;[shell]&lt;/p&gt;
+
+&lt;p&gt;# それぞれinstallする&lt;/p&gt;
+
+&lt;p&gt;$ mvn install:install-file -Dfile=ee5-archetype-war-jsf-1.1.jar -DgroupId=sample.plugin -DartifactId=ee5-archetype-war-jsf -Dversion=1.1 -Dpackaging=maven-plugin&lt;/p&gt;
+
+&lt;p&gt;$ mvn install:install-file -Dfile=ee5-archetype-ejb-1.1.jar -DgroupId=sample.plugin -DartifactId=ee5-archetype-ejb -Dversion=1.1 -Dpackaging=maven-plugin&lt;/p&gt;
+
+&lt;p&gt;$ mvn install:install-file -Dfile=ee5-archetype-ear-1.1.jar -DgroupId=sample.plugin -DartifactId=ee5-archetype-ear -Dversion=1.1 -Dpackaging=maven-plugin&lt;/p&gt;
+
+&lt;p&gt;#top levelのprojectを作成&lt;/p&gt;
+
+&lt;p&gt;$ mvn archetype:create -DarchetypeArtifactId=maven-archetype-site-simple -DartifactId=myapp -DgroupId=com.example&lt;/p&gt;
+
+&lt;p&gt;#warとかearとかejbのprojectを作成&lt;/p&gt;
+
+&lt;p&gt;$ mvn archetype:create -DarchetypeArtifactId=ee5-archetype-war-jsf -DarchetypeGroupId=sample.plugin -DarchetypeVersion=1.1 -DartifactId=myapp-war -DgroupId=com.example&lt;/p&gt;
+
+&lt;p&gt;$ mvn archetype:create -DarchetypeArtifactId=ee5-archetype-ejb -DarchetypeGroupId=sample.plugin -DarchetypeVersion=1.1 -DartifactId=myapp-ejb -DgroupId=com.example&lt;/p&gt;
+
+&lt;p&gt;$ mvn archetype:create -DarchetypeArtifactId=ee5-archetype-ear -DarchetypeGroupId=sample.plugin -DarchetypeVersion=1.1 -DartifactId=myapp-ear -DgroupId=com.example&lt;/p&gt;
+
+&lt;p&gt;[/shell]&lt;/p&gt;
+
+&lt;p&gt;自動的に下記のような構成になっている。&lt;/p&gt;
+
+&lt;p&gt;[shell]&lt;/p&gt;
+
+&lt;p&gt;myapp&lt;/p&gt;
+
+&lt;p&gt;|&amp;#8211; myapp-ear/&lt;/p&gt;
+
+&lt;p&gt;| `&amp;#8211; pom.xml&lt;/p&gt;
+
+&lt;p&gt;|&amp;#8211; myapp-ejb/&lt;/p&gt;
+
+&lt;p&gt;| |&amp;#8211; pom.xml&lt;/p&gt;
+
+&lt;p&gt;| `&amp;#8211; src/&lt;/p&gt;
+
+&lt;p&gt;| |&amp;#8211; main/&lt;/p&gt;
+
+&lt;p&gt;| | |&amp;#8211; java/&lt;/p&gt;
+
+&lt;p&gt;| | | `&amp;#8211; com/&lt;/p&gt;
+
+&lt;p&gt;| | | `&amp;#8211; example/&lt;/p&gt;
+
+&lt;p&gt;| | | |&amp;#8211; Sample.java&lt;/p&gt;
+
+&lt;p&gt;| | | `&amp;#8211; SampleImpl.java&lt;/p&gt;
+
+&lt;p&gt;| | `&amp;#8211; resources/&lt;/p&gt;
+
+&lt;p&gt;| | `&amp;#8211; META-INF/&lt;/p&gt;
+
+&lt;p&gt;| | `&amp;#8211; ejb-jar.xml&lt;/p&gt;
+
+&lt;p&gt;| `&amp;#8211; test/&lt;/p&gt;
+
+&lt;p&gt;| `&amp;#8211; java/&lt;/p&gt;
+
+&lt;p&gt;| `&amp;#8211; com/&lt;/p&gt;
+
+&lt;p&gt;| `&amp;#8211; example/&lt;/p&gt;
+
+&lt;p&gt;| `&amp;#8211; SampleImplTest.java&lt;/p&gt;
+
+&lt;p&gt;|&amp;#8211; myapp-war/&lt;/p&gt;
+
+&lt;p&gt;| |&amp;#8211; pom.xml&lt;/p&gt;
+
+&lt;p&gt;| `&amp;#8211; src/&lt;/p&gt;
+
+&lt;p&gt;| `&amp;#8211; main/&lt;/p&gt;
+
+&lt;p&gt;| |&amp;#8211; java/&lt;/p&gt;
+
+&lt;p&gt;| | `&amp;#8211; com/&lt;/p&gt;
+
+&lt;p&gt;| | `&amp;#8211; example/&lt;/p&gt;
+
+&lt;p&gt;| | `&amp;#8211; Page.java&lt;/p&gt;
+
+&lt;p&gt;| |&amp;#8211; resources/&lt;/p&gt;
+
+&lt;p&gt;| `&amp;#8211; webapp/&lt;/p&gt;
+
+&lt;p&gt;| |&amp;#8211; META-INF/&lt;/p&gt;
+
+&lt;p&gt;| | `&amp;#8211; context.xml&lt;/p&gt;
+
+&lt;p&gt;| |&amp;#8211; WEB-INF/&lt;/p&gt;
+
+&lt;p&gt;| | |&amp;#8211; faces-config.xml&lt;/p&gt;
+
+&lt;p&gt;| | `&amp;#8211; web.xml&lt;/p&gt;
+
+&lt;p&gt;| |&amp;#8211; index.html&lt;/p&gt;
+
+&lt;p&gt;| `&amp;#8211; page.jsp&lt;/p&gt;
+
+&lt;p&gt;|&amp;#8211; pom.xml&lt;/p&gt;
+
+&lt;p&gt;`&amp;#8211; src/&lt;/p&gt;
+
+&lt;p&gt;`&amp;#8211; site/&lt;/p&gt;
+
+&lt;p&gt;|&amp;#8211; apt/&lt;/p&gt;
+
+&lt;p&gt;| `&amp;#8211; index.apt&lt;/p&gt;
+
+&lt;p&gt;`&amp;#8211; site.xml&lt;/p&gt;
+
+&lt;p&gt;[/shell]&lt;/p&gt;
+
+&lt;p&gt;top level projectのmyappのpom.xmlにモジュールが追加されている。&lt;/p&gt;
+
+&lt;p&gt;[xml]&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;project xmlns=&amp;ldquo;&lt;a href=&#34;http://maven.apache.org/POM/4.0.0&amp;quot;&#34;&gt;http://maven.apache.org/POM/4.0.0&amp;quot;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;xmlns:xsi=&amp;ldquo;&lt;a href=&#34;http://www.w3.org/2001/XMLSchema-instance&amp;quot;&#34;&gt;http://www.w3.org/2001/XMLSchema-instance&amp;quot;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;xsi:schemaLocation=&amp;ldquo;&lt;a href=&#34;http://maven.apache.org/POM/4.0.0&#34;&gt;http://maven.apache.org/POM/4.0.0&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://maven.apache.org/maven-v4_0_0.xsd&amp;quot;&amp;gt;&#34;&gt;http://maven.apache.org/maven-v4_0_0.xsd&amp;quot;&amp;gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;groupId&gt;com.example&lt;/groupId&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;artifactId&gt;myapp&lt;/artifactId&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;packaging&gt;pom&lt;/packaging&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;distributionManagement&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;site&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;id&gt;website&lt;/id&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;url&gt;scp://webhost.company.com/www/website&lt;/url&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/site&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/distributionManagement&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;modules&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;module&gt;myapp-war&lt;/module&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;module&gt;myapp-ejb&lt;/module&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;module&gt;myapp-ear&lt;/module&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/modules&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/project&gt;&lt;/p&gt;
+
+&lt;p&gt;[/xml]&lt;/p&gt;
+
+&lt;p&gt;maven packageする。（myapp.earの作成）&lt;/p&gt;
+
+&lt;p&gt;[shell]&lt;/p&gt;
+
+&lt;p&gt;$ cd ~/src/myapp&lt;/p&gt;
+
+&lt;p&gt;$ ls&lt;/p&gt;
+
+&lt;p&gt;myapp-ear/ myapp-ejb/ myapp-war/ pom.xml src/&lt;/p&gt;
+
+&lt;p&gt;$ mvn package&lt;/p&gt;
+
+&lt;p&gt;[INFO] Scanning for projects&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;:&lt;/p&gt;
+
+&lt;p&gt;$ ls myapp-ear/target/&lt;/p&gt;
+
+&lt;p&gt;application.xml myapp/ myapp.ear&lt;/p&gt;
+
+&lt;p&gt;[/shell]&lt;/p&gt;
+
+&lt;p&gt;う〜んmavenカッチョよすぎる。。 antの1024倍はカッチョよい。&lt;/p&gt;
+
+&lt;p&gt;あとおまけ。GrassFishはこれでear deployらしい。ほんと？（確認してない）&lt;/p&gt;
+
+&lt;p&gt;いくらCoCといえども、これはdefaultなさそうなので、さすがに設定必要そうだけど。&lt;/p&gt;
+
+&lt;p&gt;[shell]&lt;/p&gt;
+
+&lt;p&gt;$$ASROOT/bin/asadmin deploy myapp-ear/target/myapp.ear&lt;/p&gt;
+
+&lt;p&gt;[/shell]&lt;/p&gt;
+
+&lt;p&gt;JavaEE6とJBoss AS 7とかGrassFish v3.1の組み合わせも相当よさげ〜。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

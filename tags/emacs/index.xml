@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Emacs on 順道制勝</title>
+    <link>https://naoharu.github.io/tags/emacs/index.xml</link>
+    <description>Recent content in Emacs on 順道制勝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://naoharu.github.io/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>2chのスレで育ってるNTEmacsが良い感じ</title>
+      <link>https://naoharu.github.io/archives/9838</link>
+      <pubDate>Wed, 16 Nov 2011 15:23:20 +0000</pubDate>
+      
+      <guid>https://naoharu.github.io/archives/9838</guid>
+      <description>&lt;p&gt;これ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://ai11.net/2009/misc/&#34;&gt;http://ai11.net/2009/misc/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;自分用メモ。何かわかる人は使えば良いと思う。&lt;/p&gt;
+
+&lt;p&gt;[shell]&lt;/p&gt;
+
+&lt;p&gt;;; -*- mode: emacs-lisp -*-&lt;/p&gt;
+
+&lt;p&gt;(custom-set-variables&lt;/p&gt;
+
+&lt;p&gt;;; custom-set-variables was added by Custom.&lt;/p&gt;
+
+&lt;p&gt;;; If you edit it by hand, you could mess it up, so be careful.&lt;/p&gt;
+
+&lt;p&gt;;; Your init file should contain only one such instance.&lt;/p&gt;
+
+&lt;p&gt;;; If there is more than one, they won&amp;#8217;t work right.&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;(column-number-mode t)&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;(show-paren-mode t))&lt;/p&gt;
+
+&lt;p&gt;(custom-set-faces&lt;/p&gt;
+
+&lt;p&gt;;; custom-set-faces was added by Custom.&lt;/p&gt;
+
+&lt;p&gt;;; If you edit it by hand, you could mess it up, so be careful.&lt;/p&gt;
+
+&lt;p&gt;;; Your init file should contain only one such instance.&lt;/p&gt;
+
+&lt;p&gt;;; If there is more than one, they won&amp;#8217;t work right.&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;(default ((t (:background &amp;ldquo;gray93&amp;rdquo; :foreground &amp;ldquo;navy&amp;rdquo;))))&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;(cperl-array-face ((t (:foreground &amp;ldquo;darkslateblue&amp;rdquo;))))&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;(cperl-hash-face ((t (:background &amp;ldquo;lightyellow2&amp;rdquo; :foreground &amp;ldquo;firebrick&amp;rdquo; :slant normal :weight bold))))&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;(cperl-nonoverridable-face ((t (:foreground &amp;ldquo;royalblue&amp;rdquo;))))&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;(cursor ((t (:background &amp;ldquo;navy&amp;rdquo;))))&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;(font-lock-builtin-face ((t (:foreground &amp;ldquo;palevioletred&amp;rdquo;))))&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;(font-lock-comment-face ((t (:foreground &amp;ldquo;dimgray&amp;rdquo;))))&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;(font-lock-constant-face ((t (:foreground &amp;ldquo;seagreen&amp;rdquo;))))&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;(font-lock-function-name-face ((t (:foreground &amp;ldquo;mediumblue&amp;rdquo; :weight bold))))&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;(font-lock-keyword-face ((t (:foreground &amp;ldquo;slateblue&amp;rdquo;))))&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;(font-lock-string-face ((t (:foreground &amp;ldquo;mediumvioletred&amp;rdquo;))))&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;(font-lock-type-face ((t (:foreground &amp;ldquo;royalblue&amp;rdquo;))))&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;(font-lock-variable-name-face ((t (:foreground &amp;ldquo;chocolate&amp;rdquo;))))&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;(font-lock-warning-face ((t (:foreground &amp;ldquo;firebrick&amp;rdquo;))))&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;(region ((((class color) (min-colors 88) (background light)) (:background &amp;ldquo;LightSteelBlue1&amp;rdquo;)))))&lt;/p&gt;
+
+&lt;p&gt;(set-language-environment &amp;ldquo;Japanese&amp;rdquo;)&lt;/p&gt;
+
+&lt;p&gt;(setq make-backup-files nil)&lt;/p&gt;
+
+&lt;p&gt;(setq completion-ignore-case t)&lt;/p&gt;
+
+&lt;p&gt;(setq default-indicate-empty-lines t)&lt;/p&gt;
+
+&lt;p&gt;(setq mode-require-final-newline nil)&lt;/p&gt;
+
+&lt;p&gt;(setq sentence-end-double-space nil)&lt;/p&gt;
+
+&lt;p&gt;(setq-default indent-tabs-mode nil)&lt;/p&gt;
+
+&lt;p&gt;(setenv &amp;ldquo;TZ&amp;rdquo; &amp;ldquo;JST-9&amp;rdquo;)&lt;/p&gt;
+
+&lt;p&gt;(global-auto-revert-mode t)&lt;/p&gt;
+
+&lt;p&gt;(blink-cursor-mode nil)&lt;/p&gt;
+
+&lt;p&gt;(show-paren-mode t)&lt;/p&gt;
+
+&lt;p&gt;(tooltip-mode nil)&lt;/p&gt;
+
+&lt;p&gt;(setq ring-bell-function &amp;#8216;ignore)&lt;/p&gt;
+
+&lt;p&gt;(global-set-key [kanji] &amp;#8216;ignore)&lt;/p&gt;
+
+&lt;p&gt;(prefer-coding-system &amp;#8216;utf-8-dos)&lt;/p&gt;
+
+&lt;p&gt;(set-charset-priority &amp;#8216;ascii &amp;#8216;japanese-jisx0213.2004-1 &amp;#8216;japanese-jisx0213-2&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;katakana-jisx0201 &amp;#8216;cp932)&lt;/p&gt;
+
+&lt;p&gt;(set-coding-system-priority &amp;#8216;utf-8 &amp;#8216;shift_jis-2004 &amp;#8216;iso-2022-jp-2004&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;euc-jis-2004)&lt;/p&gt;
+
+&lt;p&gt;(set-file-name-coding-system &amp;#8216;cp932)&lt;/p&gt;
+
+&lt;p&gt;(setq quail-keyboard-layout-type &amp;ldquo;jp106&amp;rdquo;)&lt;/p&gt;
+
+&lt;p&gt;(dolist (coding-system &amp;#8216;(sjis euc-jp iso-2022-jp iso-2022-7bit shift_jis-2004&lt;/p&gt;
+
+&lt;p&gt;euc-jis-2004 iso-2022-jp-2004))&lt;/p&gt;
+
+&lt;p&gt;(coding-system-put coding-system :decode-translation-table&lt;/p&gt;
+
+&lt;p&gt;(get &amp;#8216;japanese-ucs-jis-to-cp932-map &amp;#8216;translation-table))&lt;/p&gt;
+
+&lt;p&gt;(coding-system-put coding-system :encode-translation-table&lt;/p&gt;
+
+&lt;p&gt;(get &amp;#8216;japanese-ucs-cp932-to-jis-map &amp;#8216;translation-table)))&lt;/p&gt;
+
+&lt;p&gt;(defun jisx0213-post-read-conv (len)&lt;/p&gt;
+
+&lt;p&gt;(translate-region (point-min) (point-max)&lt;/p&gt;
+
+&lt;p&gt;(get &amp;#8216;jisx0213-to-unicode &amp;#8216;translation-table)))&lt;/p&gt;
+
+&lt;p&gt;(defun jisx0213-pre-write-conv (from to)&lt;/p&gt;
+
+&lt;p&gt;(translate-region (point-min) (point-max)&lt;/p&gt;
+
+&lt;p&gt;(get &amp;#8216;unicode-to-jisx0213 &amp;#8216;translation-table)))&lt;/p&gt;
+
+&lt;p&gt;(dolist (coding-system &amp;#8216;(shift_jis-2004 iso-2022-jp-2004 euc-jis-2004))&lt;/p&gt;
+
+&lt;p&gt;(coding-system-put coding-system :post-read-conversion&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;jisx0213-post-read-conv)&lt;/p&gt;
+
+&lt;p&gt;(coding-system-put coding-system :pre-write-conversion&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;jisx0213-pre-write-conv))&lt;/p&gt;
+
+&lt;p&gt;(setq-default w32-ime-mode-line-state-indicator &amp;ldquo;-&amp;rdquo;)&lt;/p&gt;
+
+&lt;p&gt;(setq w32-ime-show-mode-line nil)&lt;/p&gt;
+
+&lt;p&gt;(w32-ime-initialize)&lt;/p&gt;
+
+&lt;p&gt;(setq default-input-method &amp;ldquo;W32-IME&amp;rdquo;)&lt;/p&gt;
+
+&lt;p&gt;(setq default-frame-alist&lt;/p&gt;
+
+&lt;p&gt;(append &amp;#8216;((top . 20)&lt;/p&gt;
+
+&lt;p&gt;(left . 20)&lt;/p&gt;
+
+&lt;p&gt;(height . 47))&lt;/p&gt;
+
+&lt;p&gt;default-frame-alist))&lt;/p&gt;
+
+&lt;p&gt;(setq scalable-fonts-allowed t)&lt;/p&gt;
+
+&lt;p&gt;(setq w32-enable-synthesized-fonts t)&lt;/p&gt;
+
+&lt;p&gt;(set-face-attribute &amp;#8216;default nil&lt;/p&gt;
+
+&lt;p&gt;:family &amp;ldquo;Consolas&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;:height 100)&lt;/p&gt;
+
+&lt;p&gt;(setq ttf-japanese &amp;ldquo;メイリオ&amp;rdquo;)&lt;/p&gt;
+
+&lt;p&gt;(set-fontset-font &amp;ldquo;fontset-default&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;japanese-jisx0212&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;(&amp;ldquo;ＭＳ ゴシック&amp;rdquo; . &amp;ldquo;iso10646-1&amp;rdquo;))&lt;/p&gt;
+
+&lt;p&gt;(set-fontset-font &amp;ldquo;fontset-default&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;japanese-jisx0213.2004-1&lt;/p&gt;
+
+&lt;p&gt;`(,ttf-japanese . &amp;ldquo;iso10646-1&amp;rdquo;))&lt;/p&gt;
+
+&lt;p&gt;(set-fontset-font &amp;ldquo;fontset-default&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;japanese-jisx0213-2&lt;/p&gt;
+
+&lt;p&gt;`(,ttf-japanese . &amp;ldquo;iso10646-1&amp;rdquo;))&lt;/p&gt;
+
+&lt;p&gt;(set-fontset-font &amp;ldquo;fontset-default&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;katakana-jisx0201&lt;/p&gt;
+
+&lt;p&gt;`(,ttf-japanese . &amp;ldquo;iso10646-1&amp;rdquo;))&lt;/p&gt;
+
+&lt;p&gt;(set-fontset-font &amp;ldquo;fontset-default&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;cp932&lt;/p&gt;
+
+&lt;p&gt;`(,ttf-japanese . &amp;ldquo;iso10646-1&amp;rdquo;))&lt;/p&gt;
+
+&lt;p&gt;(set-fontset-font &amp;ldquo;fontset-default&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;(#x3099 . #x309A)&lt;/p&gt;
+
+&lt;p&gt;`(,ttf-japanese . &amp;ldquo;iso10646-1&amp;rdquo;))&lt;/p&gt;
+
+&lt;p&gt;(add-to-list &amp;#8216;face-font-rescale-alist&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;(&amp;ldquo;.*メイリオ.*&amp;rdquo; . 1.1))&lt;/p&gt;
+
+&lt;p&gt;(defun char-after-nozero ()&lt;/p&gt;
+
+&lt;p&gt;(let ((c (char-after)))&lt;/p&gt;
+
+&lt;p&gt;(if (numberp c) c 0)))&lt;/p&gt;
+
+&lt;p&gt;(defun ucs-after ()&lt;/p&gt;
+
+&lt;p&gt;(let ((c (char-after-nozero)))&lt;/p&gt;
+
+&lt;p&gt;(encode-char c &amp;#8216;ucs)))&lt;/p&gt;
+
+&lt;p&gt;(defvar utf-sig-nosig-alist&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;((utf-16le-with-signature . utf-16le)&lt;/p&gt;
+
+&lt;p&gt;(utf-16be-with-signature . utf-16be)&lt;/p&gt;
+
+&lt;p&gt;(utf-8-with-signature . utf-8)&lt;/p&gt;
+
+&lt;p&gt;(utf-32-be-unix . utf-32be-unix)&lt;/p&gt;
+
+&lt;p&gt;(utf-32-be-dos . utf-32be-dos)&lt;/p&gt;
+
+&lt;p&gt;(utf-32-be-mac . utf-32be-mac)&lt;/p&gt;
+
+&lt;p&gt;(utf-32-le-unix . utf-32le-unix)&lt;/p&gt;
+
+&lt;p&gt;(utf-32-le-dos . utf-32le-dos)&lt;/p&gt;
+
+&lt;p&gt;(utf-32-le-mac . utf-32le-mac)))&lt;/p&gt;
+
+&lt;p&gt;(defun char-to-hex-coding-patch (coding)&lt;/p&gt;
+
+&lt;p&gt;(if (assq (coding-system-base coding) utf-sig-nosig-alist)&lt;/p&gt;
+
+&lt;p&gt;(coding-system-change-eol-conversion&lt;/p&gt;
+
+&lt;p&gt;(cdr (assq (coding-system-base coding) utf-sig-nosig-alist))&lt;/p&gt;
+
+&lt;p&gt;(coding-system-eol-type coding))&lt;/p&gt;
+
+&lt;p&gt;coding))&lt;/p&gt;
+
+&lt;p&gt;(defun char-to-hex-coding (c coding)&lt;/p&gt;
+
+&lt;p&gt;(let ((i 0)&lt;/p&gt;
+
+&lt;p&gt;(estr (encode-coding-string&lt;/p&gt;
+
+&lt;p&gt;(string c)&lt;/p&gt;
+
+&lt;p&gt;(char-to-hex-coding-patch coding)))&lt;/p&gt;
+
+&lt;p&gt;(used-c (char-to-hex-coding-patch coding))&lt;/p&gt;
+
+&lt;p&gt;(res &amp;ldquo;&amp;rdquo;))&lt;/p&gt;
+
+&lt;p&gt;(if (string-match &amp;ldquo;iso-2022&amp;rdquo; (symbol-name coding))&lt;/p&gt;
+
+&lt;p&gt;(setq estr (replace-regexp-in-string &amp;ldquo;\x1b\$?(?.&amp;rdquo; &amp;ldquo;&amp;rdquo; estr)))&lt;/p&gt;
+
+&lt;p&gt;(while (&amp;lt; i (length estr))&lt;/p&gt;
+
+&lt;p&gt;(setq res (concat res (format &amp;ldquo;%02X&amp;rdquo; (elt estr i))))&lt;/p&gt;
+
+&lt;p&gt;(setq i (1+ i)))&lt;/p&gt;
+
+&lt;p&gt;;; (setq res (concat res &amp;ldquo;-&amp;rdquo; (symbol-name used-c)))&lt;/p&gt;
+
+&lt;p&gt;res))&lt;/p&gt;
+
+&lt;p&gt;(defvar mode-line-show-buffer-code t&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;*非nilならUnicodeのほかにバッファコードをモード行に表示する。&amp;rdquo;)&lt;/p&gt;
+
+&lt;p&gt;(defvar mode-line-char-code-added nil)&lt;/p&gt;
+
+&lt;p&gt;(defun mode-line-show-char-code ()&lt;/p&gt;
+
+&lt;p&gt;(let ((c (char-after-nozero)))&lt;/p&gt;
+
+&lt;p&gt;(concat&lt;/p&gt;
+
+&lt;p&gt;(format &amp;ldquo;&amp;#8211;%04X&amp;rdquo; (ucs-after))&lt;/p&gt;
+
+&lt;p&gt;(if mode-line-show-buffer-code&lt;/p&gt;
+
+&lt;p&gt;(format &amp;ldquo;&amp;#8211;%c:%s&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;(coding-system-mnemonic buffer-file-coding-system)&lt;/p&gt;
+
+&lt;p&gt;(char-to-hex-coding (char-after-nozero)&lt;/p&gt;
+
+&lt;p&gt;buffer-file-coding-system)))&lt;/p&gt;
+
+&lt;p&gt;)))&lt;/p&gt;
+
+&lt;p&gt;(defun mode-line-add-char-code ()&lt;/p&gt;
+
+&lt;p&gt;(let ((len (length default-mode-line-format))&lt;/p&gt;
+
+&lt;p&gt;(term (elt default-mode-line-format&lt;/p&gt;
+
+&lt;p&gt;(1- (length default-mode-line-format)))))&lt;/p&gt;
+
+&lt;p&gt;(delq term default-mode-line-format)&lt;/p&gt;
+
+&lt;p&gt;(setq default-mode-line-format&lt;/p&gt;
+
+&lt;p&gt;(append default-mode-line-format&lt;/p&gt;
+
+&lt;p&gt;`((char-code-mode (:eval (mode-line-show-char-code)))&lt;/p&gt;
+
+&lt;p&gt;,term)&lt;/p&gt;
+
+&lt;p&gt;))&lt;/p&gt;
+
+&lt;p&gt;(setq mode-line-char-code-added t)))&lt;/p&gt;
+
+&lt;p&gt;(define-minor-mode char-code-mode&lt;/p&gt;
+
+&lt;p&gt;nil&lt;/p&gt;
+
+&lt;p&gt;nil nil nil&lt;/p&gt;
+
+&lt;p&gt;:global t&lt;/p&gt;
+
+&lt;p&gt;(if (and char-code-mode (not column-number-mode))&lt;/p&gt;
+
+&lt;p&gt;(column-number-mode t))&lt;/p&gt;
+
+&lt;p&gt;(unless mode-line-char-code-added&lt;/p&gt;
+
+&lt;p&gt;(mode-line-add-char-code)))&lt;/p&gt;
+
+&lt;p&gt;(char-code-mode t)&lt;/p&gt;
+
+&lt;p&gt;(defun japan-composition-function (gstring)&lt;/p&gt;
+
+&lt;p&gt;(if (= (lgstring-char-len gstring) 1)&lt;/p&gt;
+
+&lt;p&gt;(compose-gstring-for-graphic gstring)&lt;/p&gt;
+
+&lt;p&gt;(or (font-shape-gstring gstring)&lt;/p&gt;
+
+&lt;p&gt;(let ((glyph-len (lgstring-glyph-len gstring))&lt;/p&gt;
+
+&lt;p&gt;(last-char (lgstring-char gstring&lt;/p&gt;
+
+&lt;p&gt;(1- (lgstring-char-len gstring))))&lt;/p&gt;
+
+&lt;p&gt;(i 0)&lt;/p&gt;
+
+&lt;p&gt;glyph)&lt;/p&gt;
+
+&lt;p&gt;(while (and (&amp;lt; i glyph-len)&lt;/p&gt;
+
+&lt;p&gt;(setq glyph (lgstring-glyph gstring i)))&lt;/p&gt;
+
+&lt;p&gt;(setq i (1+ i)))&lt;/p&gt;
+
+&lt;p&gt;(compose-glyph-string-relative gstring 0 i 0.1)))))&lt;/p&gt;
+
+&lt;p&gt;(aset composition-function-table ?゙&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;([&amp;rdquo;[うかきくけこさしすせそたちつてとはひふへほゝウカキクケコサシスセソタチツテトハヒフヘホワヰヱヲヽ].[゙]?&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;1 japan-composition-function]&lt;/p&gt;
+
+&lt;p&gt;[nil 0 japan-composition-function]))&lt;/p&gt;
+
+&lt;p&gt;(aset composition-function-table ?゚&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;([&amp;rdquo;[かきくけこはひふへほカキクケコセツトハヒフヘホㇷ].[゚]?&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;1 japan-composition-function]&lt;/p&gt;
+
+&lt;p&gt;[nil 0 japan-composition-function]))&lt;/p&gt;
+
+&lt;p&gt;(aset composition-function-table ?˩&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;([&amp;rdquo;[˥].[˩]?&amp;rdquo; 1 japan-composition-function]&lt;/p&gt;
+
+&lt;p&gt;[nil 0 japan-composition-function]))&lt;/p&gt;
+
+&lt;p&gt;(aset composition-function-table ?˥&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;([&amp;rdquo;[˩].[˥]?&amp;rdquo; 1 japan-composition-function]&lt;/p&gt;
+
+&lt;p&gt;[nil 0 japan-composition-function]))&lt;/p&gt;
+
+&lt;p&gt;;; 透過&lt;/p&gt;
+
+&lt;p&gt;(set-frame-parameter nil &amp;#8216;alpha 90)&lt;/p&gt;
+
+&lt;p&gt;(add-to-list &amp;#8216;default-frame-alist &amp;#8216;(alpha . (0.85 0.75)))&lt;/p&gt;
+
+&lt;p&gt;;; No toolbar&lt;/p&gt;
+
+&lt;p&gt;(tool-bar-mode nil)&lt;/p&gt;
+
+&lt;p&gt;;; No splash&lt;/p&gt;
+
+&lt;p&gt;(setq inhibit-startup-message t)&lt;/p&gt;
+
+&lt;p&gt;[/shell]&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
