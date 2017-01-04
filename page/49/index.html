@@ -46,6 +46,44 @@
   <div class="container">
     
     <article>
+      <h2 class="subtitle is-6">May 12, 2013</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/10371">JJUG CCC 2013 SpringとBouldering Day 3の日</a></h1>
+      <div class="content">
+        最近土日開催になって、個人的には参加しやすくなったJJUG（ジェイジャグ）に参加して来た。今回はJava EE 7とか、ScaleなどのJVM言語などのリリース話、まぁ後はコズミネクサスがどんだけスゴいかっていう宣伝スポンサー様の講演などなど。相変わらず狭義のJavaにとどまらない多種多様なセッションがあって非常にためになった。
+個人的には、直近のプロジェクトでは、開発標準化支援や、もっと低級なところだとAPI設計・ネーミングルール策定とかをワシワシやっているので、山本裕介（@yusuke）の下記の発表が本当に勉強になった。Twitter4Jのような広く一般的に拡散していくライブラリのAPI設計方針と、MUT行程でPGが100人を超すくらいの規模のSIでの共通部品設計方針って、結構似たところがあるなあと思った。
+ 性悪説に基づく  そのAPIに基づく全ての開発者が高いレベルを有しているわけではない 開発者はJavaDocなどを確認せずにメソッド名から機能を推察して利用する コピペ開発  拡散したものに手を加えて修正することは大変 すぐにはupdateしてもらえない etc&#8230;  みたいな。そのような時にしっかり回すために大切なのは、わかりやすい（利用しやすい）API設計と、「No GGRKS（ノーググレカス）」ポリシーなのだねえ。非常に勉強になりました。発表資料もアップされていたので、あとでまた見返してみよう。
+ 失敗から学ぶAPI設計 #ccc_h4 #jjug #jjug_ccc JJUG CCC 2013 Spring   from Yusuke Yamamoto  特に印象に残ったのは、下記のくだり。
+例えば、Twitter側が「ユーザ情報」と、フォロワー数などの付加的な情報を「ユーザ詳細情報」みたいに分けて提供していたので、JavaのAPIのVersion1.0としても下記のように提供していました、と。
+Version1.0
+Class User{} Class UserWithStatus extends User{ getFriendsCount(); getFollowersCount(); }  ところがTwitter側が提供するAPI仕様が変って、フォロワー数などの情報も「ユーザ詳細情報」ではなく「ユーザ情報」に含めるようになりました、と。こういうデカい仕様変更を、どうやってライブラリ側で緩衝していくか（利用者側に対して隠すか）というと、いきなり削除するのではなくて、いったんメソッドを非推奨にして、「利用は出来るんだけどもIDE上では警告が出る」ようにしますと。
+Version1.04
+Class User{ getFriendsCount(); getFollowersCount(); } /** @deprecated */ Class UserWithStatus extends User{ }  そしてメジャーバージョンが上がるような大きな更新の時にバッサリ削除すると。
+Version2.0
+Class User{ getFriendsCount(); getFollowersCount(); }  こうすると利用者側からも比較的変更が緩やかになるね、と。確かに。部品側のAPIを変えるのは利用者（SIだとアプリチームとか）からも苦情がくるし、億劫になりがちなんだけども、だからと言ってイビツな設計のまま時が経ってアプリが育っても、傷口が広がるだけだもんねぇ。こういうところはライブラリ管理方針とかリリース方針（○○な変更はメジャーバージョンアップあげますよ、とかの決めごと）などと合わせてプロジェクト内で整備していくと、利用者（アプリ）側も準備ができるし、事故が防げそうなので、実践していこう！勉強になりました！
+        
+        ...<a class="button is-link" href="https://naoharu.github.io/archives/10371" style="height:28px">
+          Read more
+          <span class="icon is-small">
+            <i class="fa fa-angle-double-right"></i>
+          </span>
+        </a>
+        
+      </div>
+    </article>
+    
+    <article>
+      <h2 class="subtitle is-6">May 10, 2013</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/10367">Bouldering Day 2</a></h1>
+      <div class="content">
+        恵比寿J&#038;S。前回から中2日。とりあえず宿題にしていたのをやっつけて、7級攻略を進めが、全滅はさせられず。。
+初音先生のビデオ見てる。
+これがキョン・・・。ん、これは、、アベくんがやってたヤツだ〜！
+なんかマニアックな動きだな〜とか思ってたら、ド定番なんですね！
+        
+      </div>
+    </article>
+    
+    <article>
       <h2 class="subtitle is-6">May 8, 2013</h2>
       <h1 class="title"><a href="https://naoharu.github.io/archives/10361">Bouldering Day 1</a></h1>
       <div class="content">
@@ -162,27 +200,6 @@ https://twitter.com/emiiiiiik/statuses/316854649686720513
 ということで、アタックの様子を動画にしてみました。
 結果、余裕の登頂だったね。帰りは赤岳鉱泉でアイスキャンディで遊ぶっていうオマケつき。もちろん、天気も良かったし、2人っていう精神的な余裕もあったのかもしれないし、装備が進化した（去年軽アイゼンで良く落ちなかったな）ってのもあるから、単純には比較できないけど、確実に体力とスキルは向上してるね！楽しい！
 写真や詳細の日記は各エントリに固有のURLが払いだされるように仕様が変わったケートクさんの日記からどうぞ！！
-        
-      </div>
-    </article>
-    
-    <article>
-      <h2 class="subtitle is-6">March 21, 2013</h2>
-      <h1 class="title"><a href="https://naoharu.github.io/archives/10296">散歩が気持ち良い季節</a></h1>
-      <div class="content">
-        特に用事もないのに白金から有栖川公園経由で麻布十番〜六本木とかまでカメラを持って散歩するのが非常に楽しい。
-六本木のベタさがね。また良いですね。
-        
-      </div>
-    </article>
-    
-    <article>
-      <h2 class="subtitle is-6">March 13, 2013</h2>
-      <h1 class="title"><a href="https://naoharu.github.io/archives/10293">2011 TED Prize winnerのJRの展示に行った日（Could art change the world? ）</a></h1>
-      <div class="content">
-        2011 TED Prize winnerであらせられるJRのINSIDE OUTの展示を日本でやるぞ！っていうプロジェクトがちょっと前にCampFireでSUCCESSしてて、しばらく忘れていたんだけど、そういえばもうやっているのだね！JR（母国のフランスではジエールと読むらしいんだけど、日本だとジェイアールって読むよね）の、プロジェクトについては下記の動画を見るとよくわかる。
-ということでワタリウムに行ってきました。いや、非常に良かった。ほんとパワフルで、何でもアリで、ハードコアなプロジェクトだなぁ、と。自分の最近の私生活のヘタレっぷりに喝を入れられたような。
-本当に、行っておいてよかった！皆さんも是非。
         
       </div>
     </article>

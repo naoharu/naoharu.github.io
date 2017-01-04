@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://naoharu.github.io/post/bouldering-day-347/</loc>
+    <lastmod>2017-01-04T23:28:54+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://naoharu.github.io/post/hello/</loc>
+    <lastmod>2017-01-03T22:14:09+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://naoharu.github.io/archives/12649</loc>
     <lastmod>2017-01-01T02:11:39+00:00</lastmod>
   </url>
@@ -5362,6 +5372,12 @@
   </url>
   
   <url>
+    <loc>https://naoharu.github.io/categories/</loc>
+    <lastmod>2017-01-04T23:28:54+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://naoharu.github.io/tags/5dmkii/</loc>
     <lastmod>2014-03-31T04:06:21+00:00</lastmod>
     <priority>0</priority>
@@ -5429,7 +5445,7 @@
   
   <url>
     <loc>https://naoharu.github.io/tags/bouldering/</loc>
-    <lastmod>2017-01-01T02:11:39+00:00</lastmod>
+    <lastmod>2017-01-04T23:28:54+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -5812,7 +5828,7 @@
   
   <url>
     <loc>https://naoharu.github.io/tags/movie/</loc>
-    <lastmod>2017-01-01T02:11:39+00:00</lastmod>
+    <lastmod>2017-01-04T23:28:54+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -5884,7 +5900,7 @@
   
   <url>
     <loc>https://naoharu.github.io/post/</loc>
-    <lastmod>2017-01-01T02:11:39+00:00</lastmod>
+    <lastmod>2017-01-04T23:28:54+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -6039,7 +6055,7 @@
   
   <url>
     <loc>https://naoharu.github.io/tags/video/</loc>
-    <lastmod>2017-01-01T02:11:39+00:00</lastmod>
+    <lastmod>2017-01-04T23:28:54+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -6111,7 +6127,7 @@
   
   <url>
     <loc>https://naoharu.github.io/</loc>
-    <lastmod>2017-01-01T02:11:39+00:00</lastmod>
+    <lastmod>2017-01-04T23:28:54+09:00</lastmod>
     <priority>0</priority>
   </url>
   
