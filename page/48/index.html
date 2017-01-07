@@ -46,6 +46,16 @@
   <div class="container">
     
     <article>
+      <h2 class="subtitle is-6">May 25, 2013</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/10422">Bouldering Day 11</a></h1>
+      <div class="content">
+        品川ロッキー2回目。前回のロッキーで宿題にしていた茶色を全部落としたぞ〜。これで10m壁の茶色はコンプリート。球体の茶色も1個落としたし、次でロッキー全茶色制覇いけるんじゃないかな！
+10回もジムに通うと大体50課題くらいはクリアして、500回くらい壁から落ちてしまっているはず。流石に、だんだんボルダリングの動きの中のアンチパターンがわかってきた。が、やっぱ成長のスピードを早めるために、いったん理論を身につけたい。そのためには入門書を暗記して、体にしみ込ませるのが一番良いと思うのだけど、どの本が良いのかな？だいたいどのジムにも下記のものは置いてあるので、これにしてみようかな。とりあえずポチッ。
+        
+      </div>
+    </article>
+    
+    <article>
       <h2 class="subtitle is-6">May 22, 2013</h2>
       <h1 class="title"><a href="https://naoharu.github.io/archives/10417">Bouldering Day 10</a></h1>
       <div class="content">
@@ -145,32 +155,6 @@
 自分はひたすら茶色撲滅運動。ピンク、黄色、垂壁の茶色は楽勝だったので、とりあえず10ｍ壁の茶色から攻める。結局、○のところだけが宿題になった。まぁ手順は把握したので、スタミナ切れということにさせてください。
 その後は手羽先食べて帰宅。
 いや〜面白かった。アジンさん初だったけど、まぁいろいろとシュートな話ができて、これは酒飲むと面白い人だぞと確信。笑
-        
-      </div>
-    </article>
-    
-    <article>
-      <h2 class="subtitle is-6">May 12, 2013</h2>
-      <h1 class="title"><a href="https://naoharu.github.io/archives/10371">JJUG CCC 2013 SpringとBouldering Day 3の日</a></h1>
-      <div class="content">
-        最近土日開催になって、個人的には参加しやすくなったJJUG（ジェイジャグ）に参加して来た。今回はJava EE 7とか、ScaleなどのJVM言語などのリリース話、まぁ後はコズミネクサスがどんだけスゴいかっていう宣伝スポンサー様の講演などなど。相変わらず狭義のJavaにとどまらない多種多様なセッションがあって非常にためになった。
-個人的には、直近のプロジェクトでは、開発標準化支援や、もっと低級なところだとAPI設計・ネーミングルール策定とかをワシワシやっているので、山本裕介（@yusuke）の下記の発表が本当に勉強になった。Twitter4Jのような広く一般的に拡散していくライブラリのAPI設計方針と、MUT行程でPGが100人を超すくらいの規模のSIでの共通部品設計方針って、結構似たところがあるなあと思った。
- 性悪説に基づく  そのAPIに基づく全ての開発者が高いレベルを有しているわけではない 開発者はJavaDocなどを確認せずにメソッド名から機能を推察して利用する コピペ開発  拡散したものに手を加えて修正することは大変 すぐにはupdateしてもらえない etc&#8230;  みたいな。そのような時にしっかり回すために大切なのは、わかりやすい（利用しやすい）API設計と、「No GGRKS（ノーググレカス）」ポリシーなのだねえ。非常に勉強になりました。発表資料もアップされていたので、あとでまた見返してみよう。
- 失敗から学ぶAPI設計 #ccc_h4 #jjug #jjug_ccc JJUG CCC 2013 Spring   from Yusuke Yamamoto  特に印象に残ったのは、下記のくだり。
-例えば、Twitter側が「ユーザ情報」と、フォロワー数などの付加的な情報を「ユーザ詳細情報」みたいに分けて提供していたので、JavaのAPIのVersion1.0としても下記のように提供していました、と。
-Version1.0
-Class User{} Class UserWithStatus extends User{ getFriendsCount(); getFollowersCount(); }  ところがTwitter側が提供するAPI仕様が変って、フォロワー数などの情報も「ユーザ詳細情報」ではなく「ユーザ情報」に含めるようになりました、と。こういうデカい仕様変更を、どうやってライブラリ側で緩衝していくか（利用者側に対して隠すか）というと、いきなり削除するのではなくて、いったんメソッドを非推奨にして、「利用は出来るんだけどもIDE上では警告が出る」ようにしますと。
-Version1.04
-Class User{ getFriendsCount(); getFollowersCount(); } /** @deprecated */ Class UserWithStatus extends User{ }  そしてメジャーバージョンが上がるような大きな更新の時にバッサリ削除すると。
-Version2.0
-Class User{ getFriendsCount(); getFollowersCount(); }  こうすると利用者側からも比較的変更が緩やかになるね、と。確かに。部品側のAPIを変えるのは利用者（SIだとアプリチームとか）からも苦情がくるし、億劫になりがちなんだけども、だからと言ってイビツな設計のまま時が経ってアプリが育っても、傷口が広がるだけだもんねぇ。こういうところはライブラリ管理方針とかリリース方針（○○な変更はメジャーバージョンアップあげますよ、とかの決めごと）などと合わせてプロジェクト内で整備していくと、利用者（アプリ）側も準備ができるし、事故が防げそうなので、実践していこう！勉強になりました！
-        
-        ...<a class="button is-link" href="https://naoharu.github.io/archives/10371" style="height:28px">
-          Read more
-          <span class="icon is-small">
-            <i class="fa fa-angle-double-right"></i>
-          </span>
-        </a>
         
       </div>
     </article>
