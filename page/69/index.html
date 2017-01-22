@@ -47,6 +47,33 @@
     
     <article>
       <h2 class="subtitle is-6">September 27, 2010</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/9247">さくらVPS（とりあえず）はじめました</a></h1>
+      <div class="content">
+        IT系の会社、しかもクラウド系の仕事でメシ食わせてもらってるのに、自分が私生活で1つもそういったサービスを使ってないっていうのは結構痛い感じなので、勉強もかねて、さくらVPSの月額980円のプランを始めました。
+これで自分も一国一城の主です。今まではWeb系のレンタルでこのブログも運用してきましたが、これからマシンまるごと借りてるから、Webに限らず何でもあり！しかも、自宅に物理的なサーバを置く場合と比べて、電気代・停電対応用の設備費用は月額の中にコミコミだし、騒音も無い。一番大きいのは、「コストダウンし続けるハードウェア」を固定資産として持つ必要がなくて、むしろ相手側の競争に丸投げすることができるってことですね。今の進化スピードだと、ハードを「所有する」こと自体がリスクでしょう。
+というか、ほんと、申し込みして5分後くらいから自分のマシンみたいに使えるんですね・・・。本番用っていうよりか、開発時のテストとか、実験用のアドホックなマシンとしての利用方法、ぜんぜんアリですね。
+というように、これからはこのサービスを使いながら、自分の仕事にも良いビジネスのアイデアなどをフィードバックさせていきたいと思います。
+ひとまずは、一応
+[shell]
+[root@www6384u ~]# passwd
+[/shell]
+して、あとは
+[shell]
+[root@www6384u ~]# vi /etc/ssh/sshd_config
+（略）
+PermitRootLogin no
+（略）
+[/shell]
+[shell]
+[root@www6384u ~]# service sshd restart
+[/shell]
+とかしておいたっていう状態です。とりあえず。今後もっと遊んだら報告します！
+        
+      </div>
+    </article>
+    
+    <article>
+      <h2 class="subtitle is-6">September 27, 2010</h2>
       <h1 class="title"><a href="https://naoharu.github.io/archives/9244">アサラトな日</a></h1>
       <div class="content">
         この前渋谷でDMRいった時になぜか買ってしまった〜。でも、買ったからには練習して上手くなろう。
@@ -196,15 +223,6 @@ SOULの中央に居座って，こんなことを言いやがる
 やりますよ、俺は、俺のことはやるってみんな知ってますよ
 だから、その仕事を俺にくれよ、･･･くれ、･･･くれ
  
-        
-      </div>
-    </article>
-    
-    <article>
-      <h2 class="subtitle is-6">September 8, 2010</h2>
-      <h1 class="title"><a href="https://naoharu.github.io/archives/9181">新しいカメラをゲット。</a></h1>
-      <div class="content">
-        早く使いたいな〜！
         
       </div>
     </article>

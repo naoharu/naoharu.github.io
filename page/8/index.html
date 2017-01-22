@@ -46,6 +46,23 @@
   <div class="container">
     
     <article>
+      <h2 class="subtitle is-6">March 27, 2016</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/12277">Bouldering Day 296</a></h1>
+      <div class="content">
+        Fish&#038;Bird。
+
+1F&#038;2Fで3級をオラオラと落とす。
+途中でシエリーさんと遭遇したので一緒に中級ラボの課題をこなさせていただき、
+最後は6級のガバが持てなくなるくらいまでやらせていただいた！良い日だった！
+1Fの２級はつながらんな〜。
+
+面白かった3級こちら。Nobuさんのらしい。習ってないと絶対できないジャミング。。
+習ってたとしてもフラッシュアテンプトじゃあ無理。。。。
+        
+      </div>
+    </article>
+    
+    <article>
       <h2 class="subtitle is-6">March 20, 2016</h2>
       <h1 class="title"><a href="https://naoharu.github.io/archives/12275">Bouldering Day 295</a></h1>
       <div class="content">
@@ -195,35 +212,6 @@ Central America Trip 10 へつづく。
 何より安いしこれはグランズレメディより良いんじゃないか？
 って思ったけど、グランズレメディは除菌もするからヌメリも取れるんだねえ。
 重曹はそこらへんどこまで効果があるかは未知だから、履いて登って確かめてみるか。
-        
-      </div>
-    </article>
-    
-    <article>
-      <h2 class="subtitle is-6">February 13, 2016</h2>
-      <h1 class="title"><a href="https://naoharu.github.io/archives/12239">DBUnit@Oracle DB時のAmbiguousTableNameException</a></h1>
-      <div class="content">
-        これまたオールドスクールなツールを使っていて問題発生。
-DBUnitを使って単体テストを実施していた時なのだけど、下記の例外に遭遇。
- org.dbunit.database.AmbiguousTableNameException: AQ$_SCHEDULES
-　at org.dbunit.database.DatabaseDataSet.initialize(DatabaseDataSet.java:140)
-　at org.dbunit.database.DatabaseDataSet.getTableMetaData(DatabaseDataSet.java:186)
-　at org.dbunit.operation.DeleteAllOperation.execute(DeleteAllOperation.java:98)
-　at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:67)
-&#8230;
- どうやらOracleを使っていて違うschemaに同じtable名が存在するとこうなっていて、
-この時はコネクション生成するときにschemaを指定すべしとのこと。
- This exception is thrown by IDataSet when multiple tables having the same name are accessible. This usually occurs when the database connection have access to multiple schemas containing identical table names.
-Possible solutions:
-1) Use a database connection credential that has access to only one database schema.
-2) Specify a schema name to the DatabaseConnection or DatabaseDataSourceConnection constructor.
-        
-        ...<a class="button is-link" href="https://naoharu.github.io/archives/12239" style="height:28px">
-          Read more
-          <span class="icon is-small">
-            <i class="fa fa-angle-double-right"></i>
-          </span>
-        </a>
         
       </div>
     </article>

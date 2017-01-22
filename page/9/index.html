@@ -46,6 +46,35 @@
   <div class="container">
     
     <article>
+      <h2 class="subtitle is-6">February 13, 2016</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/12239">DBUnit@Oracle DB時のAmbiguousTableNameException</a></h1>
+      <div class="content">
+        これまたオールドスクールなツールを使っていて問題発生。
+DBUnitを使って単体テストを実施していた時なのだけど、下記の例外に遭遇。
+ org.dbunit.database.AmbiguousTableNameException: AQ$_SCHEDULES
+　at org.dbunit.database.DatabaseDataSet.initialize(DatabaseDataSet.java:140)
+　at org.dbunit.database.DatabaseDataSet.getTableMetaData(DatabaseDataSet.java:186)
+　at org.dbunit.operation.DeleteAllOperation.execute(DeleteAllOperation.java:98)
+　at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:67)
+&#8230;
+ どうやらOracleを使っていて違うschemaに同じtable名が存在するとこうなっていて、
+この時はコネクション生成するときにschemaを指定すべしとのこと。
+ This exception is thrown by IDataSet when multiple tables having the same name are accessible. This usually occurs when the database connection have access to multiple schemas containing identical table names.
+Possible solutions:
+1) Use a database connection credential that has access to only one database schema.
+2) Specify a schema name to the DatabaseConnection or DatabaseDataSourceConnection constructor.
+        
+        ...<a class="button is-link" href="https://naoharu.github.io/archives/12239" style="height:28px">
+          Read more
+          <span class="icon is-small">
+            <i class="fa fa-angle-double-right"></i>
+          </span>
+        </a>
+        
+      </div>
+    </article>
+    
+    <article>
       <h2 class="subtitle is-6">February 7, 2016</h2>
       <h1 class="title"><a href="https://naoharu.github.io/archives/12233">Central America Trip 8</a></h1>
       <div class="content">
@@ -330,29 +359,6 @@ x-cultの持ち感、気持ち良いね！
 アウトサイドフラッギングといい、クライミングにおける物理的に整合性がある動きってのは見ていて気持ちい！
 （サイファーパンツもこれが由来なのかしら。）
   その後はみんなでご飯にいってクライミングの話をして終了！楽しかった！
-        
-      </div>
-    </article>
-    
-    <article>
-      <h2 class="subtitle is-6">January 15, 2016</h2>
-      <h1 class="title"><a href="https://naoharu.github.io/archives/12177">Bouldering Day 288</a></h1>
-      <div class="content">
-        菊川HeadRock。
-今日はこちらの3級に打ち込んで撃破。
-
-今流行りのKilter Teagan Kaijuのニョキとしたホールド。下部はこれを持って、中盤はこれでヒールする課題。
-棒の先端の天面をピンチして持つとやっぱ悪くて、棒の側面をラップして持つのが一番だねぇ。
-ピンチは「居る」ことは出来ても「引く」のがキツイ！
-逆に言うと、ラップで引き込んだ時のテンションに、ピンチで耐えられるようになれば強くなれそう。
-ただ側面をラップして持つと手首傷めそうで怖い。。
-バルジとかルーフに入れてるジム多いよね。
-セットしやすいっていうか使いまわせて展開力があるのかしら。。
-
-その後は白四角2級に着手。下部はアッサリ解決したけど、
-ゴール下のポケットとゴミカチの使い方がわからず。。
-この2つを保持することに決めるなら決めるで、その前にキョンとかで居場所を作っておかないと、
-動的なシーケンスの中でこの2つを使うのは悪すぎる。。なんかやりかたあるんかなぁ。
         
       </div>
     </article>
