@@ -46,6 +46,25 @@
   <div class="container">
     
     <article>
+      <h2 class="subtitle is-6">February 18, 2009</h2>
+      <h1 class="title"><a href="https://naoharu.github.io/archives/6877">arch（csys）関東飲み</a></h1>
+      <div class="content">
+        学部時代に所属していた講座である、旧arch・現csys（慣れない・・・）のM1の面々が、
+就職活動で関東に来ているということだったので、
+TBTK先輩、KMR先輩の下に集合し、酒を飲んだ。
+なんか、懐かしいなぁ。と。
+まぁ、自分で決意して関東に来たものの、友達はいない＆増えないし、
+研究室は結構キツめだし。。
+あーーちょっと広島が懐かしくなってしまった。
+（というと、広島の人には「ここはお前の場所じゃねーｗお前島根だろｗ」といわれる笑）
+（いや、そうだけどさ笑）
+なぜ活目する！笑
+2台巨頭！
+        
+      </div>
+    </article>
+    
+    <article>
       <h2 class="subtitle is-6">February 14, 2009</h2>
       <h1 class="title"><a href="https://naoharu.github.io/archives/6859">ユニクロすごい</a></h1>
       <div class="content">
@@ -308,39 +327,6 @@ Kさん 「いや、Nも死んでる。っていうかブラウザチームほ�
 いや、ここまで計算ずくめで男を狙い打ちするのは、ある意味、究極のフェミニストか・・・。
         
         ...<a class="button is-link" href="https://naoharu.github.io/archives/6772" style="height:28px">
-          Read more
-          <span class="icon is-small">
-            <i class="fa fa-angle-double-right"></i>
-          </span>
-        </a>
-        
-      </div>
-    </article>
-    
-    <article>
-      <h2 class="subtitle is-6">January 26, 2009</h2>
-      <h1 class="title"><a href="https://naoharu.github.io/archives/6759">Widgetプラットフォームでのスクロールバー実装</a></h1>
-      <div class="content">
-        このエントリーでは、Webページのコンテンツ量がブラウザの表示領域の大きさを超えた時に表示されるスクロールバーを、Webページのコンテンツとして生成する方法を、特に一般的なWidgetプラットフォーム上での実装に主眼をおき、簡単なサンプルをまじえながら紹介する。
-Widgetというと、HTML+JavaScript+XMLといった、敷居が比較的低いプログラミング言語（？）で実装されており、少しWebページを作成したことのある人ならば簡単に開発可能な、今もっとも手軽に作れるアプリーケーションであると言える。
-しかし、いくら「Webページを作るのと同じ感覚」と言っても、実際PC上で動作しているWebブラウザとWidgetのプラットフォームを比較すると、やはりまだ機能的に追いつけていない点や、携帯電話ネイティブがゆえに、「あえて追いかけていない」点がある。
-その具体例として、スクロールバーがある。
-PC上のブラウザだと、Webページのコンテンツの内容がブラウザの表示領域の縦幅を超えると、自動的にスクロールバーを生成するが、
-多くのWidgetプラットフォームが、モバイル端末の多様性（タッチパネル、方向キーの有無など）もよって、スクロールバーを一元的にサポートしていない。
-したがって、コンテンツ量が多くなる場合にはWidgetコンテンツ側でスクロールバーを用意する必要があり、実際に多くの既存のWidgetが独自の方法でスクロールバーの実装を行っている。
-以下は、ACCESSのNetFrontBrouserWidgetプラットフォーム上で動作する楽天市場Widgetである。スクロールバーがコンテンツとして実装されている。
-これらのWidgetは、スクロールバーが動作する領域と、それによって移動させられるコンテンツを、divタグにonClick属性やonMouse属性を持たせることによって実現している。
-以下に、サンプルを示す。
-上記のように、Widgetの縦幅を超えるコンテンツ量が存在する場合、スクロールバーウを実装しなければならない。
-そこで、
-上記のように、Widgetの表示領域を閲覧コンテンツ用スペースと制御用のスペースに分けて、制御用のスペースでは、スクロールバー（scrollbarface）やスクロールバーが稼働する範囲（scrollbarbackground）、スクロールバーを上下させるボタンなどを表示する部分を設ける。
-このスクロールバーの画像にonClick属性を仕込み、Clickすることで、
-document.body.scrollTopの値を足しこむ、もしくは引き込むことによって、上記の図にて赤い部分である、閲覧するコンテンツ（body部分）のスクロールが可能である。
-また、コンテンツ量全体に対するdocument.body.scrollTopの値を調べ、scrollbarfaceの位置に反映させることで、スクロールバーが上下する様子も再現可能である。
-以下は、上記のサンプルのNetFrontBrowserWidgetプラットフォーム上で動作するWidgetのソースコードと、それに含まれるJavaScript（scroll.js）の例である。
-function vscrollbar(scrollface, scrollbackground, scrolltop) { var scrollLimit = scrollbackground.offsetHeight - scrollface.offsetHeight; var dragFlag = false; var pointerPos = 0; var scrollFacePos = 0; var delta = 0; this.scrollUp = function() { document.body.scrollTop -= 20; scrollFacePos = document.body.scrollTop * scrollLimit / (document.body.scrollHeight - window.innerHeight); scrollface.style.top = scrolltop + scrollFacePos; }; this.scrollDown = function() { document.
-        
-        ...<a class="button is-link" href="https://naoharu.github.io/archives/6759" style="height:28px">
           Read more
           <span class="icon is-small">
             <i class="fa fa-angle-double-right"></i>
