@@ -1,360 +1,545 @@
+
 <!DOCTYPE html>
 <html lang="en-us">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>順道制勝</title>
-<link rel="stylesheet" href="https://naoharu.github.io//css/style.css">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<head>
+	<meta name="generator" content="Hugo 0.18.1" />
 
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/github.min.css">
+  
+  <meta charset="UTF-8">
+  <title>
+    順道制勝
+  </title>
 
 
-<section class="section">
-  <div class="container">
-    <nav class="nav">
-      <div class="nav-left">
-        <a class="nav-item" href="https://naoharu.github.io/"><h1 class="title is-4">順道制勝</h1></a>
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="https://naoharu.github.io/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="https://naoharu.github.io/index.xml" rel="alternate" type="application/rss+xml" title="順道制勝" />
+  <link href="https://naoharu.github.io/index.xml" rel="feed" type="application/rss+xml" title="順道制勝" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="https://naoharu.github.io/">順道制勝</a></h1>
+        
       </div>
-      <div class="nav-right">
-        <nav class="nav-item level is-mobile">
+      <div id="social" class="col span_6">
+        <ul>
           
-          <a class="level-item" href="https://github.com/naoharu">
-            <span class="icon">
-              <i class="fa fa-github"></i>
-            </span>
-          </a>
           
-          <a class="level-item" href="https://twitter.com/naoharu">
-            <span class="icon">
-              <i class="fa fa-twitter"></i>
-            </span>
-          </a>
           
-          <a class="level-item" href="/index.xml">
-            <span class="icon">
-              <i class="fa fa-rss"></i>
-            </span>
-          </a>
           
-        </nav>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </header>
+
+
+
+
+<main id="index" role="main">
+  <div class="article-header light-gray"><h1>Recent Articles</h1></div>
+  
+  
+  <div class="summary">
+    <h2><a href="https://naoharu.github.io/archives/6759">Widgetプラットフォームでのスクロールバー実装 </a></h2>
+    <div class="meta">
+      Jan 26, 2009 &nbsp;
+      
+        #<a href="/tags/diary">diary</a>&nbsp;
+      
+    </div>
   </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    
-    <article>
-      <h2 class="subtitle is-6">January 26, 2009</h2>
-      <h1 class="title"><a href="https://naoharu.github.io/archives/6759">Widgetプラットフォームでのスクロールバー実装</a></h1>
-      <div class="content">
-        このエントリーでは、Webページのコンテンツ量がブラウザの表示領域の大きさを超えた時に表示されるスクロールバーを、Webページのコンテンツとして生成する方法を、特に一般的なWidgetプラットフォーム上での実装に主眼をおき、簡単なサンプルをまじえながら紹介する。
-Widgetというと、HTML+JavaScript+XMLといった、敷居が比較的低いプログラミング言語（？）で実装されており、少しWebページを作成したことのある人ならば簡単に開発可能な、今もっとも手軽に作れるアプリーケーションであると言える。
-しかし、いくら「Webページを作るのと同じ感覚」と言っても、実際PC上で動作しているWebブラウザとWidgetのプラットフォームを比較すると、やはりまだ機能的に追いつけていない点や、携帯電話ネイティブがゆえに、「あえて追いかけていない」点がある。
-その具体例として、スクロールバーがある。
-PC上のブラウザだと、Webページのコンテンツの内容がブラウザの表示領域の縦幅を超えると、自動的にスクロールバーを生成するが、
-多くのWidgetプラットフォームが、モバイル端末の多様性（タッチパネル、方向キーの有無など）もよって、スクロールバーを一元的にサポートしていない。
-したがって、コンテンツ量が多くなる場合にはWidgetコンテンツ側でスクロールバーを用意する必要があり、実際に多くの既存のWidgetが独自の方法でスクロールバーの実装を行っている。
-以下は、ACCESSのNetFrontBrouserWidgetプラットフォーム上で動作する楽天市場Widgetである。スクロールバーがコンテンツとして実装されている。
-これらのWidgetは、スクロールバーが動作する領域と、それによって移動させられるコンテンツを、divタグにonClick属性やonMouse属性を持たせることによって実現している。
-以下に、サンプルを示す。
-上記のように、Widgetの縦幅を超えるコンテンツ量が存在する場合、スクロールバーウを実装しなければならない。
-そこで、
-上記のように、Widgetの表示領域を閲覧コンテンツ用スペースと制御用のスペースに分けて、制御用のスペースでは、スクロールバー（scrollbarface）やスクロールバーが稼働する範囲（scrollbarbackground）、スクロールバーを上下させるボタンなどを表示する部分を設ける。
-このスクロールバーの画像にonClick属性を仕込み、Clickすることで、
-document.body.scrollTopの値を足しこむ、もしくは引き込むことによって、上記の図にて赤い部分である、閲覧するコンテンツ（body部分）のスクロールが可能である。
-また、コンテンツ量全体に対するdocument.body.scrollTopの値を調べ、scrollbarfaceの位置に反映させることで、スクロールバーが上下する様子も再現可能である。
-以下は、上記のサンプルのNetFrontBrowserWidgetプラットフォーム上で動作するWidgetのソースコードと、それに含まれるJavaScript（scroll.js）の例である。
-function vscrollbar(scrollface, scrollbackground, scrolltop) { var scrollLimit = scrollbackground.offsetHeight - scrollface.offsetHeight; var dragFlag = false; var pointerPos = 0; var scrollFacePos = 0; var delta = 0; this.scrollUp = function() { document.body.scrollTop -= 20; scrollFacePos = document.body.scrollTop * scrollLimit / (document.body.scrollHeight - window.innerHeight); scrollface.style.top = scrolltop + scrollFacePos; }; this.scrollDown = function() { document.
-        
-        ...<a class="button is-link" href="https://naoharu.github.io/archives/6759" style="height:28px">
-          Read more
-          <span class="icon is-small">
-            <i class="fa fa-angle-double-right"></i>
-          </span>
-        </a>
-        
-      </div>
-    </article>
-    
-    <article>
-      <h2 class="subtitle is-6">January 26, 2009</h2>
-      <h1 class="title"><a href="https://naoharu.github.io/archives/6748">石見会</a></h1>
-      <div class="content">
-        土曜日  24日土曜日、新宿歌舞伎町@夜23時から開始された石見会に召集された。
-タカミチさん（←活字にするだけで怖いわな）、タカシさん、ウーコさん、俺の4人でオール飲み。
-ウーコさんも結構よっぱらってたな。。
-とりあえず今年の年末、3世代合同同窓会を行いたいという運びに。。
-地元民の方々、追って連絡いたします。。。
-あと今日は広島のやつらから、
-「東京に○日に行きます～！」
-とか連絡がきたり。就活も本格化ですなぁ。
-        
-      </div>
-    </article>
-    
-    <article>
-      <h2 class="subtitle is-6">January 24, 2009</h2>
-      <h1 class="title"><a href="https://naoharu.github.io/archives/6746">PC間の同期（飲みすぎた日）</a></h1>
-      <div class="content">
-        普段、
- ノートPC 研究室のデスクトップPC 自宅のPC  の3つでプログラミングをしているんだけど、PC間の同期がやっぱり面倒だったり。たとえば家にいて、
- 「こうすればいいじゃん！」
- ってアイデアが浮かんで、家のPCでがーっと書いて、うまくいって、喜んで寝て、んで結局そのまま学校に来たり。。
-まぁそれはマヌケな例としても・・・。
-皆、レポートとかしてたのに、他のPC用にどっかネットワーク上（Webメールサービスとか）に上げとくのを忘れたり、あとUSBメモリに入れたはいういけどUSBメモリ自体を家に忘れたりとかってない？？
-そういうときメチャクチャいらっと（自分のせいなのに）するし、「いや俺は絶対に忘れないぞ」って人でも、そもそもWebメールとかUSBメモリに移す作業が面倒くさいっすよね。絶対。
-なので、Microsoft Live meshというものを最近使い始めました。
-これは自分のPCの指定したフォルダを他のPCと同期してくれるサービスで、たとえば、あるPCのマイドキュメントの内容を他のPCでも共有できるというような感じ。
-これ、前から名前は聞いてたけど、今回使ってみて結構感動！
-感覚的には、「異なる複数のPCが、同じフォルダを覗いてる。」みたいな！どっちから新しくファイルを作ったりしたら、もう一方のPC内のフォルダを見ても、勝手にファイルできてるし！すげー！
-ってことで、オススメです。
-そんなこんなで、今週は結構開発が進んだ週だった！
-あと、無事ACCESSのバイトも継続できる（そのまま就職できないかな。。）ということも決まったし！
-というわけで、金曜の夜はIIJM先輩、YNOと3人で飲み。
-東方見聞録→HeartBeatとハシゴ。
-テキーラ戦争（みんなでオゴり合い）が勃発して死亡。
-        
-      </div>
-    </article>
-    
-    <article>
-      <h2 class="subtitle is-6">January 23, 2009</h2>
-      <h1 class="title"><a href="https://naoharu.github.io/archives/6742">.net by au　（ドットネット　バイ　エーユー）</a></h1>
-      <div class="content">
-        「.net by au (ドットネット バイ エーユー)」の提供開始について〈別紙〉
-Microsoftの.NET Frameworkを互換性をもつプラットフォームがau端末上で
-提供されるとのことです。
-互換性っていうのがどのくらいのものなのかってのも気になりますが、
-Tim Oreillyの言葉に耳を傾けたんですかね。
- A platform strategy beats an application strategy everytime.
-（プラットフォーム戦略は常にアプリケーション戦略を打ち負かす）
- 
-        
-      </div>
-    </article>
-    
-    <article>
-      <h2 class="subtitle is-6">January 21, 2009</h2>
-      <h1 class="title"><a href="https://naoharu.github.io/archives/6736">動画を使った英語学習サイト</a></h1>
-      <div class="content">
-        英語の学習が可能なWebサービスとしてはiKnow!とかVOA Newsが有名だけど、
-最近新しいものが登場したみたいで、yapprというやつらしいです。
-まだ本格的に試してない（新大統領の演説をみたくらい）ので、なんともいえないですが、
-あれだけ網羅性のあるiKnow!とかに対して、どれだけ差別化できてるんでしょうか。。
-動画に字幕が付与されているっていうことなので、
-てっきり、自動生成とかやってて、
-「ベンチャーがgoogleやNHKを出し抜いたのかよ・・・。」
-と思ったんだけど、ユーザーによる入力みたいですね。
-（英語圏のユーザーは、何をモチベーションにして字幕書いてくれているんだろう・・・？）
-っていうかNHKは生放送でやろうとしているのか。
-        
-      </div>
-    </article>
-    
-    <article>
-      <h2 class="subtitle is-6">January 21, 2009</h2>
-      <h1 class="title"><a href="https://naoharu.github.io/archives/6730">OB訪問</a></h1>
-      <div class="content">
-        というわけで、ACCESSのOB訪問へ。
-やっぱスゲーなこの会社。超イカついわ。
-あーーーこういうところで働くのがデベロッパー冥利に尽きるといった感じでしょうか。
-ま、俺より優秀な人はゴマン（と言わずジューマン）といるでしょうが。。
-良い会社だなぁ。ご飯も奢ってもらえたし。。
-とまぁ、就職活動も本格化してきており、ここ最近で一番苦しんだESを提出完了。
-合計2200字って1枚のESにしては過去最長です。。
-タイピング練習しといてよかったぜ。
-（ちなみに122位@425打。。。）
-&#8212;
-っていうか、話は変わるんだけど、
-こだまブログに書いてある「オバマ風画像メーカー」がYB～！超かっこいい。
-っていうか、こだまブログ、記事単体で見るとcss読み込んでないんだけど。。。いいんかな。
-        
-      </div>
-    </article>
-    
-    <article>
-      <h2 class="subtitle is-6">January 20, 2009</h2>
-      <h1 class="title"><a href="https://naoharu.github.io/archives/6727">犬式が活動停止</a></h1>
-      <div class="content">
-        マジすかー！
-無念・・・。
-        
-      </div>
-    </article>
-    
-    <article>
-      <h2 class="subtitle is-6">January 14, 2009</h2>
-      <h1 class="title"><a href="https://naoharu.github.io/archives/6699">無言の蓄積</a></h1>
-      <div class="content">
-        精神状態がやばい。
-食生活がよくなくて、栄養が偏ってるのか、
-それとも睡眠のリズムが悪いのか、かなりまいっている状況。
-身近な人に対する態度には、表れているだろうな。最悪だ。
-精神的にばかり疲れて、肉体的には疲れてないから睡眠の質がわるいのかと思い、
-夜走ったりしてるんだけど、あまり効果なし。
-とりあえず来週はリンク、IBM、ACCESSなどの就活イベントが目白押しなので、そこだけ乗り切らねば！
-MSクルーかっこいい！！（坊主率の高さが彼らのハーコーさを物語ってますね。）
-上の映像だと、イントロの後にプライマルが
- 無言　現実感無い想像バーチャル程
-無頓着になってく大事な事や人
- の部分をフライングしてて、
-そのあとKANが、
- これいつもやるんだよ
- って怒ってる。KANこえぇ。
-        
-      </div>
-    </article>
-    
-    <article>
-      <h2 class="subtitle is-6">January 10, 2009</h2>
-      <h1 class="title"><a href="https://naoharu.github.io/archives/6690">バイト募集のお知らせ（と、調布のレゲエバー）</a></h1>
-      <div class="content">
-        金曜の日記  ここには書いてなかったんだけど、
-一身上の都合により、FTでのバイトを続けていくことが難しくなって、
-昨年末で、急遽指導教官から引き上げの命が下りました途中棄権ということに。
-というわけで、僕のかわりに仕事を続けてくれる人募集。
- 場所：　新宿南口徒歩5分
-時間：　週1日5時間～
-内容：　アプリケーション開発（Windows MobileもしくはiPhone向け）
-報酬：　メール下さい
- 詳しくは、こちらまで。
-英語もしくはフランス語が話せると、なお良いです。是非。。
-バイトの募集もそこそこに、金曜の夜はマイミクhidetoさんが出演されるイベントがあるということで
-調布のレゲエバー HEART BEATSに行った。
-いやー非常に暖かい雰囲気で、初めて行ったとは思えないお店だった。
-こんな場所が徒歩10分のところにあると、ちょっとヤバいですね。。
-毎週金曜何かやってるし、、ノーチャージだし。
-音も、ハイデフではないですが、暖かくて丸っこい、手作りの「サウンドシステム」って感じの音で
-なんかすごい懐かしい感じがしました。
-かかった曲では、hidetoさんがかけてくれたhuman natureがヤバかったぁ。。
-この曲、本当に大好きなんすよねぇ。
-あと、hidetoさんの次に回してた方（お名前を失念してしまいました・・・）のかけた、
-松任谷由実のA Happy New Yearで、ちょっと泣きかけてしまった。。
-なんなんだこの曲・・・！良すぎ！ばかっ！
-        
-      </div>
-    </article>
-    
-    <article>
-      <h2 class="subtitle is-6">January 9, 2009</h2>
-      <h1 class="title"><a href="https://naoharu.github.io/archives/6679">プレッシャーに勝つ方法</a></h1>
-      <div class="content">
-        別に時間が無いわけじゃない（俺より忙しい人はゴマンといる）し、
-超重要な仕事を任されているわけじゃない（俺よりミッションクリティカルな人もゴマンといる）んだけど、
-それでも、
- 「いついつまでにコレを絶対に完成させなければならない」
- というものが4つ、5つと溜まってくると、
-どうしても精神的に負けてしまいそうになってしまうことがある。
-（最近思うんだけど、これは「仕事の重大さ」とは関係ないのかもしれない。。その話はまた今度・・・。）
-んで、その圧力を跳ね返すにはどうすべきかを考えてるんだけど、
-やっぱりメリハリというか、「私生活モード」と「バリバリモード」をうまく切り替える必要があるな、と。
-とにかく、バリバリやるには自分（時には人にも）に厳しく当たっていかないといけない。
- 「やるって言ったよね？（＞自分or人）」
-「なんで出来てないの？（＞自分or人）」
-「何時までにできる？どのくらいスケジュールとズレてる？（＞自分or人）」
-「そんなんじゃ人から信頼されないよ。（＞自分or人）」
-「言われたことだけをやるんなら、誰でもできるよね。（＞自分or人）」
-「他でもない、あなたがやることの付加価値は何？？（＞自分or人）」
-「etc&#8230;」
- まぁ、代表的な感情はこんくらいか。
-こういう問答をするときに、
-「素の自分の感情」が混ざっていると、やっぱり心が荒む。
-結局、プレッシャーに負ける時は、いつも自分の心（もしくは体）の弱い部分から崩れていくので、
-とにかく、
- 素の自分「いやぁ、そんなに追い込んでやらんでも・・・。」
- みたいな小さなヒビから浸水が始まるし、一度水が入ってきたら最後で、
-どんどん柱を腐らせていき、耐性が無くなっていく。
-なので、バリバリモードのときは、不純物を混ぜないように、完全に別人格を作る勢いで物事をやって、
-それ以外の、家に帰ったあととかは、
- 「仕事命の人生とかマジで終わってるだろｗｗｗ」
- くらいの反動を逆につけてやらないといけない。
-もしくは、趣味とかで別の目標を作って、そっちはそっちで頑張るようなことをして、
-相対的に「（プレッシャーと戦わないといけない）バリバリモード時」を
-浮き彫りにさせるようなことをしないとなぁ、と。
-研究室やバイトの事を家に帰ってまでやってると、本当に調子狂う。。
-たぶん、中途半端な心の状態でやるから、上記の
- 素の自分「いやぁ、そんなに追い込んでやらんでも・・・。」
- みたいなヒビが入りやすくなってるんだと思うんだけども。。
-やっぱメリハリは大切だなぁ。と、みんな知ってるであろうことに、最近俺も気づいた・・・。
-それでもどうしても時間が足りなくなって、持ち帰らないといけない時ってのは、
-そもそも当初の「できると思った」ことが間違っているということなので、
-家ではやらずに、マックでやるとか、サンマルクでやるとか、なんかそういう形にしないといけない。
-とにかく、
-「『バリバリモード時の自分』の尻拭いを、『ゆるゆるモード時の自分』にさせる。」
-という事態だけは避けないといけない。
-だって、「ゆるゆるモード時の自分」には罪はないんだから。。。
-もちろん、逆に、「ゆるゆるモード時の自分」のキャラや世間的な評価から
-「バリバリモード時の自分」を独立させることも重要。
-普段はナヨナヨしてても、やるべきことはキチっとやらないといけないんだから。
-そのリミッターを解除させるには、
-「お互いがお互いに対して無責任でいる。」
-ということが重要なんだ、と。
-高校で陸上競技やってた時、顧問の先生が
-「本当に強い選手っていうのは、『怪我』をしない選手。」
-って言ってたんだけど、うーん。。深い。と思う。
-結局、仕事を高い品質でコンスタントにやってる人って、
-高プレッシャー時にも鬱病とかになったりしない人なんよねぇ。
-そうなるためには、メンタル弱い俺とかは特に、心の管理に気をつけないといけないなぁー。
-（本文とは全く関係ないけど、高校のときの英語の先生の赤ちゃん。）
-        
-      </div>
-    </article>
-    
+  
+  <div class="summary">
+    <h2><a href="https://naoharu.github.io/archives/6748">石見会 </a></h2>
+    <div class="meta">
+      Jan 26, 2009 &nbsp;
+      
+        #<a href="/tags/diary">diary</a>&nbsp;
+      
+    </div>
   </div>
-</section>
-<section class="section">
-  <div class="container">
-    <nav class="level is-mobile">
-      <div class="level-left">
-        <div class="level-item">
-          
-          <a class="button" href="/page/102/">
-            <span class="icon is-small is-marginless">
-              <i class="fa fa-angle-left"></i>
-            </span>
-            Newer
-          </a>
-          
-        </div>
-      </div>
-      <div class="level-right is-marginless">
-        <div class="level-item">
-          
-          <a class="button" href="/page/104/">
-            Older
-            <span class="icon is-small is-marginless">
-              <i class="fa fa-angle-right"></i>
-            </span>
-          </a>
-          
-        </div>
-      </div>
-    </nav>
+  
+  <div class="summary">
+    <h2><a href="https://naoharu.github.io/archives/6746">PC間の同期（飲みすぎた日） </a></h2>
+    <div class="meta">
+      Jan 24, 2009 &nbsp;
+      
+        #<a href="/tags/diary">diary</a>&nbsp;
+      
+        #<a href="/tags/web">web</a>&nbsp;
+      
+    </div>
   </div>
-</section>
-
-<section class="section">
-  <div class="container has-text-centered">
-    <p>&copy; <a href="https://twitter.com/naoharu">Naoharu SASAKI</a> 2017</p>
+  
+  <div class="summary">
+    <h2><a href="https://naoharu.github.io/archives/6742">.net by au　（ドットネット　バイ　エーユー） </a></h2>
+    <div class="meta">
+      Jan 23, 2009 &nbsp;
+      
+        #<a href="/tags/diary">diary</a>&nbsp;
+      
+    </div>
   </div>
-</section>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+  
+  <div class="summary">
+    <h2><a href="https://naoharu.github.io/archives/6736">動画を使った英語学習サイト </a></h2>
+    <div class="meta">
+      Jan 21, 2009 &nbsp;
+      
+        #<a href="/tags/diary">diary</a>&nbsp;
+      
+    </div>
+  </div>
+  
+  <div class="summary">
+    <h2><a href="https://naoharu.github.io/archives/6730">OB訪問 </a></h2>
+    <div class="meta">
+      Jan 21, 2009 &nbsp;
+      
+        #<a href="/tags/diary">diary</a>&nbsp;
+      
+    </div>
+  </div>
+  
+  <div class="summary">
+    <h2><a href="https://naoharu.github.io/archives/6727">犬式が活動停止 </a></h2>
+    <div class="meta">
+      Jan 20, 2009 &nbsp;
+      
+        #<a href="/tags/diary">diary</a>&nbsp;
+      
+    </div>
+  </div>
+  
+  <div class="summary">
+    <h2><a href="https://naoharu.github.io/archives/6699">無言の蓄積 </a></h2>
+    <div class="meta">
+      Jan 14, 2009 &nbsp;
+      
+        #<a href="/tags/diary">diary</a>&nbsp;
+      
+    </div>
+  </div>
+  
+  <div class="summary">
+    <h2><a href="https://naoharu.github.io/archives/6690">バイト募集のお知らせ（と、調布のレゲエバー） </a></h2>
+    <div class="meta">
+      Jan 10, 2009 &nbsp;
+      
+        #<a href="/tags/diary">diary</a>&nbsp;
+      
+    </div>
+  </div>
+  
+  <div class="summary">
+    <h2><a href="https://naoharu.github.io/archives/6679">プレッシャーに勝つ方法 </a></h2>
+    <div class="meta">
+      Jan 9, 2009 &nbsp;
+      
+        #<a href="/tags/diary">diary</a>&nbsp;
+      
+    </div>
+  </div>
+  
+</main>
 
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/languages/go.min.js"></script>
 
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/languages/dockerfile.min.js"></script>
 
+<nav>
+  
+  
+    
+    <ul class="pagination">
+        
+        <li>
+            <a href="/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+        </li>
+        
+        <li
+        >
+        <a href="/page/102/" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+        </li>
+        
+        <li
+        ><a href="/">1</a></li>
+        
+        <li
+        ><a href="/page/2/">2</a></li>
+        
+        <li
+        ><a href="/page/3/">3</a></li>
+        
+        <li
+        ><a href="/page/4/">4</a></li>
+        
+        <li
+        ><a href="/page/5/">5</a></li>
+        
+        <li
+        ><a href="/page/6/">6</a></li>
+        
+        <li
+        ><a href="/page/7/">7</a></li>
+        
+        <li
+        ><a href="/page/8/">8</a></li>
+        
+        <li
+        ><a href="/page/9/">9</a></li>
+        
+        <li
+        ><a href="/page/10/">10</a></li>
+        
+        <li
+        ><a href="/page/11/">11</a></li>
+        
+        <li
+        ><a href="/page/12/">12</a></li>
+        
+        <li
+        ><a href="/page/13/">13</a></li>
+        
+        <li
+        ><a href="/page/14/">14</a></li>
+        
+        <li
+        ><a href="/page/15/">15</a></li>
+        
+        <li
+        ><a href="/page/16/">16</a></li>
+        
+        <li
+        ><a href="/page/17/">17</a></li>
+        
+        <li
+        ><a href="/page/18/">18</a></li>
+        
+        <li
+        ><a href="/page/19/">19</a></li>
+        
+        <li
+        ><a href="/page/20/">20</a></li>
+        
+        <li
+        ><a href="/page/21/">21</a></li>
+        
+        <li
+        ><a href="/page/22/">22</a></li>
+        
+        <li
+        ><a href="/page/23/">23</a></li>
+        
+        <li
+        ><a href="/page/24/">24</a></li>
+        
+        <li
+        ><a href="/page/25/">25</a></li>
+        
+        <li
+        ><a href="/page/26/">26</a></li>
+        
+        <li
+        ><a href="/page/27/">27</a></li>
+        
+        <li
+        ><a href="/page/28/">28</a></li>
+        
+        <li
+        ><a href="/page/29/">29</a></li>
+        
+        <li
+        ><a href="/page/30/">30</a></li>
+        
+        <li
+        ><a href="/page/31/">31</a></li>
+        
+        <li
+        ><a href="/page/32/">32</a></li>
+        
+        <li
+        ><a href="/page/33/">33</a></li>
+        
+        <li
+        ><a href="/page/34/">34</a></li>
+        
+        <li
+        ><a href="/page/35/">35</a></li>
+        
+        <li
+        ><a href="/page/36/">36</a></li>
+        
+        <li
+        ><a href="/page/37/">37</a></li>
+        
+        <li
+        ><a href="/page/38/">38</a></li>
+        
+        <li
+        ><a href="/page/39/">39</a></li>
+        
+        <li
+        ><a href="/page/40/">40</a></li>
+        
+        <li
+        ><a href="/page/41/">41</a></li>
+        
+        <li
+        ><a href="/page/42/">42</a></li>
+        
+        <li
+        ><a href="/page/43/">43</a></li>
+        
+        <li
+        ><a href="/page/44/">44</a></li>
+        
+        <li
+        ><a href="/page/45/">45</a></li>
+        
+        <li
+        ><a href="/page/46/">46</a></li>
+        
+        <li
+        ><a href="/page/47/">47</a></li>
+        
+        <li
+        ><a href="/page/48/">48</a></li>
+        
+        <li
+        ><a href="/page/49/">49</a></li>
+        
+        <li
+        ><a href="/page/50/">50</a></li>
+        
+        <li
+        ><a href="/page/51/">51</a></li>
+        
+        <li
+        ><a href="/page/52/">52</a></li>
+        
+        <li
+        ><a href="/page/53/">53</a></li>
+        
+        <li
+        ><a href="/page/54/">54</a></li>
+        
+        <li
+        ><a href="/page/55/">55</a></li>
+        
+        <li
+        ><a href="/page/56/">56</a></li>
+        
+        <li
+        ><a href="/page/57/">57</a></li>
+        
+        <li
+        ><a href="/page/58/">58</a></li>
+        
+        <li
+        ><a href="/page/59/">59</a></li>
+        
+        <li
+        ><a href="/page/60/">60</a></li>
+        
+        <li
+        ><a href="/page/61/">61</a></li>
+        
+        <li
+        ><a href="/page/62/">62</a></li>
+        
+        <li
+        ><a href="/page/63/">63</a></li>
+        
+        <li
+        ><a href="/page/64/">64</a></li>
+        
+        <li
+        ><a href="/page/65/">65</a></li>
+        
+        <li
+        ><a href="/page/66/">66</a></li>
+        
+        <li
+        ><a href="/page/67/">67</a></li>
+        
+        <li
+        ><a href="/page/68/">68</a></li>
+        
+        <li
+        ><a href="/page/69/">69</a></li>
+        
+        <li
+        ><a href="/page/70/">70</a></li>
+        
+        <li
+        ><a href="/page/71/">71</a></li>
+        
+        <li
+        ><a href="/page/72/">72</a></li>
+        
+        <li
+        ><a href="/page/73/">73</a></li>
+        
+        <li
+        ><a href="/page/74/">74</a></li>
+        
+        <li
+        ><a href="/page/75/">75</a></li>
+        
+        <li
+        ><a href="/page/76/">76</a></li>
+        
+        <li
+        ><a href="/page/77/">77</a></li>
+        
+        <li
+        ><a href="/page/78/">78</a></li>
+        
+        <li
+        ><a href="/page/79/">79</a></li>
+        
+        <li
+        ><a href="/page/80/">80</a></li>
+        
+        <li
+        ><a href="/page/81/">81</a></li>
+        
+        <li
+        ><a href="/page/82/">82</a></li>
+        
+        <li
+        ><a href="/page/83/">83</a></li>
+        
+        <li
+        ><a href="/page/84/">84</a></li>
+        
+        <li
+        ><a href="/page/85/">85</a></li>
+        
+        <li
+        ><a href="/page/86/">86</a></li>
+        
+        <li
+        ><a href="/page/87/">87</a></li>
+        
+        <li
+        ><a href="/page/88/">88</a></li>
+        
+        <li
+        ><a href="/page/89/">89</a></li>
+        
+        <li
+        ><a href="/page/90/">90</a></li>
+        
+        <li
+        ><a href="/page/91/">91</a></li>
+        
+        <li
+        ><a href="/page/92/">92</a></li>
+        
+        <li
+        ><a href="/page/93/">93</a></li>
+        
+        <li
+        ><a href="/page/94/">94</a></li>
+        
+        <li
+        ><a href="/page/95/">95</a></li>
+        
+        <li
+        ><a href="/page/96/">96</a></li>
+        
+        <li
+        ><a href="/page/97/">97</a></li>
+        
+        <li
+        ><a href="/page/98/">98</a></li>
+        
+        <li
+        ><a href="/page/99/">99</a></li>
+        
+        <li
+        ><a href="/page/100/">100</a></li>
+        
+        <li
+        ><a href="/page/101/">101</a></li>
+        
+        <li
+        ><a href="/page/102/">102</a></li>
+        
+        <li
+        class="active"><a href="/page/103/">103</a></li>
+        
+        <li
+        ><a href="/page/104/">104</a></li>
+        
+        <li
+        ><a href="/page/105/">105</a></li>
+        
+        <li
+        ><a href="/page/106/">106</a></li>
+        
+        <li
+        ><a href="/page/107/">107</a></li>
+        
+        <li
+        ><a href="/page/108/">108</a></li>
+        
+        <li
+        >
+        <a href="/page/104/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+        </li>
+        
+        <li>
+            <a href="/page/108/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-4774178-3', 'auto');
-ga('send', 'pageview');
-</script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
 
-
+</body>
+</html>
 
